@@ -1,16 +1,13 @@
 <style>
 .navbar {
-  position: sticky;
   top: 0;
-  background-color: #fff;
-  transition: background-color 0.5s ease, top 0.5s ease;
-  border-bottom: 1px solid #eee;
+  position: sticky;
   z-index: 1000;
-  height: var(--navbar-height);
+  border-bottom: 1px solid #eee;
+  background-color: var(--color-navbar)
 }
 
-.navbar-container {
-  max-width: 1200px;
+.navbar > div {
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
@@ -18,17 +15,21 @@
   align-items: center;
 }
 
-.navbar-logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.navbar-menu {
+.toggle {
+  display: none;
+}
+
+.menu {
   display: flex;
   gap: 1rem;
 }
 
-.navbar-menu ul {
+.menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -36,21 +37,12 @@
   align-items: center;
 }
 
-.navbar-menu li {
+.menu li {
   padding: 0 15px;
 }
 
-.navbar-toggle {
-  display: none;
-}
-
-.navbar-menu a {
-  text-decoration: none;
-  color: #000;
-}
-
 @media (max-width: 768px) {
-  .navbar-menu {
+  .menu {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -60,46 +52,44 @@
     background-color: #fff;
   }
 
-  .navbar-menu.active {
+  .menu.active {
     display: flex;
   }
 
-  .navbar-toggle {
-    display: block;
+  .toggle {
+    display: none;
   }
 }
 </style>
 
-<nav class="navbar">
-  <div class="navbar-container">
-    <div class="navbar-logo">Logo</div>
-    <div class="navbar-toggle" onclick="toggleMenu()">
+<section class="navbar">
+  <div>
+    <div class="logo">Logo</div>
+    <div class="toggle">
       &#9776;
     </div>
-    <div class="navbar-menu">
+    <nav class="menu">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</section>
 
 <script>
-  // const toggleMenu = () => {
-  //   document.querySelector('.navbar-menu')?.classList.toggle('active');
-  // };
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleMenu = () => {
+      const menu = document.querySelector('.menu');
+      if (menu) {
+        menu.classList.toggle('active');
+      }
+    };
 
-  // document.querySelector('.navbar-toggle')?.addEventListener('click', toggleMenu);
-
-  // window.addEventListener('scroll', () => {
-  //   const navbar = document.getElementById('.navbar');
-  //   if (window.scrollY > 100) { // Adjust this value based on when you want the navbar to change
-  //     navbar.classList.add('is-sticky');
-  //   } else {
-  //     navbar.classList.remove('is-sticky');
-  //   }
-  // });
+    const toggleButton = document.querySelector('.toggle');
+    if (toggleButton) {
+      toggleButton.addEventListener('click', toggleMenu);
+    }
+  });
 </script>
-

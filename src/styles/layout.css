@@ -1,0 +1,29 @@
+.center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.stack > * + * {
+  margin-top: var(--base-size, 1.5rem);
+}
+.stack-small > * + * {
+  margin-top: var(--base-size, 0.5rem);
+}
+.stack-large > * + * {
+  margin-top: var(--base-size, 3rem);
+}
+.stack:only-child {
+  height: 100%;
+}
+.stack > :nth-child(2) {
+  margin-bottom: auto;
+} 

@@ -1,0 +1,71 @@
+:root {
+  --section-container-max-width: 110ch;
+
+   /* Base font size */
+   --base-size: 1rem; /* Paragraph size */
+   --base-line-height: 1.5; /* Paragraph line height */
+
+   /* Modular scale calculations */
+   --scale-1: calc(var(--scale0) / var(--base-line-height));
+   --scale0: calc(var(--base-size) * var(--base-line-height));
+   --scale1: calc(var(--scale0) * var(--base-line-height)); /* 1 level up */
+   --scale2: calc(var(--scale1) * var(--base-line-height)); /* 2 levels up */
+   --scale3: calc(var(--scale2) * var(--base-line-height) ); /* 3 levels up */
+
+  --color-text: #232115;
+  --color-bg: hsla(53,10%,69%,.15);
+  --color-border: hsl(17, 24%, 90%);
+  --color-navbar: #fff;
+
+  --border-thin: 1px solid var(--color-border);
+  --navbar-height: var(--scale2);
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+
+  font-family: system-ui, sans-serif;
+  line-height: var(--base-line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+*,:after,:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit
+}
+
+a:focus:not(:focus-visible) {
+  outline: none
+}
+
+section > div {
+  max-width: var(--section-container-max-width);
+}
+
+h1 {
+  font-size: var(--scale2);
+  line-height: 1.20;
+}
+
+h2 {
+  font-size: var(--scale1);
+}
+
+h3 {
+  font-size: var(--scale0);
+}
+
+
+/* Temp Design Helper */
+/* * {
+  border: 1px dotted hsla(120, 5%, 4%, 0.137);
+} */
