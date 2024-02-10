@@ -1,0 +1,26 @@
+<style is:global>
+  .box {
+    /* ↓ Padding set to the first point on the modular scale */
+    padding: var(--s1);
+    /* ↓ Assumes you have a --border-thin var */
+    border: var(--border-thin) solid;
+    /* ↓ Always apply the transparent outline, for high contrast mode */
+    outline: var(--border-thin) transparent;
+    outline-offset: calc(var(--border-thin) * -1);
+    /* ↓ The light and dark color vars */
+    /* TODO: That needs to go somewhere else. */
+    --color-light: #fff;
+    --color-dark: #000;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
+  .box * {
+    /* ↓ Force colors to inherit from the parent
+    and honor inversion (below) */
+    color: inherit;
+  }
+</style>
+
+<div class="box">
+  <slot />
+</div>

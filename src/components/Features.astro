@@ -1,0 +1,54 @@
+---
+import Container from "../layouts/Container.astro";
+import Center from "../layouts/Center.astro";
+import Grid from "../layouts/Grid.astro";
+
+const FEATURES = [
+  {
+    title: "Opakowania",
+    body: "Opakowania i Produkty Opakowane z Własnym Brandingiem",
+    src: "../../public/images/box.svg",
+  },
+  {
+    title: "Elektronika",
+    body: "Urządzenia Elektryczne i Elektroniczne, Baterie oraz Akumulatory",
+    src: "../../public/images/battery.svg",
+  },
+  {
+    title: "Specjalistyczne",
+    body: "Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne",
+    src: "../../public/images/barrel.svg",
+  }
+];
+---
+
+<style>
+  img {
+    min-height: 4rem;
+    min-width: 4rem;
+    height: auto;
+    width: auto;
+    max-height: 6rem;
+    max-width: 6rem;
+  }
+</style>
+
+<Container>
+  <Center>
+    <h2>Features 🦄</h2>
+    <p>Testing Grid Layout</p>
+  </Center>
+  <Grid>
+    {FEATURES.map(({ title, body, src}) => (
+      <div>
+        <img src={src} />
+          <h3>
+            {title}
+          </h3>
+          <p>
+            {body}
+          </p>
+      </div>
+    ))}
+  </Grid>
+</Container>

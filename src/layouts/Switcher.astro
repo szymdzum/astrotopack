@@ -1,0 +1,28 @@
+<style is:global>
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* ↓ The default value is the first point on the modular scale */
+    gap: var(--gutter, var(--s1));
+    /* ↓ The width at which the layout “breaks” */
+    /* TODO: Why rems not ch ? */
+    --threshold: 40rem;
+  }
+  .switcher > * {
+    /* ↓ Allow children to grow */
+    flex-grow: 1;
+    /* ↓ Switch the layout at the --threshold */
+    flex-basis: calc((var(--threshold) - 100%) * 999);
+  }
+  .switcher > :nth-last-child(n+5),
+  .switcher > :nth-last-child(n+5) ~ * {
+    /* ↓ Switch to a vertical configuration if
+    there are more than 4 child elements */
+    flex-basis: 100%;
+  }
+</style>
+
+<div class="switcher">
+  <slot />
+</div>

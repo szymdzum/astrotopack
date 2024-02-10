@@ -1,0 +1,105 @@
+<style>
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  transition: background-color 0.5s ease, top 0.5s ease;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+  height: var(--navbar-height);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu li {
+  padding: 0 15px;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
+</style>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">Logo</div>
+    <div class="navbar-toggle" onclick="toggleMenu()">
+      &#9776;
+    </div>
+    <div class="navbar-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // const toggleMenu = () => {
+  //   document.querySelector('.navbar-menu')?.classList.toggle('active');
+  // };
+
+  // document.querySelector('.navbar-toggle')?.addEventListener('click', toggleMenu);
+
+  // window.addEventListener('scroll', () => {
+  //   const navbar = document.getElementById('.navbar');
+  //   if (window.scrollY > 100) { // Adjust this value based on when you want the navbar to change
+  //     navbar.classList.add('is-sticky');
+  //   } else {
+  //     navbar.classList.remove('is-sticky');
+  //   }
+  // });
+</script>
+

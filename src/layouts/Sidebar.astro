@@ -1,0 +1,24 @@
+<style is:global>
+  .with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    /* ↓ The default value is the first point on the modular scale */
+    gap: var(--gutter, var(--s1));
+  }
+  .with-sidebar > :first-child {
+    /* ↓ The width when the sidebar _is_ a sidebar */
+    flex-basis: 20rem;
+    flex-grow: 1;
+  }
+  .with-sidebar > :last-child {
+    /* ↓ Grow from nothing */
+    flex-basis: 0;
+    flex-grow: 999;
+    /* ↓ Wrap when the elements are of equal width */
+    min-width: 50%;
+  }
+</style>
+
+<div class="with-sidebar">
+  <slot />
+</div>

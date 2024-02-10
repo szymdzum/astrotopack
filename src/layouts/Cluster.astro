@@ -1,0 +1,19 @@
+<style is:global>
+  /* 
+  TODO: Need to have justyfy-content dynamic. Esentially need to pass props to the cluster
+  TODO: Can cluster contain <ul> or <ol>? Gonna figure out later during components
+  */
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space, 1rem);
+    /* ↓ Choose your justification (flex-start is default) */
+    justify-content: space-between;
+    /* ↓ Choose your alignment (flex-start is default) */
+    align-items: center;
+  }
+</style>
+
+<div class="cluster">
+  <slot />
+</div>
