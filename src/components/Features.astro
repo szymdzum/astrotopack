@@ -1,23 +1,19 @@
 ---
-import Container from "../layouts/Container.astro";
-import Center from "../layouts/Center.astro";
-import Grid from "../layouts/Grid.astro";
-
 const FEATURES = [
   {
     title: "Opakowania",
     body: "Opakowania i Produkty Opakowane z Własnym Brandingiem",
-    src: "../../public/images/box.svg",
+    src: "/images/box.svg",
   },
   {
     title: "Elektronika",
     body: "Urządzenia Elektryczne i Elektroniczne, Baterie oraz Akumulatory",
-    src: "../../public/images/battery.svg",
+    src: "/images/battery.svg",
   },
   {
     title: "Specjalistyczne",
     body: "Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne",
-    src: "../../public/images/barrel.svg",
+    src: "/images/barrel.svg",
   }
 ];
 ---
@@ -31,16 +27,22 @@ const FEATURES = [
     max-height: 6rem;
     max-width: 6rem;
   }
+  .center-content: {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 
-<Container>
-  <Center>
-    <h2>Features 🦄</h2>
-    <p>Testing Grid Layout</p>
-  </Center>
-  <Grid>
+<section class="center">
+  <div>
+    <h2>Prosta ścieżka do spełnienia wymogów zrównoważonego rozwoju</h2>
+    <p>Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:</p>
+
+  <div class="grid center">
     {FEATURES.map(({ title, body, src}) => (
-      <div>
+      <div class="grid center center-content">
         <img src={src} />
           <h3>
             {title}
@@ -50,5 +52,6 @@ const FEATURES = [
           </p>
       </div>
     ))}
-  </Grid>
-</Container>
+  </div>
+</div>
+</section>

@@ -1,9 +1,6 @@
 :root {
-  --section-container-max-width: 110ch;
-
-   /* Base font size */
    --base-size: 1rem; /* Paragraph size */
-   --base-line-height: 1.5; /* Paragraph line height */
+   --base-line-height: 1.6; /* Paragraph line height */
 
    /* Modular scale calculations */
    --scale-1: calc(var(--scale0) / var(--base-line-height));
@@ -18,6 +15,7 @@
   --color-navbar: #fff;
 
   --border-thin: 1px solid var(--color-border);
+  --section-container-max-width: 110ch;
   --navbar-height: var(--scale2);
 }
 
@@ -38,26 +36,18 @@ html {
   box-sizing: border-box
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit
-}
-
-a:focus:not(:focus-visible) {
-  outline: none
-}
-
 section > div {
   max-width: var(--section-container-max-width);
 }
 
 h1 {
   font-size: var(--scale2);
-  line-height: 1.20;
+  line-height: 1.1;
 }
 
 h2 {
   font-size: var(--scale1);
+  line-height: 1.2;
 }
 
 h3 {
@@ -66,6 +56,6 @@ h3 {
 
 
 /* Temp Design Helper */
-/* * {
+* {
   border: 1px dotted hsla(120, 5%, 4%, 0.137);
-} */
+}

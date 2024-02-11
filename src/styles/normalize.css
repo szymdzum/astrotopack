@@ -350,3 +350,12 @@ template {
 
 /* My Custom 
    ========================================================================== */
+
+a {
+  color: inherit;
+  text-decoration: inherit
+}
+
+a:focus:not(:focus-visible) {
+  outline: none
+}

@@ -1,0 +1,20 @@
+---
+import Card from '../components/Card.astro';
+---
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create two columns of equal width */
+  grid-gap: 1.6rem; /* Space between cards */
+  padding: 1.6rem; /* Padding around the grid */
+}
+</style>
+
+<section class="center">
+  <div class="container">
+  <Card />
+  <Card />
+  <Card />
+  <Card />
+  </div>
+</section>
