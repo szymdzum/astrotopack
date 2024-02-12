@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^7.3.0
     version: 7.3.0(astro@4.3.5)
+  '@fontsource/inter':
+    specifier: ^5.0.16
+    version: 5.0.16
   astro:
     specifier: ^4.3.5
     version: 4.3.5
@@ -524,6 +527,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/inter@5.0.16:
+    resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

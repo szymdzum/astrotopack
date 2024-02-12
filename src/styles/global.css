@@ -1,61 +1,66 @@
 :root {
-   --base-size: 1rem; /* Paragraph size */
-   --base-line-height: 1.6; /* Paragraph line height */
-
-   /* Modular scale calculations */
-   --scale-1: calc(var(--scale0) / var(--base-line-height));
-   --scale0: calc(var(--base-size) * var(--base-line-height));
-   --scale1: calc(var(--scale0) * var(--base-line-height)); /* 1 level up */
-   --scale2: calc(var(--scale1) * var(--base-line-height)); /* 2 levels up */
-   --scale3: calc(var(--scale2) * var(--base-line-height) ); /* 3 levels up */
+  --section-container-max-width: 1200px;
+  --navbar-height: var(--scale2);
+  --border-thin: 1px solid var(--color-border);
 
   --color-text: #232115;
-  --color-bg: hsla(53,10%,69%,.15);
-  --color-border: hsl(17, 24%, 90%);
+  --color-bg: #fff;
   --color-navbar: #fff;
-
-  --border-thin: 1px solid var(--color-border);
-  --section-container-max-width: 110ch;
-  --navbar-height: var(--scale2);
+  --color-border: hsl(17, 24%, 90%);
 }
 
 html {
-  box-sizing: border-box;
   scroll-behavior: smooth;
+}
 
-
-  font-family: system-ui, sans-serif;
-  line-height: var(--base-line-height);
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(15px + .390625vw);
+  line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
 
-*,:after,:before {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box
-}
-
-section > div {
-  max-width: var(--section-container-max-width);
-}
-
 h1 {
-  font-size: var(--scale2);
+  font-size: 3rem;
   line-height: 1.1;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: var(--scale1);
+  font-size: 2.25rem;
   line-height: 1.2;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: var(--scale0);
+  font-size: 1.2rem;
+  font-weight: 500;
 }
+
+nav {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.section-header {
+  max-width: 43.75rem; /* Approx. 700px assuming the base font size is 16px */
+  margin: 0 auto; /* Centers the content */
+  text-align: center; /* Center aligns the text */
+  padding: 1rem; /* Adds some padding around the content for spacing */
+}
+.section-subtitle {
+  opacity: 0.6;
+}
+
+
+
+/* .container {
+  max-width: var(--section-container-max-width);
+} */
 
 
 /* Temp Design Helper */
-* {
+/* * {
   border: 1px dotted hsla(120, 5%, 4%, 0.137);
-}
+} */

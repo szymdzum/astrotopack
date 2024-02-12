@@ -1,0 +1,43 @@
+<style>
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.social-link:hover {
+  background-color: #d0d0d0;
+}
+
+@media (max-width: 600px) {
+  .social-links {
+    flex-direction: column;
+  }
+}
+</style>
+
+<footer class="footer center">
+  <div class="footer-content container">
+    <div class="copyright">
+      <p>© 2020 Your Company, Inc. All rights reserved.</p>
+    </div>
+    <div class="social-links">
+      <a href="#" class="social-link">Facebook</a>
+      <a href="#" class="social-link">Instagram</a>
+    </div>
+  </div>
+</footer>
+
