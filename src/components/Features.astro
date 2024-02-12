@@ -15,7 +15,6 @@ import { features } from '../data/data.js';
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 4rem;
     padding-left: 6rem;
     padding-right: 6rem;
   }
@@ -40,7 +39,7 @@ import { features } from '../data/data.js';
     <p class="section-subtitle">Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:</p>
   </div>
 
-  <div class="features-container">
+  <div class="features-container content">
     {features.map(({ title, body, src}) => (
       <div class="feature">
         <img src={src} />

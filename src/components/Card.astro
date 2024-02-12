@@ -1,38 +1,46 @@
+---
+const { title, description, icon } = Astro.props;
+---
 <style>
-  .card {
-    display: flex;
-    background-color: #fff;
-    padding: 20px;
-    align-items: center; /* Align items vertically */
+.card {
+  display: flex;
+  background-color: #fff;
+  padding: 85px 60px 55px;
+  align-items: center; /* Align items vertically */
+  border-radius: 10px;
+  box-shadow: rgba(101, 106, 160, 0.1) 0.521px 2.954px 50px 0px
 }
 
 .card-image {
-    flex: 0 0 auto; /* Do not grow, do not shrink, initial basis auto */
-    margin-right: 20px; /* Space between image and text */
+  flex: 0 0 auto; /* Do not grow, do not shrink, initial basis auto */
+  margin-right: 20px; /* Space between image and text */
+}
+.card-content {
+  padding-left: 2rem;
 }
 
 .card-content h2 {
-    font-size: 20px; /* Adjusted to your responsive requirements */
-    font-weight: 600;
-    color: #302b4e;
-    margin: 0 0 10px 0; /* Add space below the header */
+  font-size: 20px; /* Adjusted to your responsive requirements */
+  font-weight: 600;
+  color: #302b4e;
+  margin: 0 0 10px 0; /* Add space below the header */
 }
 
 .card-content p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #43414e;
-    margin: 0; /* Remove default margins */
+  font-size: 16px;
+  font-weight: 400;
+  color: #43414e;
+  margin: 0; /* Remove default margins */
 }
 </style>
 
 
 <div class="card">
   <div class="card-image">
-      <img src="/images/box.svg" alt="Skill Icon" width="69" height="69">
+    <img src={icon} alt="Skill Icon" width="69" height="69">
   </div>
   <div class="card-content">
-      <h2>Optymalizacja kosztów</h2>
-      <p>Przygotuję strategię pozwalającą zminimalizować wydatki przy jednoczesnej pełnej zgodności z obowiązującym prawem.</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
   </div>
 </div>
