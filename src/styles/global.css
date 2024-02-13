@@ -64,7 +64,7 @@ nav {
 } */
 
 
-/* Temp Design Helper */
-/* * {
-  border: 1px dotted hsla(120, 5%, 4%, 0.137);
-} */
+ * {
+  border: 1px dotted hsla(120, 23%, 15%, 0.137);
+  border-collapse: collapse;
+}
