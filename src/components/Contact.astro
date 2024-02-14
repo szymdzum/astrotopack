@@ -1,61 +1,28 @@
 ---
 import Section from "../layouts/Section.astro"
+import Form from "../components/Form.astro"
 ---
 <style lang="scss">
-.contact-form {
+.section-content-group {
   display: flex;
-  flex-direction: column;
-  gap: 2rem; /* space-y-8 */
-}
 
-.form-group label {
-  display: block;
-  margin-bottom: .5rem; /* mb-2 */
-  font-weight: 500; /* font-medium */
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: .625rem; /* p-2.5 */
-  background-color: #F3F4F6; /* bg-gray-50 */
-  border: 1px solid #D1D5DB; /* border-gray-300 */
-  border-radius: .375rem; /* rounded-lg */
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-button {
-  padding: .75rem 1.25rem; /* py-3 px-5 */
-  color: #ffffff; /* text-white */
-  background-color: #4F46E5; /* bg-primary-700 */
-  border-radius: .375rem; /* rounded-lg */
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #4338CA; /* hover:bg-primary-800 */
-}
+  .column {
+    flex: 1;
+  }
+};
 </style>
-
 <Section>
-  <div class="section-header">
-    <h2>Contact Us</h2>
-    <p class="section-subtitle">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+  <div class="section-header-group">
+    <h2>Kontakt</h2>
+    <p>Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej marki.</p>
   </div>
 
-  <form action="#" class="contact-form">
-    <div class="form-group">
-      <label for="email">Your email</label>
-      <input type="email" id="email" placeholder="name@flowbite.com" required>
+  <div class="section-content-group">
+    <div class="column">
+      <p>info@puttopack.pl</p>
     </div>
-    <div class="form-group">
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" placeholder="Let us know how we can help you" required>
+    <div class="column">
+      <Form />
     </div>
-    <div class="form-group">
-      <label for="message">Your message</label>
-      <textarea id="message" rows="6" placeholder="Leave a comment..."></textarea>
-    </div>
-    <button type="submit">Send message</button>
-  </form>
+  </div>
 </Section>

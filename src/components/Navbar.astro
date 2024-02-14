@@ -1,43 +1,43 @@
+---
+import Logo from '../components/Logo.astro';
+---
 <style lang="scss">
-.navbar {
+header {
   top: 0;
-  z-index: 1000;
-  position: sticky;
-  border-bottom: 1px solid #eee;
-  background-color: var(--color-navbar)
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #7b7878;
+  background-color: var(--color-navbar);
+
+    .container {
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--section-container-max-width);
+  }
 }
 
-.navbar > div {
-  margin: 0 auto;
-  padding: 1rem 2rem;
+nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--section-container-max-width);
+  gap: 1rem;
+
+  menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    list-style: none;
+
+    li {
+      padding: 0 1rem;
+    }
+  }
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
 
 .toggle {
   display: none;
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-}
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-.menu li {
-  padding: 0 1rem;
 }
 
 @media (max-width: 768px) {
@@ -61,21 +61,21 @@
 }
 </style>
 
-<section class="navbar">
+<header>
   <div class="container">
-    <div class="logo">Logo</div>
+    <Logo />
     <div class="toggle">
       &#9776;
     </div>
     <nav class="menu">
-      <ul>
+      <menu>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
-      </ul>
+      </menu>
     </nav>
   </div>
-</section>
+</header>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -96,8 +96,5 @@
     document.querySelector('.toggle').addEventListener('click', (e) => {
       console.log(e.target === e.currentTarget);
     });
-
-
-
   });
 </script>

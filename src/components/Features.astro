@@ -5,41 +5,46 @@ import { features } from '../data/data.js';
 ---
 
 <style lang="scss">
-  img {
-    height: auto;
-    width: auto;
-    max-height: 6rem;
-    max-width: 6rem;
-  }
   .features-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-left: 6rem;
     padding-right: 6rem;
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+      padding: 0.5rem;
+      background-color: #fff;
+      margin: 1rem;
+
+      img {
+        height: auto;
+        width: auto;
+        max-height: 6rem;
+        max-width: 6rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0;
+      }
   }
-  .feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0.5rem;
-    background-color: #fff;
-    margin: 1rem;
-  }
-  .feature p {
-    font-size: 1rem;
-    margin: 0;
-  }
+}
 </style>
 
-<Section>
-  <div class="section-header">
+<Section name="features">
+  <div class="section-header-group">
     <h2>Prosta ścieżka do spełnienia wymogów zrównoważonego rozwoju</h2>
-    <p class="section-subtitle">Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:</p>
+    <p>Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:</p>
   </div>
 
-  <div class="features-container content">
+  <div class="section-content-group">
+    <div class="features-container">
     {features.map(({ title, body, src}) => (
       <div class="feature">
         <img src={src} />
@@ -47,5 +52,6 @@ import { features } from '../data/data.js';
         <p>{body}</p>
       </div>
     ))}
+    </div>
   </div>
 </Section>

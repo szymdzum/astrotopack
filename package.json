@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "csass" : "sass --watch --style=compressed src/styles/main.scss public/styles/styles.css",
     "lcss": "stylelint src/**/*.{scss,astro}"
   },
   "dependencies": {
