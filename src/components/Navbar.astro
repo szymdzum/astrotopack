@@ -4,59 +4,55 @@ import Logo from '../components/Logo.astro';
 <style lang="scss">
 header {
   top: 0;
-  position: fixed;
+  z-index: 2;
   width: 100%;
-  border-bottom: 1px solid #7b7878;
+  position: fixed;
+  border-bottom: var(--border-regular);
   background-color: var(--color-navbar);
 
     .container {
-      margin: 0 auto;
-      padding: 1rem 2rem;
+      margin-inline: auto;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      padding: var(--padding-sm);
       max-width: var(--section-container-max-width);
-  }
-}
 
-nav {
-  display: flex;
-  gap: 1rem;
+      nav {
+        display: flex;
 
-  menu {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    list-style: none;
+        menu {
+          display: flex;
+          align-items: center;
+          list-style: none;
+          gap: var(--gap-sm);
+          li {
+            padding: 0 var(--padding-sm);
+          }
+        }
+      }
 
-    li {
-      padding: 0 1rem;
+    .toggle {
+      display: none;
     }
-  }
-}
 
+    @media (max-width: 768px) {
+        .menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
 
-.toggle {
-  display: none;
-}
+        .menu.active {
+          display: flex;
+        }
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .toggle {
-    display: block;
+        .toggle {
+          display: block;
+        }
+      }
   }
 }
 </style>
@@ -67,7 +63,7 @@ nav {
     <div class="toggle">
       &#9776;
     </div>
-    <nav class="menu">
+    <nav class="menu" aria-label="Main Navigation">
       <menu>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -78,23 +74,14 @@ nav {
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.menu');
+  const toggleButton = document.querySelector('.toggle');
 
-    const toggleMenu = () => {
-      const menu = document.querySelector('.menu');
-      if (menu) {
-        menu.classList.toggle('active');
-      }
-    };
-
-    const toggleButton = document.querySelector('.toggle');
-
-    if (toggleButton) {
-      toggleButton.addEventListener('click', toggleMenu);
-    }
-
-    document.querySelector('.toggle').addEventListener('click', (e) => {
-      console.log(e.target === e.currentTarget);
+  if (menu && toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      menu.classList.toggle('active');
     });
-  });
+  }
+});
 </script>

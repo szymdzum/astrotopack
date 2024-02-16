@@ -6,20 +6,24 @@ import Card from '../components/Card.astro';
 ---
 <style lang="scss">
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Create two columns of equal width */
-  grid-gap: 2.25rem; /* Space between cards */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+  --multiplier: calc(40rem - 100%);
 }
 </style>
 
 <Section name="services">
-  <div class="section-header-group">
-    <h2>Moje usługi</h2>
-    <p>Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:
+  <div class="section-header">
+    <h2>
+      Moje usługi
+    </h2>
+    <p>
+      Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:
     </p>
   </div>
 
-  <div class="section-content-group">
+  <div class="section-content">
     <div class="grid-container">
       {services.map(({ title, description, icon }) => (
         <Card title={title} description={description} icon={icon} />

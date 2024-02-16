@@ -1,60 +1,25 @@
 <style lang="scss">
-  /* Base styles */
   .hero {
-    height: 90vh; /* Full viewport height */
+    height: 90vh;
     display: flex;
-    justify-content: center;
-    align-items: center; /* Center content vertically */
+    align-items: center;
     text-align: center;
-    background-size: cover; /* Optional: for background images */
-    background-position: center; /* Optional: for background images */
-    border-bottom: 1px solid #7b7878;
+    border-bottom: var(--border-regular);
   }
+
   .hero-container {
-    width: 55%; /* Fluid width */
-    max-width: 1200px; /* Maximum width to ensure readability */
-    padding: 5vh 2vw; /* Fluid padding */
-    margin: 0 auto; /* Centering the container */
-  }
-  h1 {
-    font-size: 3vw; /* Fluid font size for large displays */
-    margin-bottom: 2rem; /* Margin for spacing */
-  }
-  .hero-subtitle {
-    font-size: 1.5vw; /* Fluid font size for subtitles */
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .hero-container {
-      width: 80%; /* Increase width on smaller screens */
-    }
-    h1 {
-      font-size: 5vw; /* Increase font size for smaller screens */
-    }
-    .hero-subtitle {
-      font-size: 2.5vw; /* Increase subtitle font size for readability */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-container {
-      width: 90%; /* Further increase width for very small screens */
-      padding: 10vh 5vw; /* Adjust padding for a tighter space */
-    }
-    h1 {
-      font-size: 6vw; /* Adjust font size for better readability */
-    }
-    .hero-subtitle {
-      font-size: 3.5vw; /* Adjust subtitle font size for better readability */
-    }
+    width: min(100vw - 3rem, 80ch);
+    margin-inline: auto;
   }
 </style>
 
-
 <section class="hero">
-  <div class="hero-container center">
-    <h1>Twój przewodnik po świecie ekologicznego raportowania.</h1>
-    <p class="hero-subtitle">Kompleksowe wsparcie na każdym etapie - od diagnozy obowiązków, przez rejestrację w BDO, aż po optymalizację kosztów związanych z przepisami środowiskowymi.</p>
+  <div class="hero-container">
+    <h1>
+      Twój przewodnik po świecie ekologicznego raportowania.
+    </h1>
+    <p class="hero-subtitle">
+      Kompleksowe wsparcie na każdym etapie - od diagnozy obowiązków, przez rejestrację w BDO, aż po optymalizację kosztów związanych z przepisami środowiskowymi.
+    </p>
   </div>
 </section>

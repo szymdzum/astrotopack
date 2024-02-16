@@ -5,53 +5,44 @@ import { features } from '../data/data.js';
 ---
 
 <style lang="scss">
-  .features-container {
+  .features {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    flex-wrap: wrap;
+    --multiplier: calc(40rem - 100%);
 
-    .feature {
-      display: flex;
-      flex-direction: column;
+     div {
+      display: grid;
       gap: 1rem;
-      align-items: center;
+      min-width: 33%;
+      max-width: 100%;
+      flex-grow: 1;
+      margin-top: 2rem;
+      padding: 2rem;
+      flex-basis: calc(var(--multiplier) * 999);
       text-align: center;
-      padding: 0.5rem;
-      background-color: #fff;
-      margin: 1rem;
 
-      img {
-        height: auto;
-        width: auto;
-        max-height: 6rem;
-        max-width: 6rem;
-      }
-
-      p {
-        font-size: 1rem;
-        margin: 0;
-      }
-  }
+        img {
+          margin-inline: auto;
+        }
+    }
 }
 </style>
 
 <Section name="features">
-  <div class="section-header-group">
+  <div class="section-header">
     <h2>Prosta ścieżka do spełnienia wymogów zrównoważonego rozwoju</h2>
     <p>Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:</p>
   </div>
 
-  <div class="section-content-group">
-    <div class="features-container">
-    {features.map(({ title, body, src}) => (
-      <div class="feature">
-        <img src={src} />
-        <h3>{title}</h3>
-        <p>{body}</p>
-      </div>
-    ))}
+  <div class="section-content">
+    <div class="features">
+      {features.map(({ title, body, src}) => (
+        <div>
+          <img src={src} />
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </div>
+      ))}
     </div>
   </div>
 </Section>
