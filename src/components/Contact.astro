@@ -3,21 +3,26 @@ import Section from "../layouts/Section.astro"
 import Form from "../components/Form.astro"
 ---
 <style lang="scss">
-.section-content-group {
-  display: flex;
+  .section-content {
+    display: flex;
+    flex-wrap: wrap;
 
-  .column {
-    flex: 1;
-  }
-};
+    .column {
+      flex: 1 0 50%;
+      min-width: 300px;
+    }
+  };
 </style>
 <Section>
-  <div class="section-header-group">
-    <h2>Kontakt</h2>
-    <p>Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej marki.</p>
+  <div class="section-header">
+    <h2>
+      Kontakt</h2>
+    <p>
+      Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej marki.
+    </p>
   </div>
 
-  <div class="section-content-group">
+  <div class="section-content">
     <div class="column">
       <p>info@puttopack.pl</p>
     </div>
