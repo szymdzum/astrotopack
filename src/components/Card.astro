@@ -2,21 +2,25 @@
 const { title, description, icon } = Astro.props;
 ---
 <style lang="scss">
-.card {
-  display: flex;
-  flex-basis: calc(var(--multiplier) * 999);
-  min-width: 50%;
-  max-width: 100%;
-  flex-grow: 1;
-  background-color: #d3e3db;
-  align-items: center;
-  padding: var(--padding-sm);
+  .card {
+    display: flex;
+    flex-basis: calc(var(--multiplier) * 999);
+    min-width: 45%;
+    max-width: 100%;
+    flex-grow: 1;
+    background-color: #d3e3db;
+    align-items: center;
+    padding: var(--padding-sm);
 
-    div {
-      padding-left: var(--padding-sm);
-    }
-}
+      div {
+        padding-left: var(--padding-sm);
+          h3 {
+            margin-bottom: var(--margin-xs);
+          }
+      }
+  }
 </style>
+
 <div class="card">
   <img src={icon} alt="Skill Icon" width="60" height="60">
   <div>

@@ -5,12 +5,12 @@ import Section from '../layouts/Section.astro';
 import Card from '../components/Card.astro';
 ---
 <style lang="scss">
-.grid-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap-sm);
-  --multiplier: calc(40rem - 100%);
-}
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+    --multiplier: calc(40rem - 100%);
+  }
 </style>
 
 <Section name="services">
@@ -24,7 +24,7 @@ import Card from '../components/Card.astro';
   </div>
 
   <div class="section-content">
-    <div class="grid-container">
+    <div class="services-container">
       {services.map(({ title, description, icon }) => (
         <Card title={title} description={description} icon={icon} />
         ))}
