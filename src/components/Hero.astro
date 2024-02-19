@@ -1,25 +1,45 @@
 <style lang="scss">
   .hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-areas: "hero";
+    place-items: center;
+    height: 70vh;
+    overflow: hidden;
     border-bottom: var(--border-regular);
+
+    > * {
+      grid-area: hero;
+    }
+
+    .hero-container {
+      width: min(100vw - 3rem, 80ch);
+      z-index: 1;
+      margin-inline: auto;
+    }
+
+    img {
+      object-fit: cover;
+      height: min(70vh, 900px);
+      width: 100%;
+      z-index: -1;
+      opacity: 0.1;
+    }
   }
 
-  .hero-container {
-    width: min(100vw - 3rem, 80ch);
-    margin-inline: auto;
-  }
+
+
+
 </style>
 
 <section class="hero">
   <div class="hero-container">
     <h1>
-      Twój przewodnik po świecie ekologicznego raportowania.
+      Twój przewodnik po świecie ekologicznego raportowania
     </h1>
     <p class="hero-subtitle">
       Kompleksowe wsparcie na każdym etapie - od diagnozy obowiązków, przez rejestrację w BDO, aż po optymalizację kosztów związanych z przepisami środowiskowymi.
     </p>
   </div>
+  <img src="/images/hero_bg.png" alt="placeholder" />
 </section>

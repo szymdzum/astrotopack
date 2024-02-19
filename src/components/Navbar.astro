@@ -1,5 +1,7 @@
 ---
 import Logo from '../components/Logo.astro';
+
+import { menu } from '../data/data.js';
 ---
 <style lang="scss">
 header {
@@ -7,29 +9,27 @@ header {
   z-index: 2;
   width: 100%;
   position: fixed;
-  border-bottom: var(--border-regular);
+  box-shadow: 0 2px 4px rgba(161,169,197,.2);
   background-color: var(--color-navbar);
 
-    .container {
-      margin-inline: auto;
+  .container {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-sm);
+    max-width: var(--section-max-width);
+
+    menu {
       display: flex;
-      justify-content: space-between;
-      padding: var(--padding-sm);
-      max-width: var(--section-container-max-width);
+      align-items: center;
+      list-style: none;
+      gap: var(--gap-sm);
 
-      nav {
-        display: flex;
-
-        menu {
-          display: flex;
-          align-items: center;
-          list-style: none;
-          gap: var(--gap-sm);
-          li {
-            padding: 0 var(--padding-sm);
-          }
-        }
+      li {
+        padding: 0 var(--padding-sm);
       }
+    }
 
     .toggle {
       display: none;
@@ -65,23 +65,25 @@ header {
     </div>
     <nav class="menu" aria-label="Main Navigation">
       <menu>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
+       {menu.map(({ link, name }) => (
+          <li>
+            <a href={link}>{name}</a>
+          </li>
+        ))}
       </menu>
     </nav>
   </div>
 </header>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const menu = document.querySelector('.menu');
-  const toggleButton = document.querySelector('.toggle');
+  document.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('.menu');
+    const toggleButton = document.querySelector('.toggle');
 
-  if (menu && toggleButton) {
-    toggleButton.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  }
-});
+    if (menu && toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
 </script>

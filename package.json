@@ -8,12 +8,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "csass" : "sass --watch --style=compressed src/styles/main.scss public/styles/styles.css",
+    "csass": "sass --watch --style=compressed src/styles/main.scss public/styles/styles.css",
     "lcss": "stylelint src/**/*.{scss,astro}"
   },
   "dependencies": {
     "@astrojs/vercel": "^7.3.0",
     "@fontsource/inter": "^5.0.16",
+    "@fontsource/poppins": "^5.0.8",
     "astro": "^4.3.5"
   },
   "devDependencies": {

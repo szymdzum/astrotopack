@@ -11,6 +11,9 @@ dependencies:
   '@fontsource/inter':
     specifier: ^5.0.16
     version: 5.0.16
+  '@fontsource/poppins':
+    specifier: ^5.0.8
+    version: 5.0.8
   astro:
     specifier: ^4.3.5
     version: 4.3.5(sass@1.70.0)
@@ -578,6 +581,10 @@ packages:
 
   /@fontsource/inter@5.0.16:
     resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
+    dev: false
+
+  /@fontsource/poppins@5.0.8:
+    resolution: {integrity: sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==}
     dev: false
 
   /@isaacs/cliui@8.0.2:

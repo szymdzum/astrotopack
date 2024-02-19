@@ -13,14 +13,14 @@
   --gap-md: clamp(1.5rem, 6vmax,   3rem);
   --gap-lg: clamp(3rem,   8vmax,   4rem);
 
-  --section-max-width: 1240px;
+  --section-max-width: 1200px;
   --navbar-height: var(--scale2);
 }
 
 .section-container {
   width: 90%;
-  max-width: var(--section-max-width);
   margin-inline: auto;
+  max-width: var(--section-max-width);
   container-type: inline-size;
   padding-top: var(--padding-lg);
   padding-bottom: var(--padding-lg);
