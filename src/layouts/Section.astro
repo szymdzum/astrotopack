@@ -1,15 +1,7 @@
-<style>
-  section {
-    padding-top: 4rem
-  }
-  .section-container {
-    max-width: var(--section-container-max-width);
-    margin: 0 auto;
-    padding: 1rem;
-  }
-</style>
-
-<section>
+---
+const { name } = Astro.props;
+---
+<section id={name}>
   <div class="section-container">
     <slot/>
   </div>

@@ -1,0 +1,41 @@
+:root {
+  --padding-sm: clamp(1rem,    3%, 1.5rem);
+  --padding-md: clamp(1.5rem,  6%,   3rem);
+  --padding-lg: clamp(3rem,   12%,   6rem);
+  --padding-xl: clamp(6rem,   24%,   12rem);
+
+  --margin-xs: min(0.5rem,  2vh);
+  --margin-sm: min(2rem,  4vh);
+  --margin-md: min(4rem,  8vh);
+  --margin-lg: min(8rem, 16vh);
+
+  --gap-sm: clamp(1rem,   3vmax, 1.5rem);
+  --gap-md: clamp(1.5rem, 6vmax,   3rem);
+  --gap-lg: clamp(3rem,   8vmax,   4rem);
+
+  --section-max-width: 1200px;
+  --navbar-height: var(--scale2);
+}
+
+.section-container {
+  width: 90%;
+  margin-inline: auto;
+  max-width: var(--section-max-width);
+  container-type: inline-size;
+  padding-top: var(--padding-lg);
+  padding-bottom: var(--padding-lg);
+
+  .section-header {
+    max-width: 45rem;
+    margin-inline: auto;
+
+    h2 {
+      margin-bottom: var(--margin-sm);
+    }
+  }
+
+  .section-content{
+    margin-top: var(--margin-md);
+  }
+}
+

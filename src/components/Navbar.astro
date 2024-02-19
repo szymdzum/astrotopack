@@ -1,103 +1,89 @@
-<style>
-.navbar {
+---
+import Logo from '../components/Logo.astro';
+
+import { menu } from '../data/data.js';
+---
+<style lang="scss">
+header {
   top: 0;
-  z-index: 1000;
-  position: sticky;
-  border-bottom: 1px solid #eee;
-  background-color: var(--color-navbar)
-}
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 2px 4px rgba(161,169,197,.2);
+  background-color: var(--color-navbar);
 
-.navbar > div {
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--section-container-max-width);
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.toggle {
-  display: none;
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-}
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-.menu li {
-  padding: 0 1rem;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-  }
-
-  .menu.active {
+  .container {
+    margin-inline: auto;
     display: flex;
-  }
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-sm);
+    max-width: var(--section-max-width);
 
-  .toggle {
-    display: block;
+    menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: var(--gap-sm);
+
+      li {
+        padding: 0 var(--padding-sm);
+      }
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+        .menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+
+        .menu.active {
+          display: flex;
+        }
+
+        .toggle {
+          display: block;
+        }
+      }
   }
 }
 </style>
 
-<section class="navbar">
+<header>
   <div class="container">
-    <div class="logo">Logo</div>
+    <Logo />
     <div class="toggle">
       &#9776;
     </div>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-      </ul>
+    <nav class="menu" aria-label="Main Navigation">
+      <menu>
+       {menu.map(({ link, name }) => (
+          <li>
+            <a href={link}>{name}</a>
+          </li>
+        ))}
+      </menu>
     </nav>
   </div>
-</section>
+</header>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-
-    const toggleMenu = () => {
-      const menu = document.querySelector('.menu');
-      if (menu) {
-        menu.classList.toggle('active');
-      }
-    };
-
+    const menu = document.querySelector('.menu');
     const toggleButton = document.querySelector('.toggle');
 
-    if (toggleButton) {
-      toggleButton.addEventListener('click', toggleMenu);
+    if (menu && toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
     }
-
-    document.querySelector('.toggle').addEventListener('click', (e) => {
-      console.log(e.target === e.currentTarget);
-    });
-
-
-
   });
 </script>

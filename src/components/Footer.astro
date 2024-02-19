@@ -1,25 +1,33 @@
-<style>
+---
+const currentYear = new Date().getFullYear().toString();
+---
+<style lang="scss">
 .footer-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-}
+  padding: 1rem;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-top: 3rem;
+  font-size: 1rem;
 
-.social-links {
-  display: flex;
-  gap: 0.5rem;
-}
+  .social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
 
-.social-link {
-  display: inline-block;
-  padding: 0.5rem;
-  border-radius: 4px;
-}
+    a {
+      display: inline-block;
+      padding: 0.5rem;
+      border-radius: 4px;
 
-.social-link:hover {
-  background-color: #d0d0d0;
+      &:hover {
+        background-color: #d0d0d0;
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -29,10 +37,10 @@
 }
 </style>
 
-<footer class="footer">
-  <div class="footer-content container">
+<footer>
+  <div class="footer-content">
     <div class="copyright">
-      <p>© 2020 Your Company, Inc. All rights reserved.</p>
+      <p>© {currentYear} Puttopack.</p>
     </div>
     <div class="social-links">
       <a href="#" class="social-link">Facebook</a>
@@ -40,4 +48,5 @@
     </div>
   </div>
 </footer>
+
 

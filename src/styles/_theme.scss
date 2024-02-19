@@ -1,0 +1,22 @@
+:root {
+  --color-text: #232115;
+  --color-bg: #fff;
+  --color-navbar: #fff;
+  --color-border: hsl(17, 24%, 90%);
+  --border-regular: 1px solid #c5c3c3;
+
+  --mint-green: #f8fdf8;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+#services {
+  background-color: var(--mint-green);
+}
+
+footer {
+  background-color: #f5f5f6;
+}

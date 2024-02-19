@@ -1,3 +1,18 @@
+export const menu = [
+  {
+    link: "#features",
+    name: "O Mnie",
+  },
+  {
+    link: "#services",
+    name: "Usługi",
+  },
+  {
+    link: "#contact",
+    name: "Kontakt",
+  },
+];
+
 export const features = [
   {
     title: "Opakowania",

@@ -1,0 +1,62 @@
+:root {
+  --base-font-size: 1rem;
+  --fluid-font-size: calc(var(--base-font-size) + .390625vw);
+  --base-line-height: 1.6;
+
+  --h1-base: 1.75rem;
+  --h2-base: 1.5rem;
+  --h3-base: 1.10rem;
+  --h4-base: 1.15rem;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  font-size: var(--base-font-size);
+}
+
+menu a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.section-header {
+  text-align: center;
+
+  p {
+    font-size: var(--fluid-font-size);
+    line-height: var(--base-line-height);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 40rem) {
+  :is(.section-header) {
+    text-align: left;
+  }
+}
+
+h1 {
+  --font-size-base: var(--h1-base);
+  --font-size-fluid: 1.75cqi;
+    font-weight: 600;
+}
+
+h2 {
+  --font-size-base: var(--h2-base);
+  --font-size-fluid: 1.5cqi;
+    font-weight: 600;
+}
+
+h3 {
+  --font-size-base: var(--h3-base);
+  --font-size-fluid: 1cqi;
+}
+
+@supports (font-size: 1cqi) {
+  :is(h1, h2, h3, h4, .fluid-type) {
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(var(--font-size-base) + var(--font-size-fluid, 2.5cqi));
+  }
+}
+

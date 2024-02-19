@@ -4,23 +4,30 @@ import { services } from '../data/data.js';
 import Section from '../layouts/Section.astro';
 import Card from '../components/Card.astro';
 ---
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Create two columns of equal width */
-  grid-gap: 3rem; /* Space between cards */
-}
+<style lang="scss">
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+    --multiplier: calc(40rem - 100%);
+  }
 </style>
 
-<Section>
+<Section name="services">
   <div class="section-header">
-    <h2>Moje usługi</h2>
-    <p class="section-subtitle">Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:</p>
+    <h2>
+      Moje usługi
+    </h2>
+    <p>
+      Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:
+    </p>
   </div>
 
-  <div class="grid-container content">
-    {services.map(({ title, description, icon }) => (
-      <Card title={title} description={description} icon={icon} />
-      ))}
+  <div class="section-content">
+    <div class="services-container">
+      {services.map(({ title, description, icon }) => (
+        <Card title={title} description={description} icon={icon} />
+        ))}
+    </div>
   </div>
 </Section>

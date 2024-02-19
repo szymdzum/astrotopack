@@ -1,61 +1,45 @@
-
-
-<style>
-  /* Base styles */
+<style lang="scss">
   .hero {
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center content vertically */
-    text-align: center;
-    background-size: cover; /* Optional: for background images */
-    background-position: center; /* Optional: for background images */
-  }
-  .hero-container {
-    width: 55%; /* Fluid width */
-    max-width: 1200px; /* Maximum width to ensure readability */
-    padding: 5vh 2vw; /* Fluid padding */
-    margin: 0 auto; /* Centering the container */
-  }
-  h1 {
-    font-size: 3vw; /* Fluid font size for large displays */
-    margin-bottom: 2rem; /* Margin for spacing */
-  }
-  .hero-subtitle {
-    font-size: 1.5vw; /* Fluid font size for subtitles */
-  }
+    margin-top: 4rem;
+    display: grid;
+    grid-template-areas: "hero";
+    place-items: center;
+    height: 70vh;
+    overflow: hidden;
+    border-bottom: var(--border-regular);
 
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+    > * {
+      grid-area: hero;
+    }
+
     .hero-container {
-      width: 80%; /* Increase width on smaller screens */
+      width: min(100vw - 3rem, 80ch);
+      z-index: 1;
+      margin-inline: auto;
     }
-    h1 {
-      font-size: 5vw; /* Increase font size for smaller screens */
-    }
-    .hero-subtitle {
-      font-size: 2.5vw; /* Increase subtitle font size for readability */
+
+    img {
+      object-fit: cover;
+      height: min(70vh, 900px);
+      width: 100%;
+      z-index: -1;
+      opacity: 0.1;
     }
   }
 
-  @media (max-width: 480px) {
-    .hero-container {
-      width: 90%; /* Further increase width for very small screens */
-      padding: 10vh 5vw; /* Adjust padding for a tighter space */
-    }
-    h1 {
-      font-size: 6vw; /* Adjust font size for better readability */
-    }
-    .hero-subtitle {
-      font-size: 3.5vw; /* Adjust subtitle font size for better readability */
-    }
-  }
+
+
+
 </style>
 
-
 <section class="hero">
-  <div class="hero-container center">
-    <h1>Twój przewodnik po świecie ekologicznego raportowania.</h1>
-    <p class="hero-subtitle">Kompleksowe wsparcie na każdym etapie - od diagnozy obowiązków, przez rejestrację w BDO, aż po optymalizację kosztów związanych z przepisami środowiskowymi.</p>
+  <div class="hero-container">
+    <h1>
+      Twój przewodnik po świecie ekologicznego raportowania
+    </h1>
+    <p class="hero-subtitle">
+      Kompleksowe wsparcie na każdym etapie - od diagnozy obowiązków, przez rejestrację w BDO, aż po optymalizację kosztów związanych z przepisami środowiskowymi.
+    </p>
   </div>
+  <img src="/images/hero_bg.png" alt="placeholder" />
 </section>
