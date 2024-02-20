@@ -11,6 +11,13 @@ import Form from "../components/Form.astro"
       flex: 1 0 50%;
       min-width: 300px;
     }
+
+    .card {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      border: var(--border-regular);
+    }
   };
 </style>
 
@@ -29,7 +36,7 @@ import Form from "../components/Form.astro"
       <p>copy: info@puttopack.pl</p>
       <p>+88 777 666 555</p>
     </div>
-    <div class="column">
+    <div class="column card">
       <Form />
     </div>
   </div>

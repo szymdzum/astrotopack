@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'
 const currentYear = new Date().getFullYear().toString();
 ---
 <style lang="scss">
@@ -12,11 +13,17 @@ const currentYear = new Date().getFullYear().toString();
   margin-inline: auto;
   padding-top: 3rem;
   font-size: 1rem;
-
+  border-top: 1px solid #d7d7d7;
+  
   .social-links {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+
+    [data-icon] {
+      font-size: 2rem;
+      opacity: 0.8;
+    }
 
     a {
       display: inline-block;
@@ -25,6 +32,7 @@ const currentYear = new Date().getFullYear().toString();
 
       &:hover {
         background-color: #d0d0d0;
+        opacity: 1;
       }
     }
   }
@@ -43,8 +51,15 @@ const currentYear = new Date().getFullYear().toString();
       <p>© {currentYear} Puttopack.</p>
     </div>
     <div class="social-links">
-      <a href="#" class="social-link">Facebook</a>
-      <a href="#" class="social-link">Instagram</a>
+      <a href="#" class="social-link">
+        <Icon name="IcFacebook" />
+      </a>
+      <a href="#" class="social-link">
+        <Icon name="MdiLinkedin" />
+      </a>
+      <a href="#" class="social-link">
+        <Icon name="MdiInstagram" />
+      </a>
     </div>
   </div>
 </footer>

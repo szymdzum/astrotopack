@@ -1,6 +1,7 @@
 ---
 import Logo from '../components/Logo.astro';
 import Button from '../components/Button.astro';
+import { Icon } from 'astro-icon/components'
 
 import { menu } from '../data/data.js';
 ---
@@ -29,11 +30,14 @@ header {
 
       li {
         padding: 0 var(--padding-sm);
+        white-space: nowrap;
       }
     }
 
     .toggle {
       display: none;
+      font-size: 2rem;
+      opacity: 0.8;
     }
 
     @media (max-width: 768px) {
@@ -61,9 +65,7 @@ header {
 <header>
   <div class="container">
     <Logo />
-    <div class="toggle">
-      &#9776;
-    </div>
+    <Icon name="hamburgerMenu" class="toggle" />
     <nav class="menu" aria-label="Main Navigation">
       <menu>
        {menu.map(({ link, name }) => (

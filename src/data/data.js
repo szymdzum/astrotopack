@@ -8,6 +8,10 @@ export const menu = [
     name: "Usługi",
   },
   {
+    link: "#faq",
+    name: "FAQ",
+  },
+  {
     link: "#contact",
     name: "Kontakt",
   },
