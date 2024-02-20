@@ -19,6 +19,19 @@ menu a {
   font-weight: 600;
 }
 
+.hero {
+  text-align: center;
+
+  p, li {
+    font-size: var(--fluid-font-size);
+    line-height: var(--base-line-height);
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  
+}
+
 
 .section-header {
   text-align: center;
@@ -30,33 +43,36 @@ menu a {
   }
 }
 
-@media (max-width: 40rem) {
-  :is(.section-header) {
-    text-align: left;
-  }
-}
-
 h1 {
   --font-size-base: var(--h1-base);
   --font-size-fluid: 1.75cqi;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 h2 {
   --font-size-base: var(--h2-base);
   --font-size-fluid: 1.5cqi;
     font-weight: 600;
+    
 }
 
 h3 {
   --font-size-base: var(--h3-base);
   --font-size-fluid: 1cqi;
+  line-height: 1.2;
 }
 
 @supports (font-size: 1cqi) {
   :is(h1, h2, h3, h4, .fluid-type) {
     font-family: 'Poppins', sans-serif;
     font-size: calc(var(--font-size-base) + var(--font-size-fluid, 2.5cqi));
+  }
+}
+
+@media (max-width: 40rem) {
+  :is(.section-header) {
+    text-align: left;
   }
 }
 

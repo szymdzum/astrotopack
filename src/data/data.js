@@ -16,18 +16,18 @@ export const menu = [
 export const features = [
   {
     title: "Opakowania",
-    body: "Opakowania i Produkty Opakowane z Własnym Brandingiem",
-    src: "/images/box.svg",
+    body: "Opakowania i Produkty Opakowane z Własnym Brandingiem.",
+    src: "/images/box.png",
   },
   {
     title: "Elektronika",
-    body: "Urządzenia Elektryczne i Elektroniczne, Baterie oraz Akumulatory",
-    src: "/images/battery.svg",
+    body: "Urządzenia Elektryczne i Elektroniczne, Baterie oraz Akumulatory.",
+    src: "/images/battery.png",
   },
   {
     title: "Specjalistyczne",
-    body: "Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne",
-    src: "/images/barrel.svg",
+    body: "Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne.",
+    src: "/images/barrel.png",
   }
 ];
 

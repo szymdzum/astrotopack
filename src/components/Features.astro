@@ -3,16 +3,17 @@ import Section from '../layouts/Section.astro';
 
 import { features } from '../data/data.js';
 ---
-
 <style lang="scss">
+
   .features {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 var(--padding-md);
     --multiplier: calc(40rem - 100%);
 
      div {
       display: grid;
-      gap: 1rem;
+      gap: var(--gap-xs);
       min-width: 33%;
       max-width: 100%;
       flex-grow: 1;
@@ -23,6 +24,14 @@ import { features } from '../data/data.js';
 
         img {
           margin-inline: auto;
+          width: 80px;
+          height: 70px;
+          opacity: 0.8;
+        }
+
+        p {
+          text-wrap: balance;
+          line-height: 1.7;
         }
     } 
 }
@@ -31,10 +40,14 @@ import { features } from '../data/data.js';
 <Section name="features">
   <div class="section-header">
     <h2>
-      Prosta ścieżka do spełnienia wymogów zrównoważonego rozwoju
+      PUT to PACK
     </h2>
     <p>
-      Puttopack pomaga przedsiębiorcom w zakresie dokumentowania ilości wprowadzonych produktów i odpadów oraz wypełniania wymogów prawnych związanych z recyklingiem i gospodarką odpadami. Specjalizujemy się w takich obszarach jak:
+      Wyjaśniam wymogi prawne związane z recyklingiem. Pomagam w zakresie dokumentowania wprowadzonych produktów i odpadów. 
+    </p>
+    <br />
+    <p>
+      Specjalizuje się w takich obszarach jak:
     </p>
   </div>
 

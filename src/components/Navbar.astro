@@ -1,5 +1,6 @@
 ---
 import Logo from '../components/Logo.astro';
+import Button from '../components/Button.astro';
 
 import { menu } from '../data/data.js';
 ---
@@ -17,14 +18,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--padding-sm);
+    padding: var(--padding-xs);
     max-width: var(--section-max-width);
 
     menu {
       display: flex;
       align-items: center;
       list-style: none;
-      gap: var(--gap-sm);
+      gap: var(--gap-xs);
 
       li {
         padding: 0 var(--padding-sm);
@@ -70,8 +71,10 @@ header {
             <a href={link}>{name}</a>
           </li>
         ))}
+          <Button  />
       </menu>
     </nav>
+
   </div>
 </header>
 

@@ -1,45 +1,78 @@
 <style lang="scss">
   .hero {
-    margin-top: 4rem;
     display: grid;
     grid-template-areas: "hero";
-    place-items: center;
-    height: 70vh;
     overflow: hidden;
+    height: 75vh;
+    margin-top: 79px; // TODO: + vh of the header
     border-bottom: var(--border-regular);
 
     > * {
       grid-area: hero;
     }
 
-    .hero-container {
+    .header {
+      padding-top: 10%;
       width: min(100vw - 3rem, 80ch);
       z-index: 1;
       margin-inline: auto;
+
+      h1 {
+        margin-bottom: var(--margin-sm);
+        text-shadow: 0 1px 0 black;
+      }
+
+      .bg-card {
+        padding: var(--padding-sm);
+        background-color: var(--color-bg);
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-regular);
+        backdrop-filter: blur(4px);
+        color: var(--color-text);
+        border: var(--border-regular);
+      }
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        li {
+          padding-left: 0.25em;
+          &::marker {
+            content: attr(data-icon);
+            font-size: 1.5em;
+            
+          }
+        }
+      }
     }
 
     img {
-      object-fit: cover;
-      height: min(70vh, 900px);
+      height: min(75vh, 1000px);
       width: 100%;
       z-index: -1;
-      opacity: 0.1;
+      opacity: 0.3;
+      object-fit: cover;
+      filter: blur(4px);
     }
   }
-
-
-
-
 </style>
 
 <section class="hero">
-  <div class="hero-container">
+  <div class="header">
     <h1>
       Twój przewodnik po świecie ekologicznego raportowania
     </h1>
-    <p class="hero-subtitle">
-      Kompleksowe wsparcie na każdym etapie - od diagnozy obowiązków, przez rejestrację w BDO, aż po optymalizację kosztów związanych z przepisami środowiskowymi.
-    </p>
+    <div class="bg-card">
+      <p>
+        Kompleksowe wsparcie związane z przepisami środowiskowymi.
+      </p>
+      <ul role="list">
+        <li data-icon="🦄">Audyt</li>
+        <li data-icon="😎">Wdrożenia</li>
+        <li data-icon="🌈">Szkolenia</li>
+      </ul>
+    </div>
   </div>
-  <img src="/images/hero_bg.png" alt="placeholder" />
+  <img src="/images/hero_bg.png" alt="Background image" />
 </section>
+
