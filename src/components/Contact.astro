@@ -1,6 +1,8 @@
 ---
 import Section from "../layouts/Section.astro"
 import Form from "../components/Form.astro"
+
+import { Icon } from 'astro-icon/components'
 ---
 <style lang="scss">
   .section-content {
@@ -18,13 +20,61 @@ import Form from "../components/Form.astro"
       border-radius: 10px;
       border: var(--border-regular);
     }
+
+    .details {
+      padding: 35px;
+    }
+
+    #copy-email-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#copy-email-button:hover {
+  background-color: #0069d9;
+}
   };
+
+  #toast {
+
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Center content horizontally */
+  gap: 8px; /* Adjust the space between the icon and the text */
+}
+
+.icon {
+  /* Adjust icon size, if necessary */
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
 </style>
 
 <Section name="contact">
   <div class="section-header">
+    <p class="title">Kontakt</span>
     <h2>
-      Kontakt
+      Przestań się czaić
     </h2>
     <p>
       Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej marki.
@@ -32,12 +82,35 @@ import Form from "../components/Form.astro"
   </div>
 
   <div class="section-content">
-    <div class="column">
-      <p>copy: info@puttopack.pl</p>
-      <p>+88 777 666 555</p>
-    </div>
     <div class="column card">
       <Form />
     </div>
+    <div class="column details">
+      <button id="copy-email-button" class="button-icon" type="button">
+        <Icon class="icon" name="copyIco" />info@puttopack.pl
+      </button>
+      <p>+88 777 666 555</p>
+    </div>
+
+  </div>
+
+  <div id="toast" class="toast">
+    <span>Email copied to clipboard!<span/>
   </div>
 </Section>
+
+<script>
+  const copyEmailButton = document.getElementById('copy-email-button');
+
+  copyEmailButton.addEventListener('click', () => {
+    navigator.clipboard.writeText('username@example.com');
+
+    const toast = document.getElementById('toast');
+  toast.classList.add('show');
+
+  // Hide the toast notification after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+  });
+</script>

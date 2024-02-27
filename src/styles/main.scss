@@ -12,3 +12,13 @@ html {
 a {
   cursor: pointer;
 }
+
+.hero .card {
+  width: 70%;
+  margin-inline: auto;
+  margin-top: var(--margin-sm);
+  border: var(--border-regular);
+  padding: var(--padding-sm) var(--padding-md);
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-md);
+}

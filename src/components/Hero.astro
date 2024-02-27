@@ -4,7 +4,6 @@
     grid-template-areas: "hero";
     overflow: hidden;
     height: 75vh;
-    margin-top: 79px; // TODO: + vh of the header
     border-bottom: var(--border-regular);
 
     > * {
@@ -12,47 +11,38 @@
     }
 
     .header {
-      padding-top: 10%;
+      margin-top: var(--margin-lg);
       width: min(100vw - 3rem, 80ch);
       z-index: 1;
       margin-inline: auto;
 
-      h1 {
-        margin-bottom: var(--margin-sm);
-        text-shadow: 0 1px 0 black;
-      }
-
-      .bg-card {
-        padding: var(--padding-sm);
-        background-color: var(--color-bg);
-        border-radius: var(--border-radius-md);
-        box-shadow: var(--shadow-regular);
-        backdrop-filter: blur(4px);
-        color: var(--color-text);
-        border: var(--border-regular);
-      }
-      ul {
+      [role="list"] {
         display: flex;
         justify-content: space-evenly;
+        padding-top: var(--padding-xs);
         flex-direction: row;
+        //TODO: Add media query for smaller screens
+
+
         li {
-          padding-left: 0.25em;
+          padding-left: var(--padding-xs);
           &::marker {
             content: attr(data-icon);
-            font-size: 1.5em;
-            
+            font-size: 1em;
           }
         }
       }
     }
 
     img {
-      height: min(75vh, 1000px);
+      height: min(75vh, 800px);
       width: 100%;
       z-index: -1;
-      opacity: 0.3;
-      object-fit: cover;
-      filter: blur(4px);
+      filter: blur(0.5px);
+      object-fit: contain;
+      object-position: bottom;
+      align-self: end;
+      
     }
   }
 </style>
@@ -60,11 +50,11 @@
 <section class="hero">
   <div class="header">
     <h1>
-      Twój przewodnik po świecie ekologicznego raportowania
+      Doradca Naturalnie Odpowiedzialny
     </h1>
-    <div class="bg-card">
+    <div class="card">
       <p>
-        Kompleksowe wsparcie związane z przepisami środowiskowymi.
+        Zapewniamy kompleksowe wsparcie związane z realizacją przepisów środowiskowych.
       </p>
       <ul role="list">
         <li data-icon="🦄">Audyt</li>
