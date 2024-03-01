@@ -1,7 +1,11 @@
 ---
 import Section from '../layouts/Section.astro';
+import { Image } from "astro:assets";
+import { getCollection, getEntry } from 'astro:content';
 
-import { features } from '../data/data.js';
+const sectionData = await getCollection('sections');
+
+const features = sectionData[0].data.features;
 ---
 <style lang="scss">
 
@@ -54,9 +58,10 @@ import { features } from '../data/data.js';
 
   <div class="section-content">
     <div class="features">
-      {features.map(({ title, body, src}) => (
+      {features.map(({ title, body, src }) => (
+        console.log(title),
         <div>
-          <img src={src} />
+          <Image src={src} alt={title}  height="250" width="250" />
           <h3>{title}</h3>
           <p>{body}</p>
         </div>

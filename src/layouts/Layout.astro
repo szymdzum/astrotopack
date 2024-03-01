@@ -3,8 +3,8 @@ import '@fontsource/inter';
 import '@fontsource/poppins/600.css';
 
 import '../styles/main.scss'
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Navbar from '../sections/Navbar.astro';
+import Footer from '../sections/Footer.astro';
 
 const PAGE_TITLE = 'Astrotopack';
 ---
@@ -15,7 +15,6 @@ const PAGE_TITLE = 'Astrotopack';
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- <link rel="stylesheet" href="/styles/styles.css"> -->
     <meta name="generator" content={Astro.generator} />
     <title>{PAGE_TITLE}</title>
   </head>
