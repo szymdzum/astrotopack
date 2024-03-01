@@ -3,7 +3,7 @@ import Logo from '../components/Logo.astro';
 import Button from '../components/Button.astro';
 import { Icon } from 'astro-icon/components'
 
-import { menu } from '../data/data.js';
+import { config, menu } from '../data/data.js';
 ---
 <style lang="scss">
 header {
@@ -63,8 +63,8 @@ header {
 
 <header>
   <div class="container">
-    <Logo />
-    <Icon name="hamburgerMenu" class="toggle" />
+    <Logo name={config.pageName} />
+    <Icon name="hamburger-menu-ico" class="toggle" />
     <nav class="menu" aria-label="Main Navigation">
       <menu>
        {menu.map(({ link, name }) => (

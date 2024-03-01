@@ -1,0 +1,33 @@
+---
+import Section from '../layouts/Section.astro';
+import Feature from '../components/Feature.astro';
+
+import { getCollection } from 'astro:content';
+
+const sectionData = await getCollection('sections');
+//TODO: More elegant way to get data from collection
+const features = sectionData[0].data.features;
+---
+<Section name="features">
+  <div class="section-header">
+    <p class="title">O mnie</span>
+    <h2>
+      PUT to PACK
+    </h2>
+    <p>
+      Wyjaśniam wymogi prawne związane z recyklingiem.
+      Pomagam w zakresie dokumentowania.
+    </p>
+    <p>
+      Specjalizuje się w takich obszarach jak:
+    </p>
+  </div>
+
+  <div class="section-content">
+    <div class="features-container">
+      {features.map(feature => (
+        <Feature {...feature} />
+      ))}
+    </div>
+  </div>
+</Section>

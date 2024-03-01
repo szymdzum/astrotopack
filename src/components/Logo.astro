@@ -1,25 +1,30 @@
+---
+import { Image } from "astro:assets";
+import logoSrc from '../assets/images/putopack_logo.png';
 
+const { name } = Astro.props;
+---
 <style lang="scss">
   .logo {
     img {
-      margin-right: 0.5rem;
+      margin-right:   0.5rem;
       vertical-align: -1rem;
     }
     span {
-      font-weight: 800;
-      font-size: 1.2rem;
+      font-size:    1.2rem;
+      font-weight:  800;
     }
   }
 </style>
 
 <div class="logo">
   <a href="/">
-    <img 
-      src="/images/putopack_logo.png"
-      alt="PUT to PACK logo"
+    <Image
+      src={logoSrc}
+      alt={`${name} logo`}
       width="50"
       height="50"
     />
-    <span>PUT to PACK</span>
+    <span>{name}</span>
   </a>
 </div>

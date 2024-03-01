@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import boxBackground from '../assets/images/hero_bg.png';
+---
+
 <style lang="scss">
   #hero {
     display: grid;
@@ -63,6 +68,6 @@
       </ul>
     </div>
   </div>
-  <img src="/images/hero_bg.png" alt="Background image" />
+  <Image src={boxBackground} alt="Background image" />
 </section>
 

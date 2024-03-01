@@ -10,7 +10,7 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [
     icon({
-      iconDir: "public/icons/",
+      iconDir: "src/assets/icons",
     }),
     biome(),
   ],
