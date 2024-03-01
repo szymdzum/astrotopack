@@ -19,6 +19,7 @@
     "astro-icon": "^1.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.3",
     "postcss-html": "^1.6.0",
     "sass": "^1.70.0",
     "stylelint": "^16.2.1",

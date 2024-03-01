@@ -1,5 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
+import Biome from "astro-biome";
 
 import icon from "astro-icon";
 
@@ -7,7 +8,10 @@ import icon from "astro-icon";
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  integrations: [icon({
-    iconDir: "public/icons/",
-  })]
+  integrations: [
+    icon({
+      iconDir: "public/icons/",
+    }),
+    Biome(),
+  ],
 });

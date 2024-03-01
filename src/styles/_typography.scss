@@ -44,7 +44,7 @@ nav a {
   font-weight: 600;
 }
 
-.hero {
+#hero {
   text-align: center;
 
   p, li {
@@ -76,7 +76,7 @@ nav a {
 }
 
 @media (max-width: 40rem) {
-  :is(.section-header, .hero p) {
+  :is(.section-header, #hero p) {
     text-align: left;
   }
   :is(.book-call){
@@ -86,7 +86,7 @@ nav a {
     margin-top: var(--margin-md);
   }
 
-  :is(.hero .header [role="list"]){
+  :is(#hero .header [role="list"]){
         flex-direction: column;
       }
 }
