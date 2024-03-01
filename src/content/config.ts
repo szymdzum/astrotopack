@@ -1,7 +1,5 @@
 import { z, defineCollection } from 'astro:content';
 
-
-
 const features = defineCollection({
   type: 'data',
   schema: z.object({
@@ -14,5 +12,3 @@ const features = defineCollection({
 export const collections = {
 features
 };
-
-console.log(collections);

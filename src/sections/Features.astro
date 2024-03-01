@@ -1,46 +1,13 @@
 ---
 import Section from '../layouts/Section.astro';
-import { Image } from "astro:assets";
-import { getCollection, getEntry } from 'astro:content';
+import Feature from '../components/Feature.astro';
+
+import { getCollection } from 'astro:content';
 
 const sectionData = await getCollection('sections');
-
+//TODO: More elegant way to get data from collection
 const features = sectionData[0].data.features;
 ---
-<style lang="scss">
-
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 var(--padding-md);
-    --multiplier: calc(40rem - 100%);
-
-     div {
-      display: grid;
-      gap: var(--gap-xs);
-      min-width: 33%;
-      max-width: 100%;
-      flex-grow: 1;
-      margin-top: 2rem;
-      padding: 2rem;
-      flex-basis: calc(var(--multiplier) * 999);
-      text-align: center;
-
-        img {
-          margin-inline: auto;
-          width: 80px;
-          height: 70px;
-          opacity: 0.8;
-        }
-
-        p {
-          text-wrap: balance;
-          line-height: 1.7;
-        }
-    } 
-}
-</style>
-
 <Section name="features">
   <div class="section-header">
     <p class="title">O mnie</span>
@@ -57,14 +24,9 @@ const features = sectionData[0].data.features;
   </div>
 
   <div class="section-content">
-    <div class="features">
-      {features.map(({ title, body, src }) => (
-        console.log(title),
-        <div>
-          <Image src={src} alt={title}  height="250" width="250" />
-          <h3>{title}</h3>
-          <p>{body}</p>
-        </div>
+    <div class="features-container">
+      {features.map(feature => (
+        <Feature {...feature} />
       ))}
     </div>
   </div>
