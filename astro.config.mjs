@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
-import Biome from "astro-biome";
-
 import icon from "astro-icon";
+
+import biome from "astro-biome";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +12,6 @@ export default defineConfig({
     icon({
       iconDir: "public/icons/",
     }),
-    Biome(),
+    biome(),
   ],
 });
