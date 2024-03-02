@@ -7,6 +7,8 @@ import { getCollection } from 'astro:content';
 const sectionData = await getCollection('sections');
 //TODO: More elegant way to get data from collection
 const features = sectionData[0].data.features;
+
+console.log(features);
 ---
 <Section name="features">
   <div class="section-header">

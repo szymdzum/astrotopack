@@ -7,7 +7,9 @@ import biome from "astro-biome";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({
+    imageService: true,
+  }),
   integrations: [
     icon({
       iconDir: "src/assets/icons",
