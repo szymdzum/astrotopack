@@ -10,8 +10,6 @@ const features = defineCollection({
   }),
 });
 
-console.log(features);
-
 export const collections = {
 features
 };

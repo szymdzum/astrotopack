@@ -9,7 +9,6 @@ export default defineConfig({
   output: "server",
   adapter: vercel({
     imageService: true,
-    includeFiles: ["src/assets/images/battery.png"],
   }),
   integrations: [
     icon({
