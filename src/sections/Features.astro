@@ -4,8 +4,6 @@ import Feature from '../components/Feature.astro';
 
 import { getEntry } from 'astro:content';
 const features = await getEntry('page', 'features');
-
-console.log(features.data);
 ---
 <Section name="features">
   <div class="section-header">

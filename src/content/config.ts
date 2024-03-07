@@ -12,7 +12,6 @@ const features = defineCollection({
   ),
 });
 
-
 export const collections = {
   page: features,
 };
