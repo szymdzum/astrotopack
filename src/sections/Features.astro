@@ -2,14 +2,8 @@
 import Section from '../layouts/Section.astro';
 import Feature from '../components/Feature.astro';
 
-import { getCollection, getEntry} from 'astro:content';
-
-const sectionData = await getCollection('features');
-// const features = await getEntry('features', 'features');
-//TODO: More elegant way to get data from collection
-// const items = sectionData[0].data;
- console.log(sectionData[0].data);
-
+import { getEntry } from 'astro:content';
+const features = await getEntry('page', 'features');
 ---
 <Section name="features">
   <div class="section-header">
@@ -28,7 +22,7 @@ const sectionData = await getCollection('features');
 
   <div class="section-content">
     <div class="features-container">
-      {sectionData[0].data.map(feature => (
+      {features.data.map(feature => (
         <Feature {...feature} />
       ))}
     </div>
