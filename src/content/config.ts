@@ -14,5 +14,5 @@ const features = defineCollection({
 
 
 export const collections = {
-  features
+  page: features,
 };
