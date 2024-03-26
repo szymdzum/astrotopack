@@ -9,37 +9,35 @@
     grid-area: hero;
   }
 
-  .header {
-    margin-top: var(--margin-xl);
-    width: min(100vw - 3rem, 80ch);
-    z-index: 1;
-    margin-inline: auto;
-
-    [role="list"] {
-      display: flex;
-      justify-content: space-evenly;
-      padding-top: var(--padding-xs);
-      flex-direction: row;
-      //TODO: Add media query for smaller screens
-
-
-      li {
-        padding-left: var(--padding-xs);
-        &::marker {
-          content: attr(data-icon);
-          font-size: 1em;
-        }
-      }
-    }
-  }
-
-  img {
+  .background-img {
     object-fit: cover;
     object-position: bottom;
     align-self: end;
     height: min(75vh, 800px);
     width: 100%;
     z-index: -1;
-    filter: blur(0.8px) opacity(0.7);
+    filter: opacity(0.7);
+  }
+
+  .header {
+    width: min(100vw - 3rem, 80ch);
+    margin-top: var(--margin-xl);
+    z-index: 1;
+    margin-inline: auto;
+
+    .card-list {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      padding-top: var(--padding-sm);
+    }
+
+    .card-list li {
+      padding-left: var(--padding-xs);
+      &::marker {
+        content: attr(data-icon);
+        font-size: 1em;
+      }
+    }
   }
 }
