@@ -48,9 +48,10 @@ nav a {
   text-align: center;
 
   p, li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     font-size: 1.2rem;
     line-height: var(--base-line-height);
-    font-weight: 500;
     opacity: 0.8;
   }
 }

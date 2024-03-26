@@ -10,7 +10,8 @@
   --margin-sm: min(2rem,  4vh);
   --margin-md: min(4rem,  8vh);
   --margin-lg: min(8rem, 16vh);
-
+  --margin-xl: min(12rem, 24vh);
+  
   --gap-xs: clamp(0.5rem, 1vmax, 0.75rem);
   --gap-sm: clamp(1rem,   3vmax, 1.5rem);
   --gap-md: clamp(1.5rem, 6vmax,   3rem);
