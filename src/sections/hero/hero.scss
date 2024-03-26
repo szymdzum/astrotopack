@@ -1,0 +1,45 @@
+#hero {
+  display: grid;
+  grid-template-areas: "hero";
+  overflow: hidden;
+  height: 75vh;
+  border-bottom: var(--border-regular);
+
+  > * {
+    grid-area: hero;
+  }
+
+  .header {
+    margin-top: var(--margin-xl);
+    width: min(100vw - 3rem, 80ch);
+    z-index: 1;
+    margin-inline: auto;
+
+    [role="list"] {
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: var(--padding-xs);
+      flex-direction: row;
+      //TODO: Add media query for smaller screens
+
+
+      li {
+        padding-left: var(--padding-xs);
+        &::marker {
+          content: attr(data-icon);
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  img {
+    object-fit: cover;
+    object-position: bottom;
+    align-self: end;
+    height: min(75vh, 800px);
+    width: 100%;
+    z-index: -1;
+    filter: blur(0.8px) opacity(0.7);
+  }
+}

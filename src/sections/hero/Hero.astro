@@ -1,0 +1,25 @@
+---
+import './hero.scss';
+import { Image } from 'astro:assets';
+import backgroundImage from '/src/assets/images/hero_bg.png';
+---
+
+<section id="hero">
+  <div class="header">
+    <h1>
+      Doradca Naturalnie Odpowiedzialny
+    </h1>
+    <div class="card">
+      <p>
+        Zapewniamy kompleksowe wsparcie związane z realizacją przepisów środowiskowych.
+      </p>
+      <ul role="list">
+        <li data-icon="🦄">Audyt</li>
+        <li data-icon="😎">Wdrożenia</li>
+        <li data-icon="🌈">Szkolenia</li>
+      </ul>
+    </div>
+  </div>
+  <Image src={backgroundImage} alt="Background image" />
+</section>
+
