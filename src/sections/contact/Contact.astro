@@ -1,0 +1,51 @@
+---
+import './contact.scss'
+import { Icon } from 'astro-icon/components'
+import Section from "../../layouts/Section.astro"
+import ContactForm from "../../components/contactForm/ContactForm.astro"
+---
+<Section name="contact">
+  <div class="section-header">
+    <p class="title">Kontakt</span>
+    <h2>
+      Przestań się czaić
+    </h2>
+    <p>
+      Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej marki.
+    </p>
+  </div>
+
+  <div class="section-content">
+    <div class="column card">
+      <ContactForm />
+    </div>
+    <div class="column">
+      <button id="copy-email-button" class="button-icon" type="button">
+        <Icon class="icon" name="copy-ico" />info@puttopack.pl
+      </button>
+      <button id="phone-button" class="button-icon" type="button">
+        <Icon class="icon" name="call-ico" />+88 777 666 555
+      </button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">
+    <span>Mail skopiowany do schowka!<span/>
+  </div>
+</Section>
+
+<script>
+  const copyEmailButton = document.getElementById('copy-email-button');
+
+  copyEmailButton?.addEventListener('click', () => {
+    navigator.clipboard.writeText('username@example.com');
+
+    const toast = document.getElementById('toast');
+  toast?.classList.add('show');
+
+  // Hide the toast notification after 3 seconds
+  setTimeout(() => {
+    toast?.classList.remove('show');
+  }, 3000);
+  });
+</script>

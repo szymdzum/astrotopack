@@ -1,5 +1,4 @@
-<style lang="scss">
-.contact-form {
+#contact-form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -18,7 +17,7 @@
       }
   }
 
-  button {
+  .submit {
     padding: .75rem 1.25rem;
     color: #ffffff; 
     background-color:#45be31;
@@ -33,17 +32,3 @@
       }
   }
 }
-</style>
-
-<form action="#" class="contact-form">
-  <div class="form-group">
-    <input type="email" id="email" placeholder="Twój email" required>
-  </div>
-  <div class="form-group">
-    <input type="text" id="subject" placeholder="Temat" required>
-  </div>
-  <div class="form-group">
-    <textarea id="message" rows="6" placeholder="Twoja wiadomość"></textarea>
-  </div>
-  <button type="submit">Wyślij</button>
-</form>

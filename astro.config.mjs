@@ -1,12 +1,12 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/static";
+import vercel from '@astrojs/vercel/serverless';
 import icon from "astro-icon";
 
 import biome from "astro-biome";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
+  output: "server",
   adapter: vercel({
     imageService: true,
   }),
