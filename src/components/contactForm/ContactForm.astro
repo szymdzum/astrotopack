@@ -1,0 +1,55 @@
+---
+import './contactForms.scss';
+---
+<form method="POST" id="contact-form">
+  <input type="hidden" name="access_key" value="1d6f9772-5c58-412d-96c2-79a1d004ffe9">
+  <input type="hidden" name="subject" value="Hej, masz nową wiadomość!">
+  <input type="email" id="email" name="email" placeholder="Twój email" required>
+  <input type="text" id="subject" name="subject" placeholder="Temat" required>
+  <textarea id="message" name="message" rows="6" placeholder="Twoja wiadomość"></textarea>
+  <button class="submit" type="submit">Wyślij</button>
+  <div id="result"></div>
+</form>
+
+<script is:inline>
+  const form = document.getElementById('contact-form');
+  const result = document.getElementById('result');
+  
+  form.addEventListener('submit', function(e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Proszę czekaj..."
+  
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = json.message;
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+    })
+    .then(function() {
+        form.reset();
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 3000);
+    });
+  });
+  </script>

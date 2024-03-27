@@ -1,6 +1,6 @@
 ---
 import Section from "../layouts/Section.astro"
-import Form from "../components/Form.astro"
+import Form from "../components/contactForm/ContactForm.astro"
 
 import { Icon } from 'astro-icon/components'
 ---
@@ -102,15 +102,15 @@ import { Icon } from 'astro-icon/components'
 <script>
   const copyEmailButton = document.getElementById('copy-email-button');
 
-  copyEmailButton.addEventListener('click', () => {
+  copyEmailButton?.addEventListener('click', () => {
     navigator.clipboard.writeText('username@example.com');
 
     const toast = document.getElementById('toast');
-  toast.classList.add('show');
+  toast?.classList.add('show');
 
   // Hide the toast notification after 3 seconds
   setTimeout(() => {
-    toast.classList.remove('show');
+    toast?.classList.remove('show');
   }, 3000);
   });
 </script>
