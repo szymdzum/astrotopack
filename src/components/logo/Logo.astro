@@ -1,22 +1,10 @@
 ---
+import './logo.scss';
 import { Image } from "astro:assets";
 import logoSrc from '/src/assets/images/putopack_logo.png';
 
 const { name } = Astro.props;
 ---
-<style lang="scss">
-  .logo {
-    img {
-      margin-right:   0.5rem;
-      vertical-align: -1rem;
-    }
-    span {
-      font-size:    1.2rem;
-      font-weight:  800;
-    }
-  }
-</style>
-
 <div class="logo">
   <a href="/">
     <Image
