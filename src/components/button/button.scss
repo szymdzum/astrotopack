@@ -1,0 +1,25 @@
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.copy-email {
+  background-color: #007bff;
+    &:hover {
+      background-color: #0069d9;
+    }
+}
+
+.phone {
+  background-color: #28a745;
+  &:hover {
+    background-color: #218838;
+  }
+}
+
+.icon {
+  font-size: 1.4rem;
+  font-weight: 600;
+}

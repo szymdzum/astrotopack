@@ -13,35 +13,6 @@
     border-radius: 10px;
     border: var(--border-regular);
   }
-
-
-  #copy-email-button {
-    background-color: #007bff;
-    margin-inline: auto;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    &:hover {
-      background-color: #0069d9;
-    }
-  }
-
-  #phone-button {
-    margin-top: var(--margin-sm);
-    background-color: #28a745;
-    margin-inline: auto;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    &:hover {
-      background-color: #218838;
-    }
-  }
-
 };
 
 #toast {
@@ -64,9 +35,3 @@
   gap: 8px;
 }
 
-.icon {
-  font-size: 1.4rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-}
