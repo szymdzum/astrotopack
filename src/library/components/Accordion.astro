@@ -1,4 +1,14 @@
+---
+let { id, title, content } = Astro.props;
+---
+<div class="faq-question">
+  <input id={id} type="checkbox" class="panel">
+  <div class="plus">+</div>
+  <label for={id} class="panel-title">{title}</label>
+  <div class="panel-content">{content}</div>
+</div>
 
+<style>
 .faq-question {
   padding: var(--padding-sm) 0;
   border-bottom: 1px dotted #ccc;
@@ -63,3 +73,4 @@
 .panel {
   display: none;
 }
+</style>

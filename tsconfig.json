@@ -3,5 +3,14 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@config/*": ["src/config/*"],
+      "@components/*": ["src/library/components/*"],
+      "@layouts/*": ["src/library/layouts/*"],
+      "@sections/*": ["src/library/sections/*"],
+      "@styles/*": ["src/library/styles/*"],
+    }
   }
 }

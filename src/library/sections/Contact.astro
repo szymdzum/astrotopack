@@ -1,8 +1,7 @@
 ---
-import './contact.scss'
-import Section from "../../layouts/Section.astro"
-import ContactForm from "../../components/contactForm/ContactForm.astro"
-import Button from "../../components/button/Button.astro"
+import Section from "@layouts/Section.astro"
+import ContactForm from "@components/ContactForm.astro"
+import Button from "@components/Button.astro"
 ---
 <Section name="contact">
   <div class="section-header">
@@ -45,11 +44,50 @@ import Button from "../../components/button/Button.astro"
     navigator.clipboard.writeText('username@example.com');
 
     const toast = document.getElementById('toast');
-  toast?.classList.add('show');
+    toast?.classList.add('show');
 
   // Hide the toast notification after 3 seconds
-  setTimeout(() => {
-    toast?.classList.remove('show');
-  }, 3000);
+    setTimeout(() => {
+      toast?.classList.remove('show');
+    }, 3000);
   });
 </script>
+
+<style type="scss">
+  .section-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  .column {
+    flex: 1 0 50%;
+    min-width: 300px;
+  }
+
+  .card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: var(--border-regular);
+  }
+};
+
+#toast {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+</style>

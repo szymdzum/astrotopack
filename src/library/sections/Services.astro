@@ -1,17 +1,9 @@
 ---
-import { services } from '../data/data.js';
+import { services } from '@config/data.js';
 
-import Section from '../layouts/Section.astro';
-import Card from '../components/Card.astro';
+import Section from '@layouts/Section.astro';
+import Card from '@components/Card.astro';
 ---
-<style lang="scss">
-  .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gap-md);
-    --multiplier: calc(40rem - 100%);
-  }
-</style>
 
 <Section name="services">
   <div class="section-header">
@@ -32,3 +24,12 @@ import Card from '../components/Card.astro';
     </div>
   </div>
 </Section>
+
+<style lang="scss">
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-md);
+    --multiplier: calc(40rem - 100%);
+  }
+</style>
