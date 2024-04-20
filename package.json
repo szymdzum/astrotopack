@@ -18,6 +18,8 @@
     "astro": "^4.6.3",
     "astro-biome": "^0.0.6",
     "astro-icon": "^1.1.0",
+    "astro-purgecss": "^4.1.0",
+    "purgecss": "^5.0.0",
     "typescript-esbuild": "^0.3.10"
   },
   "devDependencies": {

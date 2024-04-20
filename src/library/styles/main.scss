@@ -6,6 +6,10 @@
 // @import './_layout';
 // @import './modules';
 
+@use "bulma/sass" with (
+  $cssvars-prefix: "my-prefix-"
+);
+
 :root {
   --color-text: #232115;
   --color-bg: #fff;

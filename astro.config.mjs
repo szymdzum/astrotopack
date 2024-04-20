@@ -1,19 +1,17 @@
 import { defineConfig } from "astro/config";
 import vercel from '@astrojs/vercel/serverless';
 import icon from "astro-icon";
-
 import biome from "astro-biome";
+
+import purgecss from "astro-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: vercel({
-    imageService: true,
+    imageService: true
   }),
-  integrations: [
-    icon({
-      iconDir: "src/assets/icons",
-    }),
-    biome(),
-  ],
+  integrations: [icon({
+    iconDir: "src/assets/icons"
+  }), biome(), purgecss()]
 });
