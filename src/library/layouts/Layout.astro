@@ -20,11 +20,9 @@ const PAGE_TITLE = 'Astrotopack';
     <script is:inline src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>{PAGE_TITLE}</title>
   </head>
-  <body class="has-navbar-fixed-top">
+  <body>
     <Navbar />
-    <main>
-      <slot />
-    </main>
+      <slot/>
     <Footer />
   </body>
 </html>
