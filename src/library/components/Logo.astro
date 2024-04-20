@@ -4,7 +4,7 @@ import logoSrc from '/src/assets/images/putopack_logo.png';
 
 const { name } = Astro.props;
 ---
-<div class="logo">
+<div class="navbar-item">
   <a href="/">
     <Image
       src={logoSrc}
@@ -17,14 +17,13 @@ const { name } = Astro.props;
 </div>
 
 <style type="scss">
-  .logo {
-    img {
-      margin-right:   0.5rem;
-      vertical-align: -1rem;
-    }
-    span {
-      font-size:    1.2rem;
-      font-weight:  800;
-    }
-  }
+img {
+  max-height: none;
+  margin-right:   0.5rem;
+  vertical-align: -1rem;
+}
+span {
+  font-size:    1.2rem;
+  font-weight:  800;
+}
 </style>

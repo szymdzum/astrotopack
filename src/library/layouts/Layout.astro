@@ -3,6 +3,7 @@ import '@fontsource/inter';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/400.css';
 
+import '@styles/_index.scss'
 import '@styles/main.scss'
 import Navbar from '@sections/Navbar.astro';
 import Footer from '@sections/Footer.astro';
@@ -10,15 +11,16 @@ import Footer from '@sections/Footer.astro';
 const PAGE_TITLE = 'Astrotopack';
 ---
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content={Astro.generator} />
+    <script is:inline src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>{PAGE_TITLE}</title>
   </head>
-  <body>
+  <body class="has-navbar-fixed-top">
     <Navbar />
     <main>
       <slot />

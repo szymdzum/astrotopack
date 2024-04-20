@@ -12,16 +12,17 @@
     "lcss": "stylelint src/**/*.{scss,astro}"
   },
   "dependencies": {
-    "@astrojs/vercel": "^7.3.0",
+    "@astrojs/vercel": "^7.5.3",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/poppins": "^5.0.8",
-    "astro": "^4.3.5",
+    "astro": "^4.6.3",
     "astro-biome": "^0.0.6",
     "astro-icon": "^1.1.0",
     "typescript-esbuild": "^0.3.10"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
+    "@types/jquery": "^3.5.29",
     "postcss-html": "^1.6.0",
     "sass": "^1.70.0",
     "stylelint": "^16.2.1",

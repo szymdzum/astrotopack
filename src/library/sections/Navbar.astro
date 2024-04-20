@@ -1,92 +1,36 @@
 ---
 import Logo from '@components/Logo.astro';
-import Button from '@components/Button.astro';
 import { Icon } from 'astro-icon/components'
-
 import { config, menu } from '@config/data.js';
+
 ---
-<style lang="scss">
-header {
-  top: 0;
-  z-index: 2;
-  width: 100%;
-  position: fixed;
-  background-color: var(--color-navbar);
-  box-shadow: var(--header-shadow);
 
-  .container {
-    margin-inline: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--padding-xs);
-    max-width: var(--section-max-width);
-
-    menu {
-      display: flex;
-      align-items: center;
-      list-style: none;
-      gap: var(--gap-xs);
-
-      li {
-        padding: 0 var(--padding-sm);
-        white-space: nowrap;
-      }
-    }
-
-    .toggle {
-      display: none;
-      font-size: 2rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-        .menu {
-          display: none;
-          width: 100%;
-          position: absolute;
-          top: 100%;
-          left: 0;
-        }
-
-        .menu.active {
-          display: flex;
-        }
-
-        .toggle {
-          display: block;
-        }
-      }
-  }
-}
-</style>
-
-<header>
-  <div class="container">
+<header class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
     <Logo name={config.pageName} />
-    <Icon name="hamburger-menu-ico" class="toggle" />
-    <nav class="menu" aria-label="Main Navigation">
-      <menu>
-       {menu.map(({ link, name }) => (
-          <li>
-            <a href={link}>{name}</a>
-          </li>
-        ))}
-      </menu>
-    </nav>
-    <Button />
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu-component">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="menu-component" class="navbar-menu">
+    <menu class="navbar-start">
+      {menu.map(({ link, name }) => (
+        <a class="navbar-item" href={link}>{name}</a>
+      ))}
+    </menu>
   </div>
 </header>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
-    const toggleButton = document.querySelector('.toggle');
-
-    if (menu && toggleButton) {
-      toggleButton.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-    }
+<script is:inline lang="ts">
+  /// <reference types="jquery" />
+$(function() {
+  $(".navbar-burger").on('click', function() {
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
   });
+});
 </script>
