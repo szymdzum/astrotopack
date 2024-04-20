@@ -6,9 +6,6 @@
 // @import './_layout';
 // @import './modules';
 
-@use "bulma/sass" with (
-  $cssvars-prefix: "my-prefix-"
-);
 
 :root {
   --color-text: #232115;
@@ -20,6 +17,8 @@
   --mint-green: #f8fdf8;
   --border-radius-md: 0.5rem;
   --header-shadow: 0 2px 4px rgba(161,169,197,.2);
+  
+  
 }
 
 body {
