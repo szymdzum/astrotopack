@@ -1,5 +1,5 @@
 {
-  "name": "documents-repositories-astrotopack",
+  "name": "astrotopack",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,9 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "csass": "sass --watch --style=compressed src/styles/main.scss public/styles/styles.css",
-    "lcss": "stylelint src/**/*.{scss,astro}"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/vercel": "^7.5.3",

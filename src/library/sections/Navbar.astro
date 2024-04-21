@@ -1,0 +1,76 @@
+---
+import Logo from '@components/Logo.astro';
+import { Icon } from 'astro-icon/components'
+
+import { config, menu } from '@config/data.js';
+---
+
+<header>
+  <Logo name={config.pageName} />
+  <Icon name="hamburger-menu-ico" class="toggle" />
+  <nav class="menu" aria-label="main navigation">
+    <ul>
+      {menu.map(({ link, name }) => (
+        <li><a href={link}>{name}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+header {
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  background-color: var(--color-navbar);
+  box-shadow: var(--header-shadow);
+
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-xs);
+  max-width: var(--section-max-width);
+
+  .menu ul {
+    list-style: none;
+  }
+
+  .menu li {
+    display: inline-block;
+  }
+
+  .menu a {
+    position:relative;
+    display:inline-block;
+    padding:1.75rem 0.5rem;
+    transition:transform 0.3s;
+  }
+
+  .menu li > a:focus,
+  .menus li > a:hover {
+    transform:scale(1.2);
+  }
+
+
+    @media (max-width: 768px) {
+        .menu {
+          display: none;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+
+        .menu.active {
+          display: flex;
+        }
+
+        .toggle {
+          display: block;
+        }
+      }
+  
+}
+</style>
