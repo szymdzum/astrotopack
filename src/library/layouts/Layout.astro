@@ -1,14 +1,15 @@
 ---
-import '@fontsource/inter';
-import '@fontsource/poppins/600.css';
-import '@fontsource/poppins/400.css';
+import "@fontsource/inter";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/400.css";
 
-import '@styles/main.scss'
-import NavBar from '@sections/NavBar.astro';
-import Footer from '@sections/Footer.astro';
+import "@styles/main.scss";
 
-const PAGE_TITLE = 'Astrotopack';
+import Footer from "@sections/Footer.astro";
+
+const PAGE_TITLE = "Astrotopack";
 ---
+
 <!doctype html>
 <html lang="pl">
   <head>
@@ -19,7 +20,6 @@ const PAGE_TITLE = 'Astrotopack';
     <title>{PAGE_TITLE}</title>
   </head>
   <body>
-    <NavBar />
     <main>
       <slot />
     </main>
