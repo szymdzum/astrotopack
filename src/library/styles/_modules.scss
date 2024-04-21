@@ -14,22 +14,22 @@
  * 6. 
  */
 
- /**
+/**
  * [2. Features]
  */
 
 .features-container {
-  display:    flex;
-  flex-wrap:  wrap;
-  padding:    0 var(--padding-md);
---multiplier: calc(40rem - 100%);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 var(--padding-md);
+  --multiplier: calc(40rem - 100%);
 }
 
 .feature-item {
-  display:    grid;
-  min-width:  33%;
-  max-width:  100%;
-  gap:        var(--gap-xs);
+  display: grid;
+  min-width: 33%;
+  max-width: 100%;
+  gap: var(--gap-xs);
   margin-top: var(--margin-xs);
   flex-basis: calc(var(--multiplier) * 999);
   text-align: center;

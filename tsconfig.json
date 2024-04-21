@@ -10,7 +10,7 @@
       "@components/*": ["src/library/components/*"],
       "@layouts/*": ["src/library/layouts/*"],
       "@sections/*": ["src/library/sections/*"],
-      "@styles/*": ["src/library/styles/*"],
+      "@styles/*": ["src/library/styles/*"]
     }
   }
 }

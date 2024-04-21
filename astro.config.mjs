@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import vercel from '@astrojs/vercel/serverless';
+import vercel from "@astrojs/vercel/serverless";
 import icon from "astro-icon";
 
 import biome from "astro-biome";
