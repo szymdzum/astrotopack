@@ -17,7 +17,6 @@ import { config, menu } from '@config/data.js';
   </nav>
 </header>
 
-
 <style lang="scss">
 header {
   top: 0;
@@ -55,12 +54,6 @@ header {
   }
 
 
-    .toggle {
-      display: none;
-      font-size: 2rem;
-      opacity: 0.8;
-    }
-
     @media (max-width: 768px) {
         .menu {
           display: none;
@@ -81,18 +74,3 @@ header {
   
 }
 </style>
-
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
-    const toggleButton = document.querySelector('.toggle');
-
-    if (menu && toggleButton) {
-      toggleButton.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-    }
-  });
-</script>
