@@ -1,69 +1,98 @@
----
-
-// import { Image } from 'astro:assets';
-// import backgroundImage from '/src/assets/images/hero_bg.png';
----
-<section id="hero">
-  <div class="header">
+<section class="hero">
+  <div class="container">
     <h1>
-      Twój Naturalnie Odpowiedzialny Doradca
+      Sustainable Solutions
+      <br />
+      for a Greener Future
     </h1>
-    <div class="card">
-      <p>
-        Zapewniamy kompleksowe wsparcie związane z realizacją przepisów środowiskowych.
-      </p>
-      <ul class="card-list" role="list">
-        <li data-icon="🦄">Audyt</li>
-        <li data-icon="😎">Wdrożenia</li>
-        <li data-icon="🌈">Szkolenia</li>
-      </ul>
+    <p class="subtitle">
+      We provide expert ecological consulting services to help businesses and organizations minimize
+      their environmental impact and promote sustainable practices.
+    </p>
+    <div class="buttons-container">
+      <button>
+        <a class="link-button" href="#"> Get a Quote </a>
+      </button>
+      <button>
+        <a class="link-button" href="#"> Our Services </a>
+      </button>
     </div>
   </div>
-  <!-- <Image class="background-img" src={backgroundImage} alt="Background image" /> -->
 </section>
 
-<style type="scss">
-  #hero {
-  display: grid;
-  grid-template-areas: "hero";
-  overflow: hidden;
-  height: 75vh;
-  border-bottom: var(--border-regular);
+<style>
+  .hero {
+    flex: 1;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(60vh - var(--navbar-height));
+    padding-top: var(--navbar-height);
 
-  > * {
-    grid-area: hero;
-  }
-
-  .background-img {
-    object-fit: cover;
-    object-position: bottom;
-    align-self: end;
-    height: min(75vh, 800px);
-    width: 100%;
-    z-index: -1;
-    filter: opacity(0.7);
-  }
-
-  .header {
-    width: min(100vw - 3rem, 80ch);
-    margin-top: var(--margin-xl);
-    z-index: 1;
-    margin-inline: auto;
-
-    .card-list {
+    .container {
+      max-width: 1200px;
+      margin: auto;
       display: flex;
-      justify-content: space-evenly;
-      flex-direction: row;
-      padding-top: var(--padding-sm);
-    }
-
-    .card-list li {
-      padding-left: var(--padding-xs);
-      &::marker {
-        content: attr(data-icon);
-        font-size: 1em;
-      }
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 6px;
     }
   }
-}
+  @media (min-width: 640px) {
+    .title {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 56px;
+    }
+  }
+
+  .subtitle {
+    margin-top: 16px;
+    max-width: 640px;
+    text-align: center;
+    color: #6b7280;
+  }
+
+  .description.dark {
+    color: #cbd5e1;
+  }
+
+  .buttons-container {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .button,
+  .button-outline {
+    padding: 8px 16px;
+    text-align: center;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .arrow-icon {
+    font-size: 16px;
+  }
 </style>

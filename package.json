@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^7.5.3",
+    "@fontsource-variable/dm-sans": "^5.0.6",
+    "@fontsource-variable/noto-serif": "^5.0.6",
+    "@fontsource-variable/rethink-sans": "^5.0.4",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/poppins": "^5.0.8",
     "astro": "^4.6.3",

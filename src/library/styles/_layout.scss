@@ -17,27 +17,182 @@
   --gap-md: clamp(1.5rem, 6vmax, 3rem);
   --gap-lg: clamp(3rem, 8vmax, 4rem);
 
+  --navbar-height: 3.25rem;
   --section-max-width: 1040px;
 }
 
-.section-container {
-  width: 90%;
-  margin-inline: auto;
-  max-width: var(--section-max-width);
-  container-type: inline-size;
-  padding-top: var(--padding-lg);
-  padding-bottom: var(--padding-lg);
+$breakpoints: (
+  'default': 0,
+  'small': 24em,
+  'medium': 48em,
+  'large': 75em,
+) !default;
 
-  .section-header {
-    max-width: 40rem;
-    margin-inline: auto;
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else if (type_of($breakpoint) == number) {
+    @media (min-width: $breakpoint+'px') {
+      @content;
+    }
+  } @else {
+    @error "Not a correct value, check _base-breakpoints for available values.";
+  }
+}
 
-    h2 {
-      margin-bottom: var(--margin-sm);
+.container {
+  margin: 0 auto;
+  padding: 0 calc(2rem / 2);
+  max-width: 100%;
+
+  @include breakpoint(medium) {
+    padding: 0 2rem;
+  }
+
+  @include breakpoint(large) {
+    padding: 0 calc(2rem / 2);
+    max-width: 1200px;
+  }
+
+  &.stretch {
+    max-width: 100%;
+  }
+}
+
+.space-content {
+  > * + *,
+  > dl > * + * {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  > h2 {
+    margin-top: 3rem;
+
+    @include breakpoint(large) {
+      margin-top: 4rem;
     }
   }
 
-  .section-content {
-    margin-top: var(--margin-md);
+  > h3 {
+    margin-top: 2rem;
+
+    @include breakpoint(large) {
+      margin-top: 3rem;
+    }
   }
+
+  > h4 {
+    margin-top: 1.5rem;
+
+    @include breakpoint(large) {
+      margin-top: 2rem;
+    }
+  }
+
+  > h5 {
+    margin-top: 1rem;
+
+    @include breakpoint(large) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  > h6 {
+    margin-top: 1rem;
+
+    @include breakpoint(large) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+// List
+
+ul:not([class]),
+ol:not([class]) {
+  margin-left: 1rem;
+
+  ul,
+  ol {
+    padding: 0.5rem 1rem 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+ul:not([class]) {
+  > li::marker {
+    display: block;
+    color: var(--primary-800);
+  }
+}
+
+ol.incremented {
+  counter-reset: item;
+
+  ol {
+    counter-reset: item;
+  }
+
+  ol,
+  ul {
+    margin: 0.75rem 0 0 1rem;
+  }
+
+  li {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0.75rem;
+    }
+
+    &::before {
+      content: counters(item, '.') '. ';
+      counter-increment: item;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
+  ul {
+    li::before {
+      content: '';
+    }
+  }
+}
+
+// Outline
+
+@mixin outline {
+  outline: 2px dotted black;
+  outline-color: black;
+  outline-offset: 0;
+  -webkit-box-shadow: 0 0 0 2px white;
+  box-shadow: 0 0 0 2px white;
+}
+
+*:focus,
+*:focus-visible {
+  @include outline;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }

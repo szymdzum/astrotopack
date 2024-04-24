@@ -1,0 +1,14 @@
+{
+	"files": [
+		{
+			"path": "src/library/styles/_layout.scss",
+			"bookmarks": [
+				{
+					"line": 5,
+					"column": 40,
+					"label": "Space variables"
+				}
+			]
+		}
+	]
+}
