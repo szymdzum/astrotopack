@@ -11,12 +11,10 @@ body {
 
   a:not(.button) {
     color: var(--action-color);
-    text-decoration: underline;
 
     &:visited {
       color: var(--action-color);
     }
-
     &:hover,
     &:focus {
       color: var(--action-color-state);
@@ -47,10 +45,10 @@ body {
 
   h1 {
     font-size: 2.25rem;
-    line-height: 3.375rem;
+    line-height: 2.375rem;
 
     @include breakpoint(medium) {
-      font-size: 3rem;
+      font-size: 3.75rem;
       line-height: 3.625rem;
     }
   }

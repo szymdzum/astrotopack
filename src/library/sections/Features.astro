@@ -5,22 +5,24 @@ import Feature from '@components/Feature.astro';
 import { getEntry } from 'astro:content';
 const features = await getEntry('page', 'features');
 ---
-<Section name="features">
-  <div class="section-header">
-    <p class="title">O mnie</span>
-    <h2>
-      PUT to PACK
-    </h2>
-    <p>
-      Specjalizuje się w takich obszarach jak:
-    </p>
-  </div>
 
-  <div class="section-content">
+<Section name="features">
+  <div class="header">
+    <h2>Put To Pack</h2>
+    <p>Specjalizuje się w takich obszarach jak:</p>
+  </div>
+  <div class="content">
     <div class="features-container">
-      {features.data.map(feature => (
-        <Feature {...feature} />
-      ))}
+      {features.data.map((feature) => <Feature {...feature} />)}
     </div>
   </div>
 </Section>
+
+<style lang="scss">
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 var(--padding-md);
+    --multiplier: calc(40rem - 100%);
+  }
+</style>

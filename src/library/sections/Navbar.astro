@@ -6,7 +6,7 @@ import logoImg from '/src/assets/images/putopack_logo.png';
 ---
 
 <header>
-  <div class="container">
+  <div>
     <Logo name={config.pageName} imgSrc={logoImg} />
     <a
       role="button"
@@ -35,16 +35,14 @@ import logoImg from '/src/assets/images/putopack_logo.png';
     top: 0;
     z-index: 3;
     width: 100%;
-    position: fixed;
+    position: sticky;
     background-color: var(--color-navbar);
     box-shadow: var(--header-shadow);
 
-    .container {
+    div {
       display: flex;
-      align-items: center;
-      margin-inline: auto;
       justify-content: space-between;
-      width: var(--section-max-width);
+      flex-wrap: wrap;
     }
 
     .menu li {

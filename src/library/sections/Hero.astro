@@ -1,5 +1,10 @@
-<section class="hero">
-  <div class="container">
+---
+import Section from '@layouts/Section.astro';
+import Button from '@components/Button.astro';
+---
+
+<Section name="hero">
+  <div class="header">
     <h1>
       Sustainable Solutions
       <br />
@@ -9,68 +14,24 @@
       We provide expert ecological consulting services to help businesses and organizations minimize
       their environmental impact and promote sustainable practices.
     </p>
-    <div class="buttons-container">
-      <button>
-        <a class="link-button" href="#"> Get a Quote </a>
-      </button>
-      <button>
-        <a class="link-button" href="#"> Our Services </a>
-      </button>
-    </div>
   </div>
-</section>
+  <div class="buttons">
+    <a href="#">
+      <Button className="color-secondary" buttonText="Contact Us" />
+    </a>
+    <a class="link-button" href="#">
+      <Button buttonText="Our Services" />
+    </a>
+  </div>
+</Section>
 
-<style>
-  .hero {
-    flex: 1;
-    background-color: #f3f4f6;
-    color: #1f2937;
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: calc(60vh - var(--navbar-height));
-    padding-top: var(--navbar-height);
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px 6px;
-    }
-  }
-  @media (min-width: 640px) {
-    .title {
-      font-size: 40px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .title {
-      font-size: 48px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .title {
-      font-size: 56px;
-    }
-  }
-
+<style lang="scss">
   .subtitle {
     margin-top: 16px;
-    max-width: 640px;
-    text-align: center;
     color: #6b7280;
   }
 
-  .description.dark {
-    color: #cbd5e1;
-  }
-
-  .buttons-container {
+  .buttons {
     margin-top: 32px;
     display: flex;
     flex-wrap: wrap;
@@ -82,17 +43,5 @@
   .button-outline {
     padding: 8px 16px;
     text-align: center;
-  }
-
-  .link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .arrow-icon {
-    font-size: 16px;
   }
 </style>
