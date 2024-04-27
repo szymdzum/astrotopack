@@ -1,69 +1,47 @@
 ---
-
-// import { Image } from 'astro:assets';
-// import backgroundImage from '/src/assets/images/hero_bg.png';
+import Section from '@layouts/Section.astro';
+import Button from '@components/Button.astro';
 ---
-<section id="hero">
+
+<Section name="hero">
   <div class="header">
     <h1>
-      Twój Naturalnie Odpowiedzialny Doradca
+      Sustainable Solutions
+      <br />
+      for a Greener Future
     </h1>
-    <div class="card">
-      <p>
-        Zapewniamy kompleksowe wsparcie związane z realizacją przepisów środowiskowych.
-      </p>
-      <ul class="card-list" role="list">
-        <li data-icon="🦄">Audyt</li>
-        <li data-icon="😎">Wdrożenia</li>
-        <li data-icon="🌈">Szkolenia</li>
-      </ul>
-    </div>
+    <p class="subtitle">
+      We provide expert ecological consulting services to help businesses and organizations minimize
+      their environmental impact and promote sustainable practices.
+    </p>
   </div>
-  <!-- <Image class="background-img" src={backgroundImage} alt="Background image" /> -->
-</section>
+  <div class="buttons">
+    <a href="#">
+      <Button className="color-secondary" buttonText="Contact Us" />
+    </a>
+    <a class="link-button" href="#">
+      <Button buttonText="Our Services" />
+    </a>
+  </div>
+</Section>
 
-<style type="scss">
-  #hero {
-  display: grid;
-  grid-template-areas: "hero";
-  overflow: hidden;
-  height: 75vh;
-  border-bottom: var(--border-regular);
-
-  > * {
-    grid-area: hero;
+<style lang="scss">
+  .subtitle {
+    margin-top: 16px;
+    color: #6b7280;
   }
 
-  .background-img {
-    object-fit: cover;
-    object-position: bottom;
-    align-self: end;
-    height: min(75vh, 800px);
-    width: 100%;
-    z-index: -1;
-    filter: opacity(0.7);
+  .buttons {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 
-  .header {
-    width: min(100vw - 3rem, 80ch);
-    margin-top: var(--margin-xl);
-    z-index: 1;
-    margin-inline: auto;
-
-    .card-list {
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: row;
-      padding-top: var(--padding-sm);
-    }
-
-    .card-list li {
-      padding-left: var(--padding-xs);
-      &::marker {
-        content: attr(data-icon);
-        font-size: 1em;
-      }
-    }
+  .button,
+  .button-outline {
+    padding: 8px 16px;
+    text-align: center;
   }
-}
 </style>

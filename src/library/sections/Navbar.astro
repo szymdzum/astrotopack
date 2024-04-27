@@ -1,92 +1,89 @@
 ---
 import Logo from '@components/Logo.astro';
-import Button from '@components/Button.astro';
-import { Icon } from 'astro-icon/components'
-
 import { config, menu } from '@config/data.js';
+
+import logoImg from '/src/assets/images/putopack_logo.png';
 ---
-<style lang="scss">
-header {
-  top: 0;
-  z-index: 2;
-  width: 100%;
-  position: fixed;
-  background-color: var(--color-navbar);
-  box-shadow: var(--header-shadow);
-
-  .container {
-    margin-inline: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--padding-xs);
-    max-width: var(--section-max-width);
-
-    menu {
-      display: flex;
-      align-items: center;
-      list-style: none;
-      gap: var(--gap-xs);
-
-      li {
-        padding: 0 var(--padding-sm);
-        white-space: nowrap;
-      }
-    }
-
-    .toggle {
-      display: none;
-      font-size: 2rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-        .menu {
-          display: none;
-          width: 100%;
-          position: absolute;
-          top: 100%;
-          left: 0;
-        }
-
-        .menu.active {
-          display: flex;
-        }
-
-        .toggle {
-          display: block;
-        }
-      }
-  }
-}
-</style>
 
 <header>
-  <div class="container">
-    <Logo name={config.pageName} />
-    <Icon name="hamburger-menu-ico" class="toggle" />
-    <nav class="menu" aria-label="Main Navigation">
-      <menu>
-       {menu.map(({ link, name }) => (
-          <li>
-            <a href={link}>{name}</a>
-          </li>
-        ))}
-      </menu>
+  <div>
+    <Logo name={config.pageName} imgSrc={logoImg} />
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      aria-controls="menu"
+    >
+    </a>
+    <nav class="menu" role="navigation" aria-label="main navigation">
+      <ul>
+        {
+          menu.map(({ link, name }) => (
+            <li>
+              <a href={link}>{name}</a>
+            </li>
+          ))
+        }
+      </ul>
     </nav>
-    <Button />
   </div>
 </header>
 
+<style lang="scss">
+  header {
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    position: sticky;
+    background-color: var(--color-navbar);
+    box-shadow: var(--header-shadow);
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .menu li {
+      display: inline-block;
+    }
+
+    .menu a {
+      display: block;
+      padding: 1.25rem 1rem;
+    }
+
+    .menu li > a:focus,
+    .menu li > a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+    }
+  }
+</style>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
-    const toggleButton = document.querySelector('.toggle');
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll('.navbar-burger'),
+      0
+    );
 
-    if (menu && toggleButton) {
-      toggleButton.addEventListener('click', () => {
-        menu.classList.toggle('active');
+    // Add a click event on each of them
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener('click', () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target?.classList.toggle('is-active');
       });
-    }
+    });
   });
 </script>

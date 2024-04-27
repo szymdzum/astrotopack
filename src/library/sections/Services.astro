@@ -6,21 +6,18 @@ import Card from '@components/Card.astro';
 ---
 
 <Section name="services">
-  <div class="section-header">
-    <p class="title">Usługi</span>
-    <h2>
-      W czym mogę Ci pomóc?
-    </h2>
-    <p>
-      Ogarnę Ci zgodność z przepisami środowiskowymi, porządek w dokumentach i inne sprawy.
-    </p>
+  <div class="header">
+    <h2>W czym mogę Ci pomóc?</h2>
+    <p>Ogarnę Ci zgodność z przepisami środowiskowymi, porządek w dokumentach i inne sprawy.</p>
   </div>
 
-  <div class="section-content">
+  <div class="content">
     <div class="services-container">
-      {services.map(({ title, description, icon }) => (
-        <Card title={title} description={description} icon={icon} />
-        ))}
+      {
+        services.map(({ title, description, icon }) => (
+          <Card title={title} description={description} icon={icon} />
+        ))
+      }
     </div>
   </div>
 </Section>
