@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  a:not(.button) {
+  a:not(.button, .menu a, .logo) {
     color: var(--action-color);
 
     &:visited {
@@ -101,5 +101,9 @@ body {
       font-size: 1.125rem;
       line-height: 1.6875rem;
     }
+  }
+
+  .is-capitalized {
+    text-transform: uppercase;
   }
 }

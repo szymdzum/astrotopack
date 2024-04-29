@@ -16,7 +16,7 @@ import logoImg from '/src/assets/images/putopack_logo.png';
       aria-controls="menu"
     >
     </a>
-    <nav class="menu" role="navigation" aria-label="main navigation">
+    <nav class="menu is-capitalized" role="navigation" aria-label="main navigation">
       <ul>
         {
           menu.map(({ link, name }) => (
@@ -43,6 +43,8 @@ import logoImg from '/src/assets/images/putopack_logo.png';
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      width: var(--max-section-width);
+      margin-inline: auto;
     }
 
     .menu li {
