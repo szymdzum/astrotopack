@@ -5,7 +5,7 @@ import ContactForm from '@components/ContactForm.astro';
 
 <Section name="contact">
   <div class="header">
-    <h2>Przestań się czaić</h2>
+    <h2>Kontakt</h2>
     <p>
       Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej
       marki.
@@ -17,22 +17,6 @@ import ContactForm from '@components/ContactForm.astro';
       <ContactForm />
     </div>
   </div>
-
-  <script>
-    const copyEmailButton = document.getElementById('copy-email-button');
-
-    copyEmailButton?.addEventListener('click', () => {
-      navigator.clipboard.writeText('username@example.com');
-
-      const toast = document.getElementById('toast');
-      toast?.classList.add('show');
-
-      // Hide the toast notification after 3 seconds
-      setTimeout(() => {
-        toast?.classList.remove('show');
-      }, 3000);
-    });
-  </script>
 
   <style type="scss">
     .section-content {
