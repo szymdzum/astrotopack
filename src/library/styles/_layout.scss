@@ -16,9 +16,6 @@
   --gap-sm: clamp(1rem, 3vmax, 1.5rem);
   --gap-md: clamp(1.5rem, 6vmax, 3rem);
   --gap-lg: clamp(3rem, 8vmax, 4rem);
-
-  --navbar-height: 3.25rem;
-  --max-section-width: 1040px;
 }
 
 $breakpoints: (
@@ -43,20 +40,26 @@ $breakpoints: (
 }
 
 .section {
-  margin: 0 auto;
-  padding: 0 calc(2rem / 2);
+  margin-inline: auto;
+  container-type: inline-size;
+  padding: var(--padding-md);
   max-width: 100%;
 
-  @include breakpoint(medium) {
-    padding: 0 2rem;
+  .header {
+    max-width: 40rem;
+    margin-inline: auto;
+  }
 
+  @include breakpoint(medium) {
     .header {
       text-align: center;
+    }
+    .buttons {
+      justify-content: center;
     }
   }
 
   @include breakpoint(large) {
-    padding: 0 calc(2rem / 2);
     max-width: 1400px;
   }
 
@@ -65,27 +68,10 @@ $breakpoints: (
   }
 }
 
-.section {
-  container-type: inline-size;
-  padding-left: var(--padding-md);
-  padding-right: var(--padding-md);
-  padding-top: var(--padding-lg);
-  padding-bottom: var(--padding-lg);
-
-  .header {
-    max-width: 40rem;
-    margin-inline: auto;
-  }
-
-  .content {
-    margin-top: var(--margin-md);
-  }
-}
-
 .space-content {
   > * + *,
   > dl > * + * {
-    margin-top: 1.5rem;
+    margin-top: var(--margin-sm);
     margin-bottom: 0;
   }
 
@@ -105,51 +91,7 @@ $breakpoints: (
     }
   }
 
-  > h4 {
-    margin-top: 1.5rem;
-
-    @include breakpoint(large) {
-      margin-top: 2rem;
-    }
-  }
-
-  > h5 {
-    margin-top: 1rem;
-
-    @include breakpoint(large) {
-      margin-top: 1.5rem;
-    }
-  }
-
-  > h6 {
-    margin-top: 1rem;
-
-    @include breakpoint(large) {
-      margin-top: 1.5rem;
-    }
-  }
-
   > *:first-child {
     margin-top: 0;
   }
-}
-
-// Outline
-
-@mixin outline {
-  outline: 2px dotted black;
-  outline-color: black;
-  outline-offset: 0;
-  -webkit-box-shadow: 0 0 0 2px white;
-  box-shadow: 0 0 0 2px white;
-}
-
-*:focus,
-*:focus-visible {
-  @include outline;
-}
-
-*:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
 }

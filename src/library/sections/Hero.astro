@@ -6,7 +6,7 @@ import Button from '@components/Button.astro';
 <Section name="hero">
   <div class="header">
     <h1>Put To Pack</h1>
-    <p class="subtitle">
+    <p>
       Realizuje prawne zobowiązania wprowadzeniowe wynikające z ustaw firmom, które sprzedają
       produkty w opakowaniach z własnym logo.
     </p>
@@ -22,22 +22,9 @@ import Button from '@components/Button.astro';
 </Section>
 
 <style lang="scss">
-  .subtitle {
-    margin-top: 16px;
-    color: #6b7280;
-  }
-
   .buttons {
-    margin-top: 32px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .button,
-  .button-outline {
-    padding: 8px 16px;
-    text-align: center;
+    gap: var(--gap-sm);
   }
 </style>

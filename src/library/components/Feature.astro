@@ -10,11 +10,10 @@ const { imgSrc, title, description } = Astro.props;
   <p>{description}</p>
 </div>
 
-<style>
+<style type="scss">
   .feature-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
   }
 
@@ -25,10 +24,8 @@ const { imgSrc, title, description } = Astro.props;
     gap: var(--gap-xs);
     margin-top: var(--margin-xs);
     flex-basis: calc(var(--multiplier) * 999);
-    text-align: center;
 
     img {
-      margin-inline: auto;
       opacity: 0.8;
     }
 

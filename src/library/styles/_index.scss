@@ -12,13 +12,26 @@
   --font-measure: 70ch;
   --font-family-default: 'Open Sans', sans-serif;
   --font-family-special: 'Open Sans', sans-serif;
-  // light theme
+
   --font-color: var(--neutral-900);
   --action-color: var(--primary-300);
   --action-color-state: var(--primary-500);
   --background: var(--neutral-100);
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
+
+  --color-text: #232115;
+  --color-bg: #fff;
+  --color-navbar: #fff;
+  --color-border: hsl(17, 24%, 90%);
+
+  --navbar-height: 3.25rem;
+  --max-section-width: 1040px;
+
+  --border-regular: 1px solid #dfe0e2;
+  --mint-green: #f8fdf8;
+  --border-radius-md: 0.5rem;
+  --header-shadow: 0 2px 4px rgba(161, 169, 197, 0.2);
 }
 
 // sticky footer on low content pages
@@ -51,15 +64,4 @@ pre {
   padding: 1rem;
   border-radius: 0.35rem;
   border: 2px solid var(--action-color);
-}
-
-body .pagination a {
-  &:hover,
-  &:focus-visible {
-    background-color: var(--action-color-state);
-
-    svg path {
-      stroke: white;
-    }
-  }
 }
