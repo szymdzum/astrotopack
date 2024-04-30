@@ -1,9 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { className, iconName, buttonText } = Astro.props;
+const { type, className, iconName, buttonText } = Astro.props;
 ---
 
-<button type="button" class={className}>
+<button type={type} class={className}>
   {iconName && <Icon class="icon" name={iconName} />}
   <!-- Isn't that obivious that we mean button text here? -->
   {buttonText}
@@ -16,7 +16,7 @@ const { className, iconName, buttonText } = Astro.props;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-    color: var(--neutral-900);
+    color: var(--neutral-100);
     background-color: var(--primary-100);
     border: 3px solid var(--primary-100);
     border-radius: 3px;
