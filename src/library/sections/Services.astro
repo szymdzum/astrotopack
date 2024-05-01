@@ -6,7 +6,7 @@ import Card from '@components/Card.astro';
 ---
 
 <Section name="services">
-  <div class="header">
+  <div class="header stack">
     <h2>W czym mogę Ci pomóc?</h2>
     <p>
       Wskażę i zweryfikuję działalność Twojej firmy pod kątem zgodności z przepisami ochrony
@@ -16,11 +16,7 @@ import Card from '@components/Card.astro';
 
   <div class="content">
     <div class="services-container">
-      {
-        services.map(({ title, description, icon }) => (
-          <Card title={title} description={description} icon={icon} />
-        ))
-      }
+      {services.map((service) => <Card {...service} />)}
     </div>
   </div>
 </Section>

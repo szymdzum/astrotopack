@@ -1,48 +1,42 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components';
 const currentYear = new Date().getFullYear().toString();
+
+const instagramUrl = 'https://www.instagram.com/puttopack';
 ---
+
 <style lang="scss">
-.footer-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-top: 3rem;
-  font-size: 1rem;
-  border-top: 1px solid #d7d7d7;
-  
-  .social-links {
+  .footer-content {
     display: flex;
-    gap: 0.5rem;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    margin-inline: auto;
+    border-top: 1px solid #d7d7d7;
 
-    [data-icon] {
-      font-size: 2rem;
-      opacity: 0.8;
-    }
+    .social-links {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
 
-    a {
-      display: inline-block;
-      padding: 0.5rem;
-      border-radius: 4px;
+      [data-icon] {
+        font-size: 2rem;
+        opacity: 0.8;
+      }
 
-      &:hover {
-        background-color: #d0d0d0;
-        opacity: 1;
+      a {
+        display: inline-block;
+        padding: 0.5rem;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #d0d0d0;
+          opacity: 1;
+        }
       }
     }
   }
-}
-
-@media (max-width: 600px) {
-  .social-links {
-    flex-direction: column;
-  }
-}
 </style>
 
 <footer>
@@ -51,17 +45,9 @@ const currentYear = new Date().getFullYear().toString();
       <p>© {currentYear} Puttopack.</p>
     </div>
     <div class="social-links">
-      <a href="#" class="social-link">
-        <Icon name="facebook-ico" />
-      </a>
-      <a href="#" class="social-link">
-        <Icon name="linkedin-ico" />
-      </a>
-      <a href="#" class="social-link">
+      <a href={instagramUrl} class="social-link">
         <Icon name="instagram-ico" />
       </a>
     </div>
   </div>
 </footer>
-
-

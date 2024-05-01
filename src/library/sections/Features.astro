@@ -7,7 +7,7 @@ const features = await getEntry('page', 'features');
 ---
 
 <Section name="features">
-  <div class="header">
+  <div class="header stack-sm">
     <h2>Put To Pack</h2>
     <p>Specjalizuje się w takich obszarach jak:</p>
   </div>
@@ -22,7 +22,6 @@ const features = await getEntry('page', 'features');
   .features-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 var(--padding-md);
     --multiplier: calc(40rem - 100%);
   }
 </style>

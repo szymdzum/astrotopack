@@ -1,0 +1,34 @@
+---
+const { menu } = Astro.props;
+---
+
+<nav role="navigation" aria-label="main navigation">
+  <ul>
+    {
+      menu.map(({ link, name }) => (
+        <li>
+          <a href={link}>{name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  nav li {
+    display: inline-block;
+  }
+
+  nav a {
+    display: block;
+    padding: var(--padding-sm);
+    color: var(--color-text);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  nav li > a:focus,
+  nav li > a:hover {
+    background-color: var(--secondary-100);
+  }
+</style>

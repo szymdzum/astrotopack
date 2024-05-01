@@ -6,7 +6,7 @@ import '@fontsource-variable/noto-serif';
 import '@fontsource-variable/rethink-sans';
 import '@fontsource-variable/dm-sans';
 import '@styles/_index.scss';
-import Navbar from '@sections/Navbar.astro';
+import Header from '@sections/Header.astro';
 import Footer from '@sections/Footer.astro';
 
 const PAGE_TITLE = 'Astrotopack';
@@ -21,7 +21,7 @@ const PAGE_TITLE = 'Astrotopack';
     <title>{PAGE_TITLE}</title>
   </head>
   <body>
-    <Navbar />
+    <Header />
     <main>
       <slot />
     </main>
