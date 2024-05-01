@@ -20,7 +20,7 @@
   --neutral-background: var(--neutral-200);
 
   --border-thick: 3px solid var(--neutral-700);
-  --max-section-width: 1040px;
+  --max-section-width: 1200px;
 }
 
 body {
@@ -40,10 +40,63 @@ body {
   footer {
     flex-shrink: 0;
   }
+
+  header,
+  #hero {
+    background-color: var(--primary-100);
+  }
+
+  footer,
+  #contact {
+    background-color: var(--neutral-400);
+  }
 }
 
-pre {
-  padding: 1rem;
-  border-radius: 0.35rem;
-  border: 2px solid var(--action-color);
+.section {
+  margin-inline: auto;
+  container-type: inline-size;
+  padding: var(--padding-md);
+  max-width: var(--max-section-width);
+
+  @include breakpoint(medium) {
+    .header {
+      text-align: center;
+
+      .buttons {
+        justify-content: center;
+      }
+    }
+
+    .feature-item {
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(large) {
+  }
+
+  &.stretch {
+    max-width: 100%;
+  }
+}
+
+/* Layout Primitives */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &-sm > * + * {
+    margin-top: var(--margin-xs);
+  }
+
+  & > * + * {
+    margin-top: var(--margin-sm);
+  }
+
+  &-lg > * + * {
+    margin-top: var(--margin-md);
+  }
 }

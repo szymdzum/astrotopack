@@ -17,8 +17,8 @@ const { type, className, iconName, buttonText } = Astro.props;
     text-decoration: none;
     text-align: center;
     color: var(--neutral-100);
-    background-color: var(--primary-100);
-    border: 3px solid var(--primary-100);
+    background-color: var(--primary-300);
+    border: solid (var(--primary-300));
     border-radius: 3px;
     transition:
       color 0.15s ease-in-out,
@@ -27,8 +27,8 @@ const { type, className, iconName, buttonText } = Astro.props;
 
     &:hover,
     &:focus {
-      background-color: var(--primary-200);
-      border-color: var(--primary-200);
+      background-color: var(--primary-300);
+      border-color: var(--primary-300);
     }
 
     &:visited {
@@ -36,8 +36,8 @@ const { type, className, iconName, buttonText } = Astro.props;
     }
 
     &.color-secondary {
-      background-color: var(--secondary-100);
-      border-color: (var(--secondary-100));
+      background-color: var(--secondary-300);
+      border-color: (var(--secondary-300));
 
       &:hover,
       &:focus {

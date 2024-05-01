@@ -12,18 +12,11 @@ const { imgSrc, title, description } = Astro.props;
 
 <style type="scss">
   .feature-item {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .feature-item {
     display: grid;
     min-width: 33%;
     max-width: 100%;
-    gap: var(--gap-xs);
-    margin-top: var(--margin-xs);
     flex-basis: calc(var(--multiplier) * 999);
+    margin-top: var(--margin-xs);
 
     img {
       opacity: 0.8;

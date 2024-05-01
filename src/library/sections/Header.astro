@@ -1,6 +1,6 @@
 ---
 import Logo from '@components/Logo.astro';
-import NavBar from '@components/NavBar.astro';
+import Navigation from '@components/Navigation.astro';
 
 import { config, menu } from '@config/data.js';
 import logoImg from '/src/assets/images/puttopack_logo.png';
@@ -9,17 +9,13 @@ import logoImg from '/src/assets/images/puttopack_logo.png';
 <header>
   <div class="nav-container">
     <Logo name={config.pageName} imgSrc={logoImg} />
-    <NavBar class="is-capitalized" menu={menu} />
+    <Navigation class="is-capitalized" menu={menu} />
   </div>
 </header>
 
 <style lang="scss">
   header {
-    top: 0;
-    z-index: 100;
-    position: sticky;
     padding: var(--padding-md) var(--padding-sm);
-    background-color: var(--neutral-100);
 
     @media (max-width: 24em) {
       display: none;
