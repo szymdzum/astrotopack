@@ -1,11 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-
 const { imgSrc, title, text } = Astro.props;
 ---
 
 <div class="feature-item">
-  <Image src={imgSrc} alt={title} height="80" width="90" />
+  <img src={imgSrc} alt={title} height="80" width="90" />
   <h3>{title}</h3>
   <p>{text}</p>
 </div>
