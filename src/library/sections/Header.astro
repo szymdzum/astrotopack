@@ -1,21 +1,23 @@
 ---
 import Logo from '@components/Logo.astro';
 import Navigation from '@components/Navigation.astro';
-
-import { config, menu } from '@config/data.js';
 import logoImg from '/src/assets/images/puttopack_logo.png';
+
+import { getEntry } from 'astro:content';
+const headerContent = await getEntry('landing', 'config');
+const { pageName, menu } = headerContent.data;
 ---
 
 <header>
   <div class="nav-container">
-    <Logo name={config.pageName} imgSrc={logoImg} />
+    <Logo name={pageName} imgSrc={logoImg} />
     <Navigation class="is-capitalized" menu={menu} />
   </div>
 </header>
 
 <style lang="scss">
   header {
-    padding: var(--padding-md) var(--padding-sm);
+    padding: var(--padding-md);
 
     @media (max-width: 24em) {
       display: none;

@@ -1,19 +1,20 @@
 ---
 import Section from '@layouts/Section.astro';
 import Feature from '@components/Feature.astro';
-
 import { getEntry } from 'astro:content';
-const features = await getEntry('page', 'features');
+
+const content = await getEntry('landing', 'features');
+const { name, title, subtitle, features } = content.data;
 ---
 
-<Section name="features">
+<Section name={name}>
   <div class="header stack-sm">
-    <h2>Put To Pack</h2>
-    <p>Specjalizuje się w takich obszarach jak:</p>
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
   </div>
   <div class="content">
     <div class="features-container">
-      {features.data.map((feature) => <Feature {...feature} />)}
+      {features.map((feature) => <Feature {...feature} />)}
     </div>
   </div>
 </Section>

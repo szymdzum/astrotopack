@@ -1,11 +1,10 @@
 ---
 import Section from '@layouts/Section.astro';
 import Button from '@components/Button.astro';
-import { type SectionHeader } from '../../content/config';
 import { getEntry } from 'astro:content';
 
-const heroContent = await getEntry('landing', 'hero');
-const { name, title, subtitle }: SectionHeader = heroContent.data;
+const content = await getEntry('landing', 'hero');
+const { name, title, subtitle } = content.data;
 ---
 
 <Section name={name}>
@@ -14,10 +13,10 @@ const { name, title, subtitle }: SectionHeader = heroContent.data;
     <p>{subtitle}</p>
     <div class="buttons">
       <a href="#">
-        <Button buttonText="Usługi" />
+        <Button>Usługi</Button>
       </a>
       <a href="#">
-        <Button className="color-secondary" buttonText="Kontakt" />
+        <Button className="color-secondary">Kontakt</Button>
       </a>
     </div>
   </div>
