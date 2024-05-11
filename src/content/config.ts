@@ -57,21 +57,22 @@ const aboutSection = defineCollection({
 
 const featuresSection = defineCollection({
   type: 'content',
+  schema: z.object({
+    name: z.string(),
+    title: z.string(),
+    subtitle: z.string(),
+  }),
+});
+
+const feature = defineCollection({
+  type: 'data',
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      title: z.string(),
-      subtitle: z.string(),
-      features: z.array(
-        z.object({
-          name: z.string(),
-          description: z.string(),
-          imgSrc: image(),
-        })
-      ),
+      description: z.string(),
+      imgSrc: image(),
     }),
 });
-
 // Services
 const services = z.object({
   name: z.string(),
@@ -108,6 +109,7 @@ export const collections = {
   heroSection,
   aboutSection,
   featuresSection,
+  feature,
   servicesSection,
   contactSection,
 };

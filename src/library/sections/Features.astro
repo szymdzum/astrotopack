@@ -4,7 +4,9 @@ import Feature from '@components/Feature.astro';
 import { getEntry } from 'astro:content';
 
 const content = await getEntry('landing', 'features');
-const { name, title, subtitle, features } = content.data;
+const features = await getEntry('features', 'features');
+
+const { name, title, subtitle } = content.data;
 ---
 
 <Section name={name}>
@@ -14,7 +16,7 @@ const { name, title, subtitle, features } = content.data;
   </div>
   <div class="content">
     <div class="features-container">
-      {features.map((feature) => <Feature {...feature} />)}
+      {features.data.map((feature) => <Feature {...feature} />)}
     </div>
   </div>
 </Section>

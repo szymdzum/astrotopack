@@ -1,17 +1,17 @@
 [
   {
     "title": "Opakowania",
-    "description": "Opakowania i Produkty Opakowane z Własnym Brandingiem.",
+    "text": "Opakowania z Własnym Brandingiem.",
     "imgSrc": "/src/assets/images/box.png"
   },
   {
     "title": "Elektronika",
-    "description": "Urządzenia Elektryczne i Elektroniczne, Baterie oraz Akumulatory.",
+    "text": "Urządzenia Elektryczne, Elektroniczne oraz Akumulatory.",
     "imgSrc": "/src/assets/images/battery.png"
   },
   {
     "title": "Specjalistyczne",
-    "description": "Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne.",
+    "text": "Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne.",
     "imgSrc": "/src/assets/images/barrel.png"
   }
 ]
