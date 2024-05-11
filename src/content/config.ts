@@ -21,12 +21,6 @@ const hero = z.object({
   name: z.string(),
   title: z.string(),
   subtitle: z.string(),
-  cta: z.array(
-    z.object({
-      name: z.string(),
-      href: z.string(),
-    })
-  ),
 });
 
 const heroSection = defineCollection({
@@ -110,10 +104,10 @@ const contactSection = defineCollection({
 export type AboutMe = z.infer<typeof about>;
 
 export const collections = {
-  siteConfig: siteConfig,
-  heroSection: heroSection,
-  aboutSection: aboutSection,
-  landing: featuresSection,
-  servicesSection: servicesSection,
-  contactSection: contactSection,
+  siteConfig,
+  heroSection,
+  aboutSection,
+  featuresSection,
+  servicesSection,
+  contactSection,
 };
