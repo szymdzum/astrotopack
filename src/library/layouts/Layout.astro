@@ -1,4 +1,5 @@
 ---
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '@fontsource/inter';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/400.css';
@@ -26,5 +27,6 @@ const PAGE_TITLE = 'Astrotopack';
       <slot />
     </main>
     <Footer />
+    <SpeedInsights />
   </body>
 </html>

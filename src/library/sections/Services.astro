@@ -1,17 +1,17 @@
 ---
-import { services } from '@config/data.js';
-
 import Section from '@layouts/Section.astro';
 import Card from '@components/Card.astro';
+
+import { getEntry } from 'astro:content';
+const servicesContent = await getEntry('landing', 'services');
+
+const { name, title, subtitle, services } = await servicesContent.data;
 ---
 
-<Section name="services">
+<Section name={name}>
   <div class="header stack">
-    <h2>W czym mogę Ci pomóc?</h2>
-    <p>
-      Wskażę i zweryfikuję działalność Twojej firmy pod kątem zgodności z przepisami ochrony
-      środowiska
-    </p>
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
   </div>
 
   <div class="content">

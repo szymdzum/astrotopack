@@ -5,9 +5,9 @@ const { menu } = Astro.props;
 <nav role="navigation" aria-label="main navigation">
   <ul>
     {
-      menu.map(({ link, name }) => (
+      menu.map(({ link, text }) => (
         <li>
-          <a href={link}>{name}</a>
+          <a href={link}>{text}</a>
         </li>
       ))
     }

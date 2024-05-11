@@ -1,31 +1,113 @@
 import { z, defineCollection } from 'astro:content';
 
-const sectionHeader = z.object({
+// Page Config
+const config = z.object({
+  pageName: z.string(),
+  menu: z.array(
+    z.object({
+      name: z.string(),
+      href: z.string(),
+    })
+  ),
+});
+
+const siteConfig = defineCollection({
+  type: 'content',
+  schema: config,
+});
+
+// Hero Section
+const hero = z.object({
   name: z.string(),
   title: z.string(),
   subtitle: z.string(),
 });
 
-const features = defineCollection({
-  type: 'data',
-  schema: ({ image }) =>
-    z.array(
-      z.object({
-        title: z.string(),
-        description: z.string(),
-        imgSrc: image(),
-      })
-    ),
-});
-
-export type SectionHeader = z.infer<typeof sectionHeader>;
-
-const sections = defineCollection({
+const heroSection = defineCollection({
   type: 'content',
-  schema: sectionHeader,
+  schema: hero,
 });
+
+// About Me
+const about = z.object({
+  name: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+  paragraphs: z.array(z.string()),
+});
+
+const aboutSection = defineCollection({
+  type: 'content',
+  schema: about,
+});
+
+// Features
+// const features = z.object({
+//   name: z.string(),
+//   title: z.string(),
+//   subtitle: z.string(),
+//   features: z.array(
+//     z.object({
+//       name: z.string(),
+//       description: z.string(),
+//       imgSrc: image(),
+//     })
+//   ),
+// });
+
+const featuresSection = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      title: z.string(),
+      subtitle: z.string(),
+      features: z.array(
+        z.object({
+          name: z.string(),
+          description: z.string(),
+          imgSrc: image(),
+        })
+      ),
+    }),
+});
+
+// Services
+const services = z.object({
+  name: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+  services: z.array(
+    z.object({
+      name: z.string(),
+      description: z.string(),
+    })
+  ),
+});
+
+const servicesSection = defineCollection({
+  type: 'content',
+  schema: services,
+});
+
+const contact = z.object({
+  name: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+});
+
+const contactSection = defineCollection({
+  type: 'content',
+  schema: contact,
+});
+
+export type AboutMe = z.infer<typeof about>;
 
 export const collections = {
-  page: features,
-  landing: sections,
+  siteConfig,
+  heroSection,
+  aboutSection,
+  featuresSection,
+  servicesSection,
+  contactSection,
 };

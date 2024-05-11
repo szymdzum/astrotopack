@@ -1,15 +1,16 @@
 ---
 import Section from '@layouts/Section.astro';
 import ContactForm from '@components/ContactForm.astro';
+import { getEntry } from 'astro:content';
+
+const content = await getEntry('landing', 'contact');
+const { name, title, subtitle } = content.data;
 ---
 
-<Section name="contact">
+<Section name={name}>
   <div class="header stack-sm">
-    <h2>Kontakt</h2>
-    <p>
-      Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej
-      marki.
-    </p>
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
   </div>
 
   <div class="content">

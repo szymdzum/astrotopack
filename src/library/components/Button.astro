@@ -1,12 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { type, className, iconName, buttonText } = Astro.props;
+const { type, className, iconName } = Astro.props;
 ---
 
 <button type={type} class={className}>
   {iconName && <Icon class="icon" name={iconName} />}
   <!-- Isn't that obivious that we mean button text here? -->
-  {buttonText}
+  <slot />
 </button>
 
 <style is:global type="text/scss">
