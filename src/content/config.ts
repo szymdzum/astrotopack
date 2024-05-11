@@ -113,7 +113,7 @@ export const collections = {
   siteConfig: siteConfig,
   heroSection: heroSection,
   aboutSection: aboutSection,
-  featuresSection: featuresSection,
+  landing: featuresSection,
   servicesSection: servicesSection,
   contactSection: contactSection,
 };
