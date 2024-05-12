@@ -8,18 +8,9 @@ const { name, title, subtitle, paragraphs } = await content.data;
 ---
 
 <Section name={name}>
-  <div class="header">
-    <p>{subtitle}</p>
-  </div>
-
   <div class="content">
     <div class="flex-container">
-      <div class="column stack-sm">
-        <h2>{title}</h2>
-        <p>{paragraphs[0]}</p>
-        <Button>Dowiedz się więcej</Button>
-      </div>
-      <div class="column">
+      <div class="column image-container">
         <img
           alt="Ekspertka w dziedzinie ochrony środowiska"
           class="placeholder"
@@ -27,6 +18,12 @@ const { name, title, subtitle, paragraphs } = await content.data;
           src="/placeholder.svg"
           width="600"
         />
+      </div>
+
+      <div class="column stack-sm">
+        <h2>{title}</h2>
+        <p>{paragraphs[0]}</p>
+        <Button>Dowiedz się więcej</Button>
       </div>
     </div>
 
@@ -48,20 +45,33 @@ const { name, title, subtitle, paragraphs } = await content.data;
     </div>
   </div>
   <style lang="scss">
+    @import '@styles/_layout.scss';
+
     .flex-container {
       display: flex;
       justify-content: space-between;
-      margin-top: var(--margin-lg);
-    }
+      flex-direction: column;
+      margin-top: var(--margin-md);
 
-    .column {
-      flex: 1;
-      margin: 0 1rem;
-    }
+      @include breakpoint(large) {
+        flex-direction: row;
 
-    .placeholder {
-      object-fit: cover;
-      aspect-ratio: 6/4 auto;
+        .image-container {
+          order: 2;
+        }
+      }
+
+      .column {
+        flex: 1;
+        margin: 0 1rem;
+      }
+
+      .placeholder {
+        object-fit: cover;
+        aspect-ratio: 6/4 auto;
+        max-width: 100%;
+        height: auto;
+      }
     }
   </style>
 </Section>

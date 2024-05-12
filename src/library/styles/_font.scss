@@ -1,10 +1,10 @@
 body {
-  font-family: 'DM Sans Variable', sans-serif;
+  font-family: 'Inter', sans-serif;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility;
   font-synthesis: none;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5;
   text-wrap: balance;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +32,7 @@ body {
     word-break: break-word;
   }
 
-  :where(h1, h2) {
+  :where(h1, h2, h3) {
     font-family: 'Rethink Sans Variable', sans-serif;
   }
 
@@ -50,62 +50,31 @@ body {
 
   h1 {
     font-size: 2.25rem;
-    line-height: 3.275rem;
 
     @include breakpoint(medium) {
       font-size: 3.75rem;
-      line-height: 3.625rem;
     }
   }
 
   h2 {
     font-size: 1.875rem;
-    line-height: 2.5125rem;
 
     @include breakpoint(medium) {
       font-size: 2.25rem;
-      line-height: 3.375rem;
     }
   }
 
   h3 {
     font-size: 1.5rem;
-    line-height: 2.25rem;
 
     @include breakpoint(medium) {
       font-size: 1.875rem;
-      line-height: 2.8125rem;
     }
   }
 
-  h4 {
-    font-size: 1.25rem;
-    line-height: 1.875rem;
-
-    @include breakpoint(medium) {
-      font-size: 1.5rem;
-      line-height: 2.25rem;
-    }
-  }
-
-  h5 {
-    font-size: 1.125rem;
-    line-height: 1.6875rem;
-
-    @include breakpoint(medium) {
-      font-size: 1.25rem;
-      line-height: 1.875rem;
-      h6 {
-        font-size: 1rem;
-      }
-    }
-
-    line-height: 1.5rem;
-
-    @include breakpoint(medium) {
-      font-size: 1.125rem;
-      line-height: 1.6875rem;
-    }
+  .header p {
+    font-size: calc(100% + 0.35vw);
+    color: var(--neutral-700);
   }
 
   .is-capitalized {
