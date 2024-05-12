@@ -41,35 +41,13 @@ const aboutSection = defineCollection({
   schema: about,
 });
 
-// Features
-// const features = z.object({
-//   name: z.string(),
-//   title: z.string(),
-//   subtitle: z.string(),
-//   features: z.array(
-//     z.object({
-//       name: z.string(),
-//       description: z.string(),
-//       imgSrc: image(),
-//     })
-//   ),
-// });
-
 const featuresSection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
-      name: z.string(),
-      title: z.string(),
-      subtitle: z.string(),
-      features: z.array(
-        z.object({
-          name: z.string(),
-          description: z.string(),
-          imgSrc: image(),
-        })
-      ),
-    }),
+  schema: z.object({
+    name: z.string(),
+    title: z.string(),
+    subtitle: z.string(),
+  }),
 });
 
 // Services
