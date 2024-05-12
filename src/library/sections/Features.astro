@@ -4,9 +4,25 @@ import Feature from '@components/Feature.astro';
 import { getEntry } from 'astro:content';
 
 const content = await getEntry('landing', 'features');
-const features = await getEntry('features', 'features');
-
 const { name, title, subtitle } = content.data;
+
+const features = [
+  {
+    title: 'Opakowania',
+    text: 'Opakowania z Własnym Brandingiem.',
+    imgSrc: '/src/assets/images/box.png',
+  },
+  {
+    title: 'Elektronika',
+    text: 'Urządzenia Elektryczne, Elektroniczne oraz Akumulatory.',
+    imgSrc: '/src/assets/images/battery.png',
+  },
+  {
+    title: 'Specjalistyczne',
+    text: 'Zużyte Oleje, Opony, Środki Smarowe i Specjalistyczne.',
+    imgSrc: '/src/assets/images/barrel.png',
+  },
+];
 ---
 
 <Section name={name}>
@@ -16,7 +32,7 @@ const { name, title, subtitle } = content.data;
   </div>
   <div class="content">
     <div class="features-container">
-      {features.data.map((feature) => <Feature {...feature} />)}
+      {features.map((feature) => <Feature {...feature} />)}
     </div>
   </div>
 </Section>
