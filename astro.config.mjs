@@ -6,6 +6,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   output: 'static',
   adapter: vercel({
+    imageService: true,
     webAnalytics: {
       enabled: true,
     },
