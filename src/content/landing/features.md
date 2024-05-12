@@ -1,5 +1,5 @@
 ---
 name: 'features'
-title: 'Put To Pack'
-subtitle: 'Specjalizuje się w takich obszarach jak:'
+title: 'Cześć! Jestem Zuza'
+subtitle: 'Od ponad 5 lat zajmuję się ochroną środowiska, ze szczególnym uwzględnieniem obszaru związanego z identyfikacją i wprowadzaniem  na rynek:'
 ---

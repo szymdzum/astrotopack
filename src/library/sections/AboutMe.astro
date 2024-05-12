@@ -1,5 +1,6 @@
 ---
 import Section from '@layouts/Section.astro';
+import Button from '@components/Button.astro';
 import { getEntry } from 'astro:content';
 
 const content = await getEntry('landing', 'about');
@@ -7,16 +8,60 @@ const { name, title, subtitle, paragraphs } = await content.data;
 ---
 
 <Section name={name}>
-  <div class="header stack-sm">
-    <h2>{title}</h2>
+  <div class="header">
     <p>{subtitle}</p>
   </div>
 
-  {
-    paragraphs.map((paragraph) => (
-      <div class="content">
-        <p>{paragraph}</p>
+  <div class="content">
+    <div class="flex-container">
+      <div class="column stack-sm">
+        <h2>{title}</h2>
+        <p>{paragraphs[0]}</p>
+        <Button>Dowiedz się więcej</Button>
       </div>
-    ))
-  }
+      <div class="column">
+        <img
+          alt="Ekspertka w dziedzinie ochrony środowiska"
+          class="placeholder"
+          height="400"
+          src="/placeholder.svg"
+          width="600"
+        />
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="column">
+        <img
+          alt="Ekspertka w dziedzinie ochrony środowiska"
+          class="placeholder"
+          height="400"
+          src="/placeholder.svg"
+          width="600"
+        />
+      </div>
+      <div class="column stack-sm">
+        <h2>{subtitle}</h2>
+        <p>{paragraphs[1]}</p>
+        <Button>Skontaktuj się</Button>
+      </div>
+    </div>
+  </div>
+  <style lang="scss">
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--margin-lg);
+    }
+
+    .column {
+      flex: 1;
+      margin: 0 1rem;
+    }
+
+    .placeholder {
+      object-fit: cover;
+      aspect-ratio: 6/4 auto;
+    }
+  </style>
 </Section>
