@@ -20,6 +20,7 @@
     "astro": "^4.8.2",
     "astro-icon": "^1.1.0",
     "install": "^0.13.0",
+    "sharp": "^0.33.3",
     "typescript-esbuild": "^0.3.10"
   },
   "devDependencies": {
