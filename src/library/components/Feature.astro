@@ -12,10 +12,13 @@ const { imgSrc, title, text } = Astro.props;
 <style type="scss">
   .feature-item {
     display: grid;
-    min-width: 33%;
+    min-width: 28%;
     max-width: 100%;
     flex-basis: calc(var(--multiplier) * 999);
-    margin-top: var(--margin-xs);
+    margin: var(--margin-xs);
+    padding: var(--padding-xs);
+    background-color: var(--background);
+    border: var(--border-thin);
 
     img {
       opacity: 0.8;
