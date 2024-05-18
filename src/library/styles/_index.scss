@@ -15,13 +15,14 @@
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
 
+  --border-thin: 1px solid var(--neutral-600);
   --border-thick: 3px solid var(--neutral-700);
   --max-section-width: 1200px;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  overflow: visible;
   color: var(--font-color);
   background-color: var(--background);
 
@@ -29,9 +30,6 @@ body {
     text-decoration: none;
   }
 
-  main {
-    flex: 1 0 auto;
-  }
 
   #hero {
     height: 35vh;

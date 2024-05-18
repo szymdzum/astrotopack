@@ -19,7 +19,13 @@ const { pageName, menu } = headerContent.data;
 
 <style lang="scss">
   header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--background);
     padding: var(--padding-sm) var(--padding-md);
+
+    border-bottom: var(--border-thin);
 
     @media (max-width: 24em) {
       display: none;

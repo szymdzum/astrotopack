@@ -23,12 +23,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
 
     <div class="flex-container">
       <div class="column">
-        <img
-          alt="Ekspertka w dziedzinie ochrony środowiska"
-          height="400"
-          src="/about_img_2.png"
-          width="600"
-        />
+        <img alt="Ekspertka w dziedzinie ochrony środowiska" src="/about_img_2.png" />
       </div>
       <div class="column stack-sm">
         <h2>{subtitle}</h2>
@@ -44,7 +39,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
-      margin-top: var(--margin-md);
+      margin-top: var(--margin-lg);
 
       @include breakpoint(large) {
         flex-direction: row;
@@ -59,7 +54,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
         margin: 0 1rem;
       }
 
-      .img {
+      img {
         object-fit: cover;
         aspect-ratio: 6/4 auto;
         max-width: 100%;

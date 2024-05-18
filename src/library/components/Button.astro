@@ -15,11 +15,10 @@ const { type, className, iconName } = Astro.props;
   button {
     display: inline-block;
     padding: 0.75rem 1rem;
-
     text-align: center;
     color: var(--neutral-100);
     background-color: var(--primary-500);
-    border: 1px solid var(--neutral-900);
+
     border-radius: 3px;
     transition:
       color 0.15s ease-in-out,
@@ -29,16 +28,16 @@ const { type, className, iconName } = Astro.props;
     &:hover,
     &:focus {
       background-color: var(--primary-400);
-      border-color: var(--primary-300);
+      border-color: var(--neutral-900);
     }
 
     &.color-secondary {
-      background-color: var(--secondary-500);
+      background-color: var(--complementary-300);
       border-color: (var(--secondary-500));
 
       &:hover,
       &:focus {
-        background-color: var(--secondary-400);
+        background-color: var(--complementary-200);
         border-color: var(--secondary-400);
       }
     }
