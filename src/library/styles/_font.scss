@@ -11,9 +11,13 @@ body {
   -webkit-font-smoothing: antialiased;
 
   p,
-  .button,
-  nav {
+  nav,
+  .button {
     font-size: calc(100% + 0.25vw);
+  }
+
+  .header p {
+    font-size: calc(100% + 0.35vw);
   }
 
   a:not(.button, .menu a, .logo) {
@@ -47,7 +51,7 @@ body {
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   h1 {
@@ -62,7 +66,7 @@ body {
     font-size: 1.875rem;
 
     @include breakpoint(medium) {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       line-height: 2.6rem;
     }
   }
@@ -79,10 +83,6 @@ body {
     font-family: 'Rethink Sans Variable', sans-serif;
   }
 
-  .header p {
-    font-size: calc(100% + 0.35vw);
-    color: var(--neutral-700);
-  }
 
   .is-capitalized {
     text-transform: uppercase;

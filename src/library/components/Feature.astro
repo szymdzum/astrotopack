@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 const { imgSrc, title, text } = Astro.props;
 ---
 
-<div class="feature-item">
+<div class="feature-item stack-sm">
   <Image src={imgSrc} alt={title} height="90" width="90" />
   <h3>{title}</h3>
   <p>{text}</p>

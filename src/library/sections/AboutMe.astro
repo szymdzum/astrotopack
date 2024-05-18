@@ -38,25 +38,38 @@ const { name, title, subtitle, paragraphs } = await content.data;
     .flex-container {
       display: flex;
       justify-content: space-between;
-      margin-top: var(--margin-lg);
+      flex-direction: column;
+      margin-top: var(--margin-sm);
       gap: var(--gap-md);
 
       .column {
         flex: 1;
       }
 
+      .image-container {
+        order: -1;
+      }
+
       img {
-        object-fit: cover;
-        max-width: 90%;
-        height: auto;
-        border-radius: var(--radius-md);
+        border-radius: 1rem;
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+        width: 50%;
       }
 
       @include breakpoint(large) {
         flex-direction: row;
 
+        &:nth-child(2) {
+          margin-top: var(--margin-lg);
+        }
+
         .image-container {
           order: 2;
+        }
+
+        img {
+          width: 100%;
         }
       }
     }

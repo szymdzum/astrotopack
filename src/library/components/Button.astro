@@ -25,13 +25,15 @@ const { href, type, className, iconName } = Astro.props;
   .button {
     display: inline-flex;
     text-align: center;
-    color: var(--neutral-100);
+    color: var(--neutral-900);
+    background-color: var(--primary-300);
     gap: var(--gap-sm);
-    background-color: var(--primary-500);
     padding-block: var(--padding-sm);
     padding-inline: var(--padding-md);
-    border-radius: var(--radius-sm);
-    font-weight: 600;
+    border-radius: var(--radius-xxl);
+    border: var(--border-thin);
+
+    font-weight: 800;
     padding: 1.5ch 2ch;
 
     transition:
@@ -40,23 +42,17 @@ const { href, type, className, iconName } = Astro.props;
       border-color 0.15s ease-in-out;
 
     &:is(:hover, :focus) {
-      background-color: var(--primary-400);
-      border-color: var(--neutral-900);
+      transform: translateY(-4px) translateX(-2px);
+      box-shadow: 2px 5px 0 0 black;
     }
 
     &:where(button):where(:not(:active)):focus-visible {
       outline-offset: 5px;
     }
 
-    &.color-secondary {
-      background-color: var(--secondary-400);
-      border-color: (var(--secondary-500));
-
-      &:hover,
-      &:focus {
-        background-color: var(--secondary-300);
-        border-color: var(--secondary-400);
-      }
+    &.secondary {
+      background-color: var(--secondary-300);
+      border: var(--border-thin);
     }
 
     &.size-small {
@@ -91,8 +87,9 @@ const { href, type, className, iconName } = Astro.props;
       gap: 0.5rem;
 
       [data-icon] {
+        font-size: 3ch;
         flex-shrink: 0;
-        fill: none;
+
         stroke-linecap: round;
         stroke-linejoin: round;
       }
@@ -100,9 +97,11 @@ const { href, type, className, iconName } = Astro.props;
   }
 
   .email {
-    background-color: hsl(211, 100%, 43%);
-    &:hover {
-      background-color: hsl(207.8, 55.41%, 29.02%);
+    background-color: hsl(190, 72.41%, 65.88%);
+    color: var(--neutral-800);
+
+    svg {
+      color: var(--neutral-800);
     }
   }
 

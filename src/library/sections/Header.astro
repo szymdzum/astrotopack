@@ -12,7 +12,7 @@ const { pageName, menu } = headerContent.data;
 <header>
   <div class="nav-container">
     <Logo name={pageName} imgSrc={logoImg} />
-    <Navigation class="is-capitalized" menu={menu} />
+    <Navigation menu={menu} />
     <SocialLinks />
   </div>
 </header>
@@ -23,13 +23,15 @@ const { pageName, menu } = headerContent.data;
     top: 0;
     z-index: 100;
     background-color: var(--background);
+    border-bottom: var(--border-thin);
+    padding-top: var(--padding-xs);
 
     .nav-container {
       display: flex;
       align-items: center;
       margin-inline: auto;
       justify-content: space-between;
-      padding: var(--padding-sm);
+      padding: var(--padding-xs);
       max-width: var(--max-section-width);
     }
 

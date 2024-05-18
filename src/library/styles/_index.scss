@@ -7,19 +7,21 @@
 
 :root {
   --font-color: var(--neutral-900);
-  --background: var(--neutral-100);
+  --background: var(--primary-100);
 
-  --action-color: var(--neutral-700);
+  --action-color: var(--neutral-900);
   --action-color-state: var(--primary-500);
 
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
 
-  --border-thin: 1px solid var(--neutral-600);
-  --border-thick: 3px solid var(--neutral-700);
+  --border-thin: 0.25vmin solid #05060f;
+  --border: 0.5vmin solid hsl(234, 50%, 4%);
+  --box-shadow: 0.4rem 0.4rem #05060f;
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
+  --radius-xxl: 10em;
 
   --max-section-width: 1200px;
 }
@@ -35,17 +37,20 @@ body {
   }
 
   #hero {
-    height: 40vh;
+    background-color: var(--complementary-400);
+    border-bottom: var(--border);
   }
 
   #about {
-    background-color: var(--neutral-200);
+    border-top: var(--border-thin);
+    background-color: var(--primary-200);
+    border-bottom: var(--border);
   }
 
-  footer,
   #contact {
-    background-color: var(--neutral-300);
+    padding: var(--padding-lg) var(--padding-lg);
   }
+
 }
 
 .section {
