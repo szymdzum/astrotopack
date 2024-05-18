@@ -17,7 +17,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
       <div class="column stack-sm">
         <h2>{title}</h2>
         <p>{paragraphs[0]}</p>
-        <Button>Dowiedz się więcej</Button>
+        <Button href="#services">Dowiedz się więcej</Button>
       </div>
     </div>
 
@@ -28,7 +28,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
       <div class="column stack-sm">
         <h2>{subtitle}</h2>
         <p>{paragraphs[1]}</p>
-        <Button>Skontaktuj się</Button>
+        <Button href="#contact">Skontaktuj się</Button>
       </div>
     </div>
   </div>
@@ -39,27 +39,38 @@ const { name, title, subtitle, paragraphs } = await content.data;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
-      margin-top: var(--margin-lg);
+      margin-top: var(--margin-sm);
+      gap: var(--gap-md);
+
+      .column {
+        flex: 1;
+      }
+
+      .image-container {
+        order: -1;
+      }
+
+      img {
+        border-radius: 1rem;
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+        width: 50%;
+      }
 
       @include breakpoint(large) {
         flex-direction: row;
 
+        &:nth-child(2) {
+          margin-top: var(--margin-lg);
+        }
+
         .image-container {
           order: 2;
         }
-      }
 
-      .column {
-        flex: 1;
-        margin: 0 1rem;
-      }
-
-      img {
-        object-fit: cover;
-        aspect-ratio: 6/4 auto;
-        max-width: 100%;
-        height: auto;
-        border-radius: 1rem;
+        img {
+          width: 100%;
+        }
       }
     }
   </style>

@@ -7,16 +7,22 @@
 
 :root {
   --font-color: var(--neutral-900);
-  --background: var(--neutral-100);
+  --background: var(--primary-100);
 
-  --action-color: var(--neutral-700);
+  --action-color: var(--neutral-900);
   --action-color-state: var(--primary-500);
 
   --primary-background: var(--primary-100);
   --neutral-background: var(--neutral-200);
 
-  --border-thin: 1px solid var(--neutral-600);
-  --border-thick: 3px solid var(--neutral-700);
+  --border-thin: 0.25vmin solid #05060f;
+  --border: 0.5vmin solid hsl(234, 50%, 4%);
+  --box-shadow: 0.4rem 0.4rem #05060f;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-xxl: 10em;
+
   --max-section-width: 1200px;
 }
 
@@ -30,19 +36,29 @@ body {
     text-decoration: none;
   }
 
-
   #hero {
-    height: 35vh;
+    border-bottom: var(--border-thin);
+  }
+
+  #features {
+    background: hsl(30.43, 83.13%, 83.73%);
   }
 
   #about {
-    background-color: var(--neutral-200);
+    border-top: var(--border-thin);
+    background-color: var(--primary-200);
+    border-bottom: var(--border);
   }
 
-  footer,
-  #contact {
-    background-color: var(--neutral-300);
+
+  footer {
+    background: radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
+    background-size: 2em 2em;
+    background-color: var(--background);
+    opacity: 1;
+    height: 25vh;
   }
+
 }
 
 .section {
@@ -80,17 +96,25 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  &-sm>*+* {
-    margin-top: var(--margin-xs);
+  >*+* {
+    margin-top: var(--margin-sm);
   }
 
-  &>*+* {
-    margin-top: var(--margin-sm);
+  &-sm>*+* {
+    margin-top: var(--margin-xs);
   }
 
   &-lg>*+* {
     margin-top: var(--margin-md);
   }
+}
+
+// create a class that centers both horizontaly and vertically 
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons {

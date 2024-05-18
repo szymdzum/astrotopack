@@ -5,19 +5,13 @@ const currentYear = new Date().getFullYear().toString();
 <style lang="scss">
   .footer-content {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: var(--padding-lg);
     margin-inline: auto;
-    border-top: 1px solid #d7d7d7;
   }
 </style>
 
 <footer>
-  <div class="footer-content">
-    <div class="copyright">
-      <p>© {currentYear} Puttopack.</p>
-    </div>
-  </div>
+  <div class="footer-content"></div>
 </footer>

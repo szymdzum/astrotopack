@@ -1,106 +1,58 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { type, className, iconName } = Astro.props;
+const { href, type, className, iconName } = Astro.props;
 ---
 
-<button type={type} class={className}>
-  {iconName && <Icon class="icon" name={iconName} />}
-  <!-- Isn't that obivious that we mean button text here? -->
-  <span>
-    <slot />
-  </span>
-</button>
+{
+  href ? (
+    <a class={`button ${className}`} href={href}>
+      {iconName && <Icon class="icon" name={iconName} />}
+      <span>
+        <slot />
+      </span>
+    </a>
+  ) : (
+    <button type={type} class={`button ${className}`}>
+      {iconName && <Icon class="icon" name={iconName} />}
+      <span>
+        <slot />
+      </span>
+    </button>
+  )
+}
 
-<style is:global type="text/scss">
-  button {
-    display: inline-block;
-    padding: 0.75rem 1rem;
+<style lang="scss">
+  .button {
+    display: inline-flex;
     text-align: center;
-    color: var(--neutral-100);
-    background-color: var(--primary-500);
+    color: var(--neutral-900);
+    background-color: var(--primary-300);
+    gap: var(--gap-sm);
+    padding-block: var(--padding-sm);
+    padding-inline: var(--padding-md);
+    border-radius: var(--radius-xxl);
+    border: var(--border-thin);
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 1.5ch 2ch;
 
-    border-radius: 3px;
     transition:
       color 0.15s ease-in-out,
       background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out;
 
-    &:hover,
-    &:focus {
-      background-color: var(--primary-400);
-      border-color: var(--neutral-900);
+    &:is(:hover, :focus) {
+      transform: translateY(-4px) translateX(-2px);
+      box-shadow: 2px 5px 0 0 black;
     }
 
-    &.color-secondary {
-      background-color: var(--complementary-300);
-      border-color: (var(--secondary-500));
-
-      &:hover,
-      &:focus {
-        background-color: var(--complementary-200);
-        border-color: var(--secondary-400);
-      }
+    &:where(button):where(:not(:active)):focus-visible {
+      outline-offset: 5px;
     }
 
-    &.color-neutral {
-      background-color: var(--neutral-500);
-      border-color: (var(--neutral-500));
-
-      &:hover,
-      &:focus {
-        background-color: var(--neutral-400);
-        border-color: var(--neutral-400);
-      }
-    }
-
-    &.color-info {
-      background-color: var(--info-300);
-      border-color: (var(--info-300));
-
-      &:hover,
-      &:focus {
-        background-color: var(--info-200);
-        border-color: var(--info-200);
-      }
-    }
-
-    &.color-success {
-      background-color: var(--success-400);
-      border-color: (var(--success-400));
-
-      &:hover,
-      &:focus {
-        background-color: var(--success-300);
-        border-color: var(--success-300);
-      }
-    }
-
-    &.color-warning {
-      background-color: var(--warning-400);
-      border-color: (var(--warning-400));
-
-      &:hover,
-      &:focus {
-        background-color: var(--warning-300);
-        border-color: var(--warning-300);
-      }
-    }
-
-    &.color-error {
-      background-color: var(--error-300);
-      border-color: (var(--error-300));
-
-      &:hover,
-      &:focus {
-        background-color: var(--error-200);
-        border-color: var(--error-200);
-      }
-    }
-
-    &.size-tiny {
-      padding: 0.125rem 0.25rem;
-      font-size: 0.75rem;
-      line-height: 1.125rem;
+    &.secondary {
+      background-color: var(--secondary-300);
+      border: var(--border-thin);
     }
 
     &.size-small {
@@ -113,12 +65,6 @@ const { type, className, iconName } = Astro.props;
       padding: 0.75rem 1rem;
       font-size: 1.125rem;
       line-height: 1.6875rem;
-    }
-
-    &.size-huge {
-      padding: 1rem 2rem;
-      font-size: 1.25rem;
-      line-height: 1.875rem;
     }
 
     &.behavior-full {
@@ -141,27 +87,21 @@ const { type, className, iconName } = Astro.props;
       gap: 0.5rem;
 
       [data-icon] {
-        height: auto;
-        width: 30px;
+        font-size: 3ch;
+        flex-shrink: 0;
+
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
     }
   }
 
-  .darkmode .button.type-secondary {
-    color: var(--neutral-100);
-  }
-
   .email {
-    background-color: hsl(207.8, 55.41%, 29.02%);
-    &:hover {
-      background-color: #0069d9;
-    }
-  }
+    background-color: hsl(190, 72.41%, 65.88%);
+    color: var(--neutral-800);
 
-  .phone {
-    background-color: #28a745;
-    &:hover {
-      background-color: #218838;
+    svg {
+      color: var(--neutral-800);
     }
   }
 
