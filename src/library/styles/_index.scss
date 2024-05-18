@@ -6,14 +6,10 @@
 @import './_font';
 
 :root {
-  --radius-small: 3px;
-  --radius-large: 6px;
-  --font-measure: 70ch;
-
   --font-color: var(--neutral-900);
   --background: var(--neutral-100);
 
-  --action-color: var(--primary-300);
+  --action-color: var(--neutral-700);
   --action-color-state: var(--primary-500);
 
   --primary-background: var(--primary-100);
@@ -37,34 +33,33 @@ body {
     flex: 1 0 auto;
   }
 
-  footer {
-    flex-shrink: 0;
+  #hero {
+    height: 35vh;
   }
 
-  header,
-  #hero {
-    background-color: var(--primary-100);
+  #about {
+    background-color: var(--neutral-200);
   }
 
   footer,
   #contact {
-    background-color: var(--neutral-400);
+    background-color: var(--neutral-300);
   }
 }
 
 .section {
   margin-inline: auto;
   container-type: inline-size;
-  padding: var(--padding-md);
+  padding: var(--padding-lg) var(--padding-md);
   max-width: var(--max-section-width);
 
   @include breakpoint(medium) {
     .header {
       text-align: center;
+    }
 
-      .buttons {
-        justify-content: center;
-      }
+    .buttons {
+      justify-content: center;
     }
 
     .feature-item {
@@ -73,8 +68,7 @@ body {
     }
   }
 
-  @include breakpoint(large) {
-  }
+  @include breakpoint(large) {}
 
   &.stretch {
     max-width: 100%;
@@ -88,15 +82,21 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  &-sm > * + * {
+  &-sm>*+* {
     margin-top: var(--margin-xs);
   }
 
-  & > * + * {
+  &>*+* {
     margin-top: var(--margin-sm);
   }
 
-  &-lg > * + * {
+  &-lg>*+* {
     margin-top: var(--margin-md);
   }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
 }

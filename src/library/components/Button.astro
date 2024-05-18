@@ -6,19 +6,20 @@ const { type, className, iconName } = Astro.props;
 <button type={type} class={className}>
   {iconName && <Icon class="icon" name={iconName} />}
   <!-- Isn't that obivious that we mean button text here? -->
-  <slot />
+  <span>
+    <slot />
+  </span>
 </button>
 
 <style is:global type="text/scss">
   button {
     display: inline-block;
     padding: 0.75rem 1rem;
-    font-weight: bold;
-    text-decoration: none;
+
     text-align: center;
     color: var(--neutral-100);
-    background-color: var(--primary-300);
-    border: solid (var(--primary-300));
+    background-color: var(--primary-500);
+    border: 1px solid var(--neutral-900);
     border-radius: 3px;
     transition:
       color 0.15s ease-in-out,
@@ -27,17 +28,13 @@ const { type, className, iconName } = Astro.props;
 
     &:hover,
     &:focus {
-      background-color: var(--primary-300);
+      background-color: var(--primary-400);
       border-color: var(--primary-300);
     }
 
-    &:visited {
-      color: var(--neutral-900);
-    }
-
     &.color-secondary {
-      background-color: var(--secondary-300);
-      border-color: (var(--secondary-300));
+      background-color: var(--secondary-500);
+      border-color: (var(--secondary-500));
 
       &:hover,
       &:focus {
@@ -155,8 +152,8 @@ const { type, className, iconName } = Astro.props;
     color: var(--neutral-100);
   }
 
-  .copy-email {
-    background-color: #007bff;
+  .email {
+    background-color: hsl(207.8, 55.41%, 29.02%);
     &:hover {
       background-color: #0069d9;
     }

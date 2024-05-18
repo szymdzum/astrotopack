@@ -1,5 +1,5 @@
 ---
 name: 'contact'
-title: 'Kontakt'
-subtitle: 'Skontaktuj się ze mną, abyśmy wspólnie mogli pracować nad ekologiczną przyszłością Twojej marki.'
+title: 'Zgłębiaj tajemnice świata przepisów'
+subtitle: 'Zapraszam do zgłębiania tajemnic świata przepisów, w którym dbałość o zgodność i bezpieczeństwo są kluczowe.'
 ---
