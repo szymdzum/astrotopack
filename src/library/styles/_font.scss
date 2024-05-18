@@ -10,7 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  p {
+  p,
+  button span,
+  nav a {
     font-size: calc(100% + 0.25vw);
   }
 
@@ -20,9 +22,10 @@ body {
     &:visited {
       color: var(--action-color);
     }
+
     &:hover,
     &:focus {
-      color: var(--action-color-state);
+
       text-decoration: none;
     }
   }
@@ -70,6 +73,10 @@ body {
     @include breakpoint(medium) {
       font-size: 1.875rem;
     }
+  }
+
+  header {
+    font-family: 'Rethink Sans Variable', sans-serif;
   }
 
   .header p {

@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+const instagramUrl = 'https://www.instagram.com/puttopack';
+---
+
+<div class="social-links">
+  <a href={instagramUrl} class="social-link">
+    <Icon name="instagram-ico" />
+  </a>
+</div>
+<style lang="scss">
+  .social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    [data-icon] {
+      font-size: 2rem;
+      opacity: 0.8;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.5rem;
+      border-radius: 4px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+</style>

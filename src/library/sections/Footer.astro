@@ -1,8 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
 const currentYear = new Date().getFullYear().toString();
-
-const instagramUrl = 'https://www.instagram.com/puttopack';
 ---
 
 <style lang="scss">
@@ -14,28 +11,6 @@ const instagramUrl = 'https://www.instagram.com/puttopack';
     padding: 1rem;
     margin-inline: auto;
     border-top: 1px solid #d7d7d7;
-
-    .social-links {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-
-      [data-icon] {
-        font-size: 2rem;
-        opacity: 0.8;
-      }
-
-      a {
-        display: inline-block;
-        padding: 0.5rem;
-        border-radius: 4px;
-
-        &:hover {
-          background-color: #d0d0d0;
-          opacity: 1;
-        }
-      }
-    }
   }
 </style>
 
@@ -43,11 +18,6 @@ const instagramUrl = 'https://www.instagram.com/puttopack';
   <div class="footer-content">
     <div class="copyright">
       <p>© {currentYear} Puttopack.</p>
-    </div>
-    <div class="social-links">
-      <a href={instagramUrl} class="social-link">
-        <Icon name="instagram-ico" />
-      </a>
     </div>
   </div>
 </footer>
