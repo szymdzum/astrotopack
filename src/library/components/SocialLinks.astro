@@ -8,24 +8,29 @@ const instagramUrl = 'https://www.instagram.com/puttopack';
     <Icon name="instagram-ico" />
   </a>
 </div>
+
 <style lang="scss">
   .social-links {
     display: flex;
-    gap: 0.5rem;
-    align-items: center;
 
     [data-icon] {
       font-size: 2rem;
-      opacity: 0.8;
     }
 
     a {
-      display: inline-block;
-      padding: 0.5rem;
-      border-radius: 4px;
+      border-radius: 50%;
+      width: 4.8ch;
+      height: 4.8ch;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
       &:hover {
-        opacity: 1;
+        background: #e4405f;
+        color: #fff;
       }
     }
   }

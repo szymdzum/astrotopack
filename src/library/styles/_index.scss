@@ -17,6 +17,10 @@
 
   --border-thin: 1px solid var(--neutral-600);
   --border-thick: 3px solid var(--neutral-700);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+
   --max-section-width: 1200px;
 }
 
@@ -30,9 +34,8 @@ body {
     text-decoration: none;
   }
 
-
   #hero {
-    height: 35vh;
+    height: 40vh;
   }
 
   #about {
@@ -80,17 +83,25 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  &-sm>*+* {
-    margin-top: var(--margin-xs);
+  >*+* {
+    margin-top: var(--margin-sm);
   }
 
-  &>*+* {
-    margin-top: var(--margin-sm);
+  &-sm>*+* {
+    margin-top: var(--margin-xs);
   }
 
   &-lg>*+* {
     margin-top: var(--margin-md);
   }
+}
+
+// create a class that centers both horizontaly and vertically 
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons {

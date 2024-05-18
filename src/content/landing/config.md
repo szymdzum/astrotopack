@@ -1,7 +1,7 @@
 ---
 pageName: 'Put To Pack'
 menu:
-  - link: '#features'
+  - link: '#about'
     text: O Mnie
   - link: '#services'
     text: Usługi

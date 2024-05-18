@@ -23,20 +23,18 @@ const { pageName, menu } = headerContent.data;
     top: 0;
     z-index: 100;
     background-color: var(--background);
-    padding: var(--padding-sm) var(--padding-md);
-
-    border-bottom: var(--border-thin);
-
-    @media (max-width: 24em) {
-      display: none;
-    }
 
     .nav-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       margin-inline: auto;
+      justify-content: space-between;
+      padding: var(--padding-sm);
       max-width: var(--max-section-width);
+    }
+
+    @media (max-width: 24em) {
+      display: none;
     }
   }
 </style>
