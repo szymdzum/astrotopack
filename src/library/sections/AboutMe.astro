@@ -11,11 +11,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
   <div class="content">
     <div class="flex-container">
       <div class="column image-container">
-        <img
-          alt="Ekspertka w dziedzinie ochrony środowiska"
-          class="placeholder"
-          src="/src/assets/images/about_img_1.png"
-        />
+        <img alt="Ekspertka w dziedzinie ochrony środowiska" src="/about_img_1.png" />
       </div>
 
       <div class="column stack-sm">
@@ -29,9 +25,8 @@ const { name, title, subtitle, paragraphs } = await content.data;
       <div class="column">
         <img
           alt="Ekspertka w dziedzinie ochrony środowiska"
-          class="placeholder"
           height="400"
-          src="/src/assets/images/about_img_2.png"
+          src="/about_img_2.png"
           width="600"
         />
       </div>
@@ -64,7 +59,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
         margin: 0 1rem;
       }
 
-      .placeholder {
+      .img {
         object-fit: cover;
         aspect-ratio: 6/4 auto;
         max-width: 100%;
