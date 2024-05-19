@@ -5,14 +5,14 @@ const { href, type, className, iconName } = Astro.props;
 
 {
   href ? (
-    <a class={`button ${className}`} href={href}>
+    <a class={`button fit-content ${className}`} href={href}>
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
       </span>
     </a>
   ) : (
-    <button type={type} class={`button ${className}`}>
+    <button type={type} class={`button fit-content ${className}`}>
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
@@ -26,20 +26,13 @@ const { href, type, className, iconName } = Astro.props;
     display: inline-flex;
     text-align: center;
     color: var(--neutral-900);
-    background-color: var(--primary-300);
-    gap: var(--gap-sm);
-    padding-block: var(--padding-sm);
-    padding-inline: var(--padding-md);
-    border-radius: var(--radius-xxl);
-    border: var(--border-thin);
+    background: var(--primary-300);
+    padding-block: var(--padding-xs);
+    padding-inline: var(--padding-sm);
+    border-radius: var(--radius-btn);
+    border: var(--border-sm);
     text-transform: uppercase;
-    font-weight: 800;
-    padding: 1.5ch 2ch;
-
-    transition:
-      color 0.15s ease-in-out,
-      background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out;
+    font-weight: 700;
 
     &:is(:hover, :focus) {
       transform: translateY(-4px) translateX(-2px);
@@ -51,8 +44,8 @@ const { href, type, className, iconName } = Astro.props;
     }
 
     &.secondary {
-      background-color: var(--secondary-300);
-      border: var(--border-thin);
+      background: var(--secondary-300);
+      border: var(--border-sm);
     }
 
     &.size-small {
@@ -77,7 +70,7 @@ const { href, type, className, iconName } = Astro.props;
 
       &:hover,
       &:focus {
-        background-color: transparent;
+        background: transparent;
       }
     }
 
@@ -87,9 +80,8 @@ const { href, type, className, iconName } = Astro.props;
       gap: 0.5rem;
 
       [data-icon] {
-        font-size: 3ch;
+        font-size: 2.5ch;
         flex-shrink: 0;
-
         stroke-linecap: round;
         stroke-linejoin: round;
       }
@@ -97,7 +89,7 @@ const { href, type, className, iconName } = Astro.props;
   }
 
   .email {
-    background-color: hsl(190, 72.41%, 65.88%);
+    background: var(--blue-200);
     color: var(--neutral-800);
 
     svg {

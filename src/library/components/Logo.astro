@@ -5,28 +5,28 @@ const { name, imgSrc } = Astro.props;
 
 <a href="/" class="logo">
   <Image src={imgSrc} alt="Logo" width="75" height="85" />
-  <span><b>Put </b>to <b>Pack </b></span>
+  <span><b>Put </b>to <b>Pack</b></span>
 </a>
 
 <style lang="scss">
-  a {
+  .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
     color: inherit;
-  }
 
-  img {
-    margin-top: -1rem;
-    margin-right: 0.5rem;
-  }
+    img {
+      margin-top: -1rem;
+      margin-right: 0.5rem;
+    }
 
-  span {
-    font-size: 1.75rem;
-    font-weight: 500;
+    span {
+      font-size: 2rem;
+      font-weight: 500;
 
-    b {
-      font-weight: 900;
+      b {
+        font-weight: 900;
+      }
     }
   }
 </style>

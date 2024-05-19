@@ -14,20 +14,24 @@ const { menu } = Astro.props;
   </ul>
 </nav>
 
-<style>
-  nav li {
-    display: inline-block;
-  }
+<style lang="scss">
+  nav {
+    display: flex;
 
-  nav a {
-    display: block;
-    padding: var(--padding-sm);
-    font-weight: 800;
-    text-transform: uppercase;
-  }
+    justify-content: center;
+    li {
+      display: inline-block;
+    }
 
-  nav li > a:focus,
-  nav li > a:hover {
-    border-radius: 1rem;
+    a {
+      display: block;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: var(--padding-sm);
+
+      &:focus,
+      &:hover {
+      }
+    }
   }
 </style>

@@ -9,19 +9,13 @@
   --font-color: var(--neutral-900);
   --background: var(--primary-100);
 
-  --action-color: var(--neutral-900);
-  --action-color-state: var(--primary-500);
-
-  --primary-background: var(--primary-100);
-  --neutral-background: var(--neutral-200);
-
-  --border-thin: 0.25vmin solid #05060f;
-  --border: 0.5vmin solid hsl(234, 50%, 4%);
-  --box-shadow: 0.4rem 0.4rem #05060f;
+  --border-sm: 0.25vmin solid var(--neutral-900);
+  --border-lg: 0.5vmin solid var(--neutral-900);
+  --box-shadow: 0.4rem 0.4rem var(--neutral-900);
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
-  --radius-xxl: 10em;
+  --radius-btn: 10em;
 
   --max-section-width: 1200px;
 }
@@ -37,28 +31,27 @@ body {
   }
 
   #hero {
-    border-bottom: var(--border-thin);
+    border-bottom: var(--border-sm);
   }
 
   #features {
-    background: hsl(30.43, 83.13%, 83.73%);
+    background: var(--secondary-400);
   }
 
   #about {
-    border-top: var(--border-thin);
-    background-color: var(--primary-200);
-    border-bottom: var(--border);
+    background: var(--primary-200);
+    border-top: var(--border-sm);
+    border-bottom: var(--border-lg);
   }
 
-
   footer {
-    background: radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
+    background:
+      radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
     background-size: 2em 2em;
     background-color: var(--background);
     opacity: 1;
     height: 25vh;
   }
-
 }
 
 .section {
@@ -81,8 +74,6 @@ body {
       text-align: center;
     }
   }
-
-  @include breakpoint(large) {}
 
   &.stretch {
     max-width: 100%;
@@ -115,6 +106,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// used on button so that it only takes up the space it needs
+.fit-content {
+  width: fit-content;
 }
 
 .buttons {

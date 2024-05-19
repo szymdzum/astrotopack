@@ -21,10 +21,10 @@ body {
   }
 
   a:not(.button, .menu a, .logo) {
-    color: var(--action-color);
+    color: var(--neutral-900);
 
     &:visited {
-      color: var(--action-color);
+      color: var(--neutral-900);
     }
 
     &:hover,
@@ -38,9 +38,10 @@ body {
     word-break: break-word;
   }
 
-  :where(h1, h2, h3, .button) {
+  :where(header, h1, h2, h3, .button) {
     font-family: 'Rethink Sans Variable', sans-serif;
   }
+
 
   h1,
   h2 {
@@ -78,11 +79,6 @@ body {
       font-size: 1.875rem;
     }
   }
-
-  header {
-    font-family: 'Rethink Sans Variable', sans-serif;
-  }
-
 
   .is-capitalized {
     text-transform: uppercase;

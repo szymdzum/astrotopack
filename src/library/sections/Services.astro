@@ -15,14 +15,12 @@ const { name, title, subtitle, services } = await servicesContent.data;
   </div>
 
   <div class="content">
-    <div class="services-container">
-      {services.map((service) => <Card {...service} />)}
-    </div>
+    {services.map((service) => <Card {...service} />)}
   </div>
 </Section>
 
 <style lang="scss">
-  .services-container {
+  .content {
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap-md);
