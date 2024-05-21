@@ -10,7 +10,7 @@ const { pageName, menu } = content.data;
 ---
 
 <header>
-  <div class="nav-container">
+  <div>
     <Logo name={pageName} imgSrc={logoImg} />
     <Navigation menu={menu} />
     <SocialLinks />
@@ -23,17 +23,16 @@ const { pageName, menu } = content.data;
     top: 0;
     z-index: 100;
     background: var(--background);
-    padding-top: var(--padding-xs);
     border-bottom: var(--border-sm);
 
-    .nav-container {
+    div {
       display: flex;
       flex-wrap: wrap;
-      align-items: stretch;
+      align-items: baseline;
       margin-inline: auto;
       justify-content: space-between;
-      padding: var(--padding-xs);
       max-width: var(--max-section-width);
+      padding: 0 var(--padding-md) var(--padding-sm) var(--padding-md);
     }
 
     @media (max-width: 24em) {

@@ -6,8 +6,8 @@
 @import './_font';
 
 :root {
-  --font-color: var(--neutral-900);
   --background: var(--primary-100);
+  --font-color: var(--neutral-900);
 
   --border-sm: 0.25vmin solid var(--neutral-900);
   --border-lg: 0.5vmin solid var(--neutral-900);
@@ -24,11 +24,7 @@ body {
   height: 100%;
   overflow: visible;
   color: var(--font-color);
-  background-color: var(--background);
-
-  a {
-    text-decoration: none;
-  }
+  background: var(--background);
 
   #hero {
     border-bottom: var(--border-sm);

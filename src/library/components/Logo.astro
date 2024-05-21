@@ -11,18 +11,17 @@ const { name, imgSrc } = Astro.props;
 <style lang="scss">
   .logo {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: inherit;
-
+    align-items: baseline;
     img {
-      margin-top: -1rem;
+      position: relative;
+      bottom: -20px;
       margin-right: 0.5rem;
     }
 
     span {
       font-size: 2rem;
       font-weight: 500;
+      line-height: 1.2;
 
       b {
         font-weight: 900;
