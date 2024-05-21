@@ -9,22 +9,34 @@ const { name, imgSrc } = Astro.props;
 </a>
 
 <style lang="scss">
+  @import '@styles/_layout.scss';
+
   .logo {
     display: flex;
     align-items: baseline;
+
     img {
       position: relative;
       bottom: -20px;
-      margin-right: 0.5rem;
     }
 
     span {
+      display: none;
       font-size: 2rem;
       font-weight: 500;
-      line-height: 1.2;
 
       b {
         font-weight: 900;
+      }
+    }
+
+    @include breakpoint(medium) {
+      img {
+        margin-right: 0.5rem;
+      }
+
+      span {
+        display: block;
       }
     }
   }

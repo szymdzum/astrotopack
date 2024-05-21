@@ -40,11 +40,12 @@ body {
     border-bottom: var(--border-lg);
   }
 
+  $background-pattern: radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
+
   footer {
-    background:
-      radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
+    background: $background-pattern;
     background-size: 2em 2em;
-    background-color: var(--background);
+
     opacity: 1;
     height: 25vh;
   }
@@ -58,15 +59,6 @@ body {
 
   @include breakpoint(medium) {
     .header {
-      text-align: center;
-    }
-
-    .buttons {
-      justify-content: center;
-    }
-
-    .feature-item {
-      justify-items: center;
       text-align: center;
     }
   }
@@ -113,4 +105,5 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-sm);
+  justify-content: center;
 }

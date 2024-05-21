@@ -12,7 +12,11 @@ const { href, type, className, iconName } = Astro.props;
       </span>
     </a>
   ) : (
-    <button type={type} class={`button fit-content ${className}`}>
+    <button
+      type={type}
+      class={`button
+     ${className}`}
+    >
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
@@ -25,14 +29,14 @@ const { href, type, className, iconName } = Astro.props;
   .button {
     display: inline-flex;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
     color: var(--neutral-900);
     background: var(--primary-300);
     padding-block: var(--padding-xs);
     padding-inline: var(--padding-sm);
     border-radius: var(--radius-btn);
     border: var(--border-sm);
-    text-transform: uppercase;
-    font-weight: 700;
 
     &:is(:hover, :focus) {
       transform: translateY(-4px) translateX(-2px);

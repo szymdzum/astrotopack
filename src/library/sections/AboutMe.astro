@@ -8,7 +8,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
 ---
 
 <Section name={name}>
-  <div class="content">
+  <div class="content stack-lg">
     <div class="flex-container">
       <div class="column image-container">
         <img alt="Ekspertka w dziedzinie ochrony środowiska" src="/about_img_1.png" />
@@ -41,7 +41,6 @@ const { name, title, subtitle, paragraphs } = await content.data;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin-top: var(--margin-sm);
     gap: var(--gap-md);
 
     .column {
@@ -56,11 +55,12 @@ const { name, title, subtitle, paragraphs } = await content.data;
       border-radius: 1rem;
       border: var(--border-lg);
       box-shadow: var(--box-shadow);
+      aspect-ratio: 4 / 3;
       object-fit: cover;
-      width: 50%;
+      width: 100%;
     }
 
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       flex-direction: row;
 
       &:nth-child(2) {
@@ -73,6 +73,7 @@ const { name, title, subtitle, paragraphs } = await content.data;
 
       img {
         width: 100%;
+        aspect-ratio: 1;
       }
     }
   }
