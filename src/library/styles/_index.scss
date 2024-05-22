@@ -6,8 +6,15 @@
 @import './_font';
 
 :root {
-  --background: var(--primary-100);
   --font-color: var(--neutral-900);
+
+  --background: var(--brute-bg);
+  --bg-accent: var(--brute-bg-accent);
+  --bg-highlight: var(--brute-bg-highlight);
+
+  --primary: var(--brute-primary);
+  --secondary: var(--brute-secondary);
+  --tertiary: var(--brute-tertiary);
 
   --border-sm: 0.25vmin solid var(--neutral-900);
   --border-lg: 0.5vmin solid var(--neutral-900);
@@ -31,22 +38,18 @@ body {
   }
 
   #features {
-    background: var(--secondary-400);
+    background: var(--bg-highlight);
   }
 
   #about {
-    background: var(--primary-200);
+    background: var(--bg-accent);
     border-top: var(--border-sm);
-    border-bottom: var(--border-lg);
+    border-bottom: var(--border-sm);
   }
 
-  $background-pattern: radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
-
   footer {
-    background: $background-pattern;
+    background: var(--dotted-pattern);
     background-size: 2em 2em;
-
-    opacity: 1;
     height: 25vh;
   }
 }
@@ -62,33 +65,7 @@ body {
       text-align: center;
     }
   }
-
-  &.stretch {
-    max-width: 100%;
-  }
 }
-
-/* Layout Primitives */
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  >*+* {
-    margin-top: var(--margin-sm);
-  }
-
-  &-sm>*+* {
-    margin-top: var(--margin-xs);
-  }
-
-  &-lg>*+* {
-    margin-top: var(--margin-md);
-  }
-}
-
-// create a class that centers both horizontaly and vertically 
 
 .center {
   display: flex;

@@ -3,14 +3,14 @@ import { Image } from 'astro:assets';
 const { imgSrc, title, text } = Astro.props;
 ---
 
-<div class="feature-item stack-sm">
+<div class="feature stack-sm">
   <Image src={imgSrc} alt={title} height="90" width="90" />
   <h3>{title}</h3>
   <p>{text}</p>
 </div>
 
 <style type="scss">
-  .feature-item {
+  .feature {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,8 +19,8 @@ const { imgSrc, title, text } = Astro.props;
     min-width: 30%;
     max-width: 100%;
     flex-basis: calc(var(--multiplier) * 999);
-    padding: var(--padding-sm);
     background: var(--background);
+    padding: var(--padding-sm);
     border: var(--border-sm);
     border-radius: var(--radius-md);
   }

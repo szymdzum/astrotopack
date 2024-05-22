@@ -4,7 +4,6 @@ import Card from '@components/Card.astro';
 
 import { getEntry } from 'astro:content';
 const servicesContent = await getEntry('landing', 'services');
-
 const { name, title, subtitle, services } = await servicesContent.data;
 ---
 
