@@ -5,12 +5,12 @@ import SocialLinks from '@components/SocialLinks.astro';
 import logoImg from '/src/assets/images/puttopack_logo.png';
 
 import { getEntry } from 'astro:content';
-const headerContent = await getEntry('landing', 'config');
-const { pageName, menu } = headerContent.data;
+const content = await getEntry('landing', 'config');
+const { pageName, menu } = content.data;
 ---
 
 <header>
-  <div class="nav-container">
+  <div>
     <Logo name={pageName} imgSrc={logoImg} />
     <Navigation menu={menu} />
     <SocialLinks />
@@ -22,17 +22,17 @@ const { pageName, menu } = headerContent.data;
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--background);
-    border-bottom: var(--border-thin);
-    padding-top: var(--padding-xs);
+    background: var(--background);
+    border-bottom: var(--border-sm);
 
-    .nav-container {
+    div {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      align-items: baseline;
       margin-inline: auto;
       justify-content: space-between;
-      padding: var(--padding-xs);
       max-width: var(--max-section-width);
+      padding: 0 var(--padding-md) var(--padding-sm) var(--padding-md);
     }
 
     @media (max-width: 24em) {

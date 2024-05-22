@@ -7,21 +7,22 @@
 
 :root {
   --font-color: var(--neutral-900);
-  --background: var(--primary-100);
 
-  --action-color: var(--neutral-900);
-  --action-color-state: var(--primary-500);
+  --background: var(--brute-bg);
+  --bg-accent: var(--brute-bg-accent);
+  --bg-highlight: var(--brute-bg-highlight);
 
-  --primary-background: var(--primary-100);
-  --neutral-background: var(--neutral-200);
+  --primary: var(--brute-primary);
+  --secondary: var(--brute-secondary);
+  --tertiary: var(--brute-tertiary);
 
-  --border-thin: 0.25vmin solid #05060f;
-  --border: 0.5vmin solid hsl(234, 50%, 4%);
-  --box-shadow: 0.4rem 0.4rem #05060f;
+  --border-sm: 0.25vmin solid var(--neutral-900);
+  --border-lg: 0.5vmin solid var(--neutral-900);
+  --box-shadow: 0.4rem 0.4rem var(--neutral-900);
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
-  --radius-xxl: 10em;
+  --radius-btn: 10em;
 
   --max-section-width: 1200px;
 }
@@ -30,35 +31,27 @@ body {
   height: 100%;
   overflow: visible;
   color: var(--font-color);
-  background-color: var(--background);
-
-  a {
-    text-decoration: none;
-  }
+  background: var(--background);
 
   #hero {
-    border-bottom: var(--border-thin);
+    border-bottom: var(--border-sm);
   }
 
   #features {
-    background: hsl(30.43, 83.13%, 83.73%);
+    background: var(--bg-highlight);
   }
 
   #about {
-    border-top: var(--border-thin);
-    background-color: var(--primary-200);
-    border-bottom: var(--border);
+    background: var(--bg-accent);
+    border-top: var(--border-sm);
+    border-bottom: var(--border-sm);
   }
-
 
   footer {
-    background: radial-gradient(circle, #000000 10%, transparent 11%), radial-gradient(circle at bottom left, #000000 5%, transparent 6%), radial-gradient(circle at bottom right, #000000 5%, transparent 6%), radial-gradient(circle at top left, #000000 5%, transparent 6%), radial-gradient(circle at top right, #000000 5%, transparent 6%);
+    background: var(--dotted-pattern);
     background-size: 2em 2em;
-    background-color: var(--background);
-    opacity: 1;
     height: 25vh;
   }
-
 }
 
 .section {
@@ -71,45 +64,8 @@ body {
     .header {
       text-align: center;
     }
-
-    .buttons {
-      justify-content: center;
-    }
-
-    .feature-item {
-      justify-items: center;
-      text-align: center;
-    }
-  }
-
-  @include breakpoint(large) {}
-
-  &.stretch {
-    max-width: 100%;
   }
 }
-
-/* Layout Primitives */
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  >*+* {
-    margin-top: var(--margin-sm);
-  }
-
-  &-sm>*+* {
-    margin-top: var(--margin-xs);
-  }
-
-  &-lg>*+* {
-    margin-top: var(--margin-md);
-  }
-}
-
-// create a class that centers both horizontaly and vertically 
 
 .center {
   display: flex;
@@ -117,8 +73,14 @@ body {
   align-items: center;
 }
 
+// used on button so that it only takes up the space it needs
+.fit-content {
+  width: fit-content;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-sm);
+  justify-content: center;
 }

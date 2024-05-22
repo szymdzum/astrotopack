@@ -5,14 +5,18 @@ const { href, type, className, iconName } = Astro.props;
 
 {
   href ? (
-    <a class={`button ${className}`} href={href}>
+    <a class={`button fit-content ${className}`} href={href}>
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
       </span>
     </a>
   ) : (
-    <button type={type} class={`button ${className}`}>
+    <button
+      type={type}
+      class={`button
+     ${className}`}
+    >
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
@@ -25,25 +29,18 @@ const { href, type, className, iconName } = Astro.props;
   .button {
     display: inline-flex;
     text-align: center;
-    color: var(--neutral-900);
-    background-color: var(--primary-300);
-    gap: var(--gap-sm);
-    padding-block: var(--padding-sm);
-    padding-inline: var(--padding-md);
-    border-radius: var(--radius-xxl);
-    border: var(--border-thin);
     text-transform: uppercase;
-    font-weight: 800;
-    padding: 1.5ch 2ch;
-
-    transition:
-      color 0.15s ease-in-out,
-      background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out;
+    font-weight: 700;
+    color: var(--neutral-900);
+    background: var(--primary);
+    padding-block: var(--padding-xs);
+    padding-inline: var(--padding-sm);
+    border-radius: var(--radius-btn);
+    border: var(--border-sm);
 
     &:is(:hover, :focus) {
       transform: translateY(-4px) translateX(-2px);
-      box-shadow: 2px 5px 0 0 black;
+      box-shadow: 2px 5px 0 0 var(--neutral-900);
     }
 
     &:where(button):where(:not(:active)):focus-visible {
@@ -51,62 +48,28 @@ const { href, type, className, iconName } = Astro.props;
     }
 
     &.secondary {
-      background-color: var(--secondary-300);
-      border: var(--border-thin);
+      background: var(--secondary);
+      border: var(--border-sm);
     }
 
-    &.size-small {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.875rem;
-      line-height: 1.3125rem;
+    &.outline {
+      background: inherit;
+      border: var(--border-sm);
     }
 
-    &.size-large {
-      padding: 0.75rem 1rem;
-      font-size: 1.125rem;
-      line-height: 1.6875rem;
-    }
-
-    &.behavior-full {
+    &.full {
       display: block;
       width: 100%;
-    }
-
-    &.type-secondary {
-      background-color: transparent;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
     }
 
     &.has-icon {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: var(--gap-xs);
 
       [data-icon] {
-        font-size: 3ch;
-        flex-shrink: 0;
-
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        font-size: 2.5ch;
       }
     }
-  }
-
-  .email {
-    background-color: hsl(190, 72.41%, 65.88%);
-    color: var(--neutral-800);
-
-    svg {
-      color: var(--neutral-800);
-    }
-  }
-
-  .icon {
-    font-size: 1.4rem;
-    font-weight: 600;
   }
 </style>

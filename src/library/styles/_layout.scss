@@ -23,18 +23,41 @@ $breakpoints: (
   'small': 24em,
   'medium': 48em,
   'large': 75em,
-) !default;
+  ) !default;
 
 @mixin breakpoint($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
-  } @else if (type_of($breakpoint) == number) {
+  }
+
+  @else if (type_of($breakpoint)==number) {
     @media (min-width: $breakpoint+'px') {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @error "Not a correct value, check _base-breakpoints for available values.";
   }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  >*+* {
+    margin-top: var(--margin-sm
+    );
+}
+
+&-sm>*+* {
+  margin-top: var(--margin-xs);
+}
+
+&-lg>*+* {
+  margin-top: var(--margin-md);
+}
 }

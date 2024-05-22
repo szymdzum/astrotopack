@@ -1,21 +1,10 @@
 $colors: (
-  primary: (100:hsl(40, 60%, 98.04%),
-    200: hsl(55.38, 37.14%, 93.14%),
-    300: hsl(99.27, 55.56%, 80.59%),
-    400: hsl(83.57, 11.48%, 47.84%),
-    500: hsl(84, 18%, 36%),
-  ),
-  secondary: (100: hsl(37.94, 85%, 84.31%),
-    200: hsl(24.88, 27.52%, 70.78%),
-    300:hsl(0, 100%, 70.98%),
-    400: hsl(27.04, 32.72%, 42.55%),
-    500: hsl(28, 55%, 29%),
-  ),
-  complementary: (100: hsl(251.49, 24.87%, 62.94%),
-    200: hsl(247.38, 27.9%, 45.69%),
-    300: hsl(193, 69%, 79%),
-    400: hsl(197.4, 71.43%, 72.55%),
-    500: hsl(240, 55%, 25%),
+  brute: (bg: hsl(40, 60%, 98.04%),
+    bg-accent: hsl(55.38, 37.14%, 93.14%),
+    bg-highlight: hsl(30.43, 83.13%, 83.73%),
+    primary: hsl(99.27, 55.56%, 80.59%),
+    secondary: hsl(0, 100%, 70.98%),
+    tertiary: hsl(38, 95%, 57%),
   ),
   neutral: (100: hsl(0 0% 100%),
     200: hsl(52, 85%, 93%),
@@ -37,4 +26,10 @@ $colors: (
       --#{$color}-#{$shade}: #{$value};
     }
   }
+
+  --dotted-pattern: radial-gradient(circle, #000000 10%, transparent 11%),
+  radial-gradient(circle at bottom left, #000000 5%, transparent 6%),
+  radial-gradient(circle at bottom right, #000000 5%, transparent 6%),
+  radial-gradient(circle at top left, #000000 5%, transparent 6%),
+  radial-gradient(circle at top right, #000000 5%, transparent 6%);
 }

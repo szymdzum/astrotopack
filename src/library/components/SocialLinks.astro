@@ -11,25 +11,29 @@ const instagramUrl = 'https://www.instagram.com/puttopack';
 
 <style lang="scss">
   .social-links {
-    margin-top: -0.5rem;
     display: flex;
-
+    align-items: center;
     [data-icon] {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
 
     a {
       border-radius: 50%;
-      width: 4.8ch;
-      height: 4.8ch;
+      width: 4ch;
+      height: 4ch;
       display: flex;
       justify-content: center;
       align-items: center;
-      border: var(--border-thin);
+      border: var(--border-sm);
       cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
       background: #e4405f;
       color: #fff;
+
+      &:is(:hover, :focus) {
+        transform: translateY(-4px) translateX(-2px);
+        box-shadow: 2px 5px 0 0 black;
+      }
     }
   }
 </style>

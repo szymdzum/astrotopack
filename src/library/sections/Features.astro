@@ -1,8 +1,8 @@
 ---
 import Section from '@layouts/Section.astro';
 import Feature from '@components/Feature.astro';
-import { getEntry } from 'astro:content';
 
+import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'features');
 const { name, title, subtitle } = content.data;
 
@@ -26,21 +26,20 @@ const features = [
 ---
 
 <Section name={name}>
-  <div class="header stack-sm">
+  <div class="header stack">
     <h2>{title}</h2>
     <p>{subtitle}</p>
   </div>
   <div class="content">
-    <div class="features-container">
-      {features.map((feature) => <Feature {...feature} />)}
-    </div>
+    {features.map((feature) => <Feature {...feature} />)}
   </div>
 </Section>
 
 <style lang="scss">
-  .features-container {
+  .content {
     display: flex;
     flex-wrap: wrap;
+    gap: var(--gap-sm);
     --multiplier: calc(40rem - 100%);
   }
 </style>

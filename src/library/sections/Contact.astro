@@ -1,14 +1,14 @@
 ---
 import Section from '@layouts/Section.astro';
 import Button from '@components/Button.astro';
-import { getEntry } from 'astro:content';
 
+import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'contact');
 const { name, title, subtitle } = content.data;
 ---
 
 <Section name={name}>
-  <div class="header stack-sm">
+  <div class="header stack">
     <h2>{title}</h2>
     <p>{subtitle}</p>
   </div>
@@ -16,11 +16,13 @@ const { name, title, subtitle } = content.data;
   <div class="content">
     <div class="buttons">
       <Button
-        href="mailto:info@puttopack.com"
+        href="mailto:info@puttopack.pl"
         target="_blank"
         className="has-icon email"
-        iconName="mail-ico">Skontaktuj się</Button
+        iconName="mail-ico"
       >
+        Skontaktuj się
+      </Button>
     </div>
   </div>
 </Section>

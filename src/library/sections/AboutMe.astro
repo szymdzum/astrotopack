@@ -1,77 +1,81 @@
 ---
 import Section from '@layouts/Section.astro';
 import Button from '@components/Button.astro';
-import { getEntry } from 'astro:content';
 
+import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'about');
-const { name, title, subtitle, paragraphs } = await content.data;
+const { name, titles, paragraphs } = await content.data;
+const [title1, title2] = titles;
+const [p1, p2] = paragraphs;
 ---
 
 <Section name={name}>
-  <div class="content">
-    <div class="flex-container">
-      <div class="column image-container">
-        <img alt="Ekspertka w dziedzinie ochrony środowiska" src="/about_img_1.png" />
+  <div class="content stack-lg">
+    <div class="flex">
+      <div class="column swap">
+        <img alt="Eco image" src="/about_img_1.png" />
       </div>
-
-      <div class="column stack-sm">
-        <h2>{title}</h2>
-        <p>{paragraphs[0]}</p>
-        <Button href="#services">Dowiedz się więcej</Button>
+      <div class="column stack">
+        <h2>{title1}</h2>
+        <p>{p1}</p>
+        <Button className="outline" href="#services">Dowiedz się więcej</Button>
       </div>
     </div>
 
-    <div class="flex-container">
+    <div class="flex">
       <div class="column">
-        <img alt="Ekspertka w dziedzinie ochrony środowiska" src="/about_img_2.png" />
+        <img alt="Eco image" src="/about_img_2.png" />
       </div>
-      <div class="column stack-sm">
-        <h2>{subtitle}</h2>
-        <p>{paragraphs[1]}</p>
-        <Button href="#contact">Skontaktuj się</Button>
+      <div class="column stack">
+        <h2>{title2}</h2>
+        <p>{p2}</p>
+        <Button className="outline" href="#contact">Skontaktuj się</Button>
       </div>
     </div>
   </div>
-  <style lang="scss">
-    @import '@styles/_layout.scss';
+</Section>
 
-    .flex-container {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      margin-top: var(--margin-sm);
-      gap: var(--gap-md);
+<style lang="scss">
+  @import '@styles/_layout.scss';
 
-      .column {
-        flex: 1;
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--gap-md);
+
+    .column {
+      flex: 1;
+    }
+
+    .swap {
+      order: -1;
+    }
+
+    img {
+      border-radius: var(--radius-md);
+      border: var(--border-lg);
+      box-shadow: var(--box-shadow);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+
+      &:nth-child(2) {
+        margin-top: var(--margin-lg);
       }
 
-      .image-container {
-        order: -1;
+      .swap {
+        order: 2;
       }
 
       img {
-        border-radius: 1rem;
-        border: var(--border);
-        box-shadow: var(--box-shadow);
-        width: 50%;
-      }
-
-      @include breakpoint(large) {
-        flex-direction: row;
-
-        &:nth-child(2) {
-          margin-top: var(--margin-lg);
-        }
-
-        .image-container {
-          order: 2;
-        }
-
-        img {
-          width: 100%;
-        }
+        width: 100%;
+        aspect-ratio: 1;
       }
     }
-  </style>
-</Section>
+  }
+</style>
