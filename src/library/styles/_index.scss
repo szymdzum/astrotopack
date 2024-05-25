@@ -73,14 +73,10 @@ body {
   align-items: center;
 }
 
-// used on button so that it only takes up the space it needs
-.fit-content {
-  width: fit-content;
-}
-
+// Not the best place for this, but it's a small project
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-sm);
   justify-content: center;
+  gap: var(--gap-xs);
 }
