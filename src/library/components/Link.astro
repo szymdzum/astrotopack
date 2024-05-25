@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'a'> {
+  url: string;
+  rel?: string;
+  target?: string;
+  className?: string;
+  iconName?: string;
+}
+const { url, className, iconName } = Astro.props;
+// Needs additinal aria-label for screen readers and external linc behavior
+// if url.startsWith('#') then it's an internal link
+// if url.startsWith('http') then it's an external link
+// if url.startsWith('/') then it's an internal link
+// if url.startsWith('mailto') then it's an email link
+// if url.startsWith('tel') then it's a phone link
+// so how to do it in a clever way?
+// Need role? button or link?
+// iconName then class has-icon
+---
+
+<a
+  href={url}
+  class:list={[className]}
+  target={url.startsWith('http') ? '_blank' : '_self'}
+  role={className === 'button' ? 'button' : 'link'}
+>
+  {iconName && <Icon class="icon" name={iconName} />}
+  <slot />
+</a>
+
+<style>
+  @layer defaults {
+    .external-link {
+      white-space: inherit;
+    }
+  }
+</style>

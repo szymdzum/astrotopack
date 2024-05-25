@@ -1,6 +1,6 @@
 ---
 import Section from '@layouts/Section.astro';
-import Button from '@components/Button.astro';
+import Link from '@components/Link.astro';
 
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'contact');
@@ -15,14 +15,9 @@ const { name, title, subtitle } = content.data;
 
   <div class="content">
     <div class="buttons">
-      <Button
-        url="mailto:info@puttopack.pl"
-        target="_blank"
-        className="email has-icon"
-        iconName="mail-ico"
-      >
+      <Link url="mailto:info@puttopack.pl" className="button email has-icon" iconName="mail-ico">
         Napisz
-      </Button>
+      </Link>
     </div>
   </div>
 </Section>

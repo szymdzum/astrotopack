@@ -3,14 +3,13 @@ import Section from '@layouts/Section.astro';
 
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'intro');
-const { name, title, subtitle, paragraphs } = await content.data;
+const { name, title, paragraphs } = await content.data;
 const [p1, p2, p3, p4] = paragraphs;
 ---
 
 <Section name={name}>
   <div class="header stack">
     <h1>{title}</h1>
-    <p>{subtitle}</p>
   </div>
   <div class="content stack-sm">
     <p>{p1}</p>
