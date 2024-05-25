@@ -1,13 +1,22 @@
 ---
+interface Props {
+  menu: NavItem[];
+}
+
+interface NavItem {
+  url: string;
+  text: string;
+}
+
 const { menu } = Astro.props;
 ---
 
 <nav role="navigation" aria-label="main navigation">
   <ul>
     {
-      menu.map(({ link, text }) => (
+      menu.map(({ url, text }) => (
         <li>
-          <a href={link}>{text}</a>
+          <a href={url}>{text}</a>
         </li>
       ))
     }
@@ -21,7 +30,7 @@ const { menu } = Astro.props;
     }
 
     a {
-      font-weight: 800;
+      font-weight: 700;
       text-transform: uppercase;
       padding: var(--padding-sm);
 

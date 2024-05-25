@@ -1,10 +1,10 @@
 ---
 pageName: 'Put To Pack'
 menu:
-  - link: '#about'
+  - url: '#about'
     text: O Mnie
-  - link: '#services'
+  - url: '#services'
     text: Usługi
-  - link: '#contact'
+  - url: '#contact'
     text: Kontakt
 ---

@@ -24,7 +24,7 @@
   --radius-md: 1rem;
   --radius-btn: 10em;
 
-  --max-section-width: 1200px;
+  --max-section-width: 80ch;
 }
 
 body {
@@ -37,6 +37,10 @@ body {
     border-bottom: var(--border-sm);
   }
 
+  #intro {
+    background: var(--neutral-100);
+  }
+
   #features {
     background: var(--bg-highlight);
   }
@@ -45,6 +49,10 @@ body {
     background: var(--bg-accent);
     border-top: var(--border-sm);
     border-bottom: var(--border-sm);
+  }
+
+  #contact .section {
+    padding-top: 0;
   }
 
   footer {
