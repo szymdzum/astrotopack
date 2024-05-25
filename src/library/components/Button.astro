@@ -1,22 +1,35 @@
 ---
 import { Icon } from 'astro-icon/components';
-const { href, type, className, iconName } = Astro.props;
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'button'> {
+  url?: string;
+  target?: string;
+  className?: string;
+  iconName?: string;
+  children?: string;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const { url, type = 'button', className, iconName, target } = Astro.props;
 ---
 
 {
-  href ? (
-    <a class={`button fit-content ${className}`} href={href}>
+  url ? (
+    <a
+      class={`button ${className}`}
+      href={url}
+      role="button"
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+    >
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
       </span>
     </a>
   ) : (
-    <button
-      type={type}
-      class={`button
-     ${className}`}
-    >
+    <button type={type} class={className}>
       {iconName && <Icon class="icon" name={iconName} />}
       <span>
         <slot />
@@ -26,12 +39,13 @@ const { href, type, className, iconName } = Astro.props;
 }
 
 <style lang="scss">
+  button,
   .button {
     display: inline-flex;
     text-align: center;
-    text-transform: uppercase;
+    align-self: flex-start;
+    line-height: 1.1;
     font-weight: 700;
-    color: var(--neutral-900);
     background: var(--primary);
     padding-block: var(--padding-xs);
     padding-inline: var(--padding-sm);
@@ -43,18 +57,17 @@ const { href, type, className, iconName } = Astro.props;
       box-shadow: 2px 5px 0 0 var(--neutral-900);
     }
 
-    &:where(button):where(:not(:active)):focus-visible {
-      outline-offset: 5px;
+    &:is(:active) {
+      transform: translateY(-2px) translateX(-1px);
+      box-shadow: 1px 3px 0 0 var(--neutral-900);
     }
 
     &.secondary {
       background: var(--secondary);
-      border: var(--border-sm);
     }
 
     &.outline {
       background: inherit;
-      border: var(--border-sm);
     }
 
     &.full {
@@ -65,10 +78,11 @@ const { href, type, className, iconName } = Astro.props;
     &.has-icon {
       display: flex;
       align-items: center;
-      gap: var(--gap-xs);
 
       [data-icon] {
-        font-size: 2.5ch;
+        font-size: 2ch;
+        fill: currentColor;
+        margin-right: 0.25em;
       }
     }
   }

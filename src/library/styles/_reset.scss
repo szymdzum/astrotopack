@@ -107,6 +107,7 @@ strong {
 img {
   border-style: none;
 }
+
 ul:where([class]) {
   list-style: none;
 }
@@ -114,20 +115,6 @@ ul:where([class]) {
 input[type='text'],
 textarea {
   width: 100%;
-}
-
-button,
-input,
-textarea,
-optgroup,
-select {
-  color: inherit;
-  letter-spacing: inherit;
-  font-family: inherit;
-  border: 1px solid gray;
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
 }
 
 button,
@@ -153,7 +140,7 @@ legend {
 }
 
 button {
-  padding: 0.75em 1em;
+  padding: 0;
   border-radius: 0;
   background-color: transparent;
   line-height: 1;
@@ -163,21 +150,27 @@ button * {
   pointer-events: none;
 }
 
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
 button:hover {
   cursor: pointer;
 }
 
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 progress {
@@ -190,8 +183,10 @@ textarea {
 
 [type='checkbox'],
 [type='radio'] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 [type='number']::-webkit-inner-spin-button,
@@ -200,7 +195,8 @@ textarea {
 }
 
 [type='search'] {
-  outline-offset: -2px; /* 2 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 details {
