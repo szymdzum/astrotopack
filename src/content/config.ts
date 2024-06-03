@@ -6,7 +6,7 @@ const config = z.object({
   menu: z.array(
     z.object({
       name: z.string(),
-      href: z.string(),
+      url: z.string(),
     })
   ),
 });
@@ -26,6 +26,18 @@ const hero = z.object({
 const heroSection = defineCollection({
   type: 'content',
   schema: hero,
+});
+
+const intro = z.object({
+  name: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+  text: z.array(z.string()),
+});
+
+const introSection = defineCollection({
+  type: 'content',
+  schema: intro,
 });
 
 // About Me
@@ -84,6 +96,7 @@ export type AboutMe = z.infer<typeof about>;
 export const collections = {
   siteConfig,
   heroSection,
+  introSection,
   aboutSection,
   featuresSection,
   servicesSection,

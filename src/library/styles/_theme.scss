@@ -1,4 +1,10 @@
 $colors: (
+  toned: (bg: hsl(40, 60%, 98.04%),
+    bg-accent: hsl(22, 49%, 36%),
+    bg-highlight: hsl(60, 32%, 32%),
+    primary: hsl(41, 39%, 54%),
+    secondary: hsl(43, 73%, 61%),
+  ),
   brute: (bg: hsl(40, 60%, 98.04%),
     bg-accent: hsl(55.38, 37.14%, 93.14%),
     bg-highlight: hsl(30.43, 83.13%, 83.73%),

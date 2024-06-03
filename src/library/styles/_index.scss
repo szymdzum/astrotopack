@@ -4,6 +4,8 @@
 @import './_theme';
 @import './_layout';
 @import './_font';
+@import './_navbar';
+@import './_button';
 
 :root {
   --font-color: var(--neutral-900);
@@ -16,7 +18,8 @@
   --secondary: var(--brute-secondary);
   --tertiary: var(--brute-tertiary);
 
-  --border-sm: 0.25vmin solid var(--neutral-900);
+  --border-sm: 0.35vmin solid var(--neutral-900);
+  --border-md: 0.4vmin solid var(--neutral-900);
   --border-lg: 0.5vmin solid var(--neutral-900);
   --box-shadow: 0.4rem 0.4rem var(--neutral-900);
 
@@ -24,7 +27,7 @@
   --radius-md: 1rem;
   --radius-btn: 10em;
 
-  --max-section-width: 1200px;
+  --max-section-width: 80ch;
 }
 
 body {
@@ -33,18 +36,30 @@ body {
   color: var(--font-color);
   background: var(--background);
 
+  header,
   #hero {
-    border-bottom: var(--border-sm);
+    background: var(--toned-secondary);
+    text-align: left;
+  }
+
+  #intro {
+    background: var(--neutral-100);
   }
 
   #features {
-    background: var(--bg-highlight);
+    border-top: var(--border-sm);
+    border-bottom: var(--border-sm);
+    background: var(--brute-secondary);
   }
 
   #about {
     background: var(--bg-accent);
     border-top: var(--border-sm);
     border-bottom: var(--border-sm);
+  }
+
+  #contact .section {
+    padding-top: 0;
   }
 
   footer {
@@ -61,7 +76,7 @@ body {
   max-width: var(--max-section-width);
 
   @include breakpoint(medium) {
-    .header {
+    #features .header {
       text-align: center;
     }
   }

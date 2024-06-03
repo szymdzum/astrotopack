@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+
 const instagramUrl = 'https://www.instagram.com/puttopack';
 ---
 
@@ -26,13 +27,17 @@ const instagramUrl = 'https://www.instagram.com/puttopack';
       align-items: center;
       border: var(--border-sm);
       cursor: pointer;
-
       background: #e4405f;
       color: #fff;
 
       &:is(:hover, :focus) {
         transform: translateY(-4px) translateX(-2px);
         box-shadow: 2px 5px 0 0 black;
+      }
+
+      &:is(:active) {
+        transform: translateY(-2px) translateX(-1px);
+        box-shadow: 1px 3px 0 0 var(--neutral-900);
       }
     }
   }

@@ -1,0 +1,48 @@
+  button,
+  .button {
+    display: inline-flex;
+    text-align: center;
+    align-self: flex-start;
+    line-height: 1.1;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: var(--primary);
+    padding: 0.5em 1.25em;
+    border-radius: var(--radius-btn);
+    border: var(--border-sm);
+
+    &:is(:hover, :focus) {
+      transform: translateY(-4px) translateX(-2px);
+      box-shadow: 2px 5px 0 0 var(--neutral-900);
+      scale: 1.05;
+    }
+
+    &:is(:active) {
+      transform: translateY(-2px) translateX(-1px);
+      box-shadow: 1px 3px 0 0 var(--neutral-900);
+    }
+
+    &.secondary {
+      background: var(--secondary);
+    }
+
+    &.outline {
+      background: inherit;
+    }
+
+    &.full {
+      display: block;
+      width: 100%;
+    }
+
+    &.has-icon {
+      display: flex;
+      align-items: center;
+
+      [data-icon] {
+        font-size: 2ch;
+        fill: currentColor;
+        margin-right: 0.25em;
+      }
+    }
+  }

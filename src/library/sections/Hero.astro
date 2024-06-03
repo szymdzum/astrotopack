@@ -1,6 +1,6 @@
 ---
 import Section from '@layouts/Section.astro';
-import Button from '@components/Button.astro';
+import Link from '@components/Link.astro';
 
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'hero');
@@ -12,8 +12,8 @@ const { name, title, subtitle } = content.data;
     <h1>{title}</h1>
     <p>{subtitle}</p>
     <div class="buttons">
-      <Button url="#contact" className="outline">Kontakt</Button>
-      <Button url="#services">Usługi</Button>
+      <Link url="#services" className="button">Usługi</Link>
+      <Link url="#contact" className="button outline">Kontakt</Link>
     </div>
   </div>
 </Section>

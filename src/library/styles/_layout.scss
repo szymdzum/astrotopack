@@ -49,15 +49,15 @@ $breakpoints: (
   justify-content: flex-start;
 
   >*+* {
-    margin-top: var(--margin-sm
+    margin-block-start: var(--margin-sm
     );
 }
 
 &-sm>*+* {
-  margin-top: var(--margin-xs);
+  margin-block-start: var(--margin-xs);
 }
 
 &-lg>*+* {
-  margin-top: var(--margin-md);
+  margin-block-start: var(--margin-md);
 }
 }

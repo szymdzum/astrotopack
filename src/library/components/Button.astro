@@ -3,87 +3,19 @@ import { Icon } from 'astro-icon/components';
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'button'> {
-  url?: string;
-  target?: string;
+  type?: 'button' | 'submit';
+  size?: 'sm' | 'md' | 'lg';
+  theme?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
   className?: string;
   iconName?: string;
-  children?: string;
-  type?: 'button' | 'submit' | 'reset';
 }
 
-const { url, type = 'button', className, iconName, target } = Astro.props;
+const { type = 'button', size = 'md', className, iconName } = Astro.props;
 ---
 
-{
-  url ? (
-    <a
-      class={`button ${className}`}
-      href={url}
-      role="button"
-      target={target}
-      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-    >
-      {iconName && <Icon class="icon" name={iconName} />}
-      <span>
-        <slot />
-      </span>
-    </a>
-  ) : (
-    <button type={type} class={className}>
-      {iconName && <Icon class="icon" name={iconName} />}
-      <span>
-        <slot />
-      </span>
-    </button>
-  )
-}
-
-<style lang="scss">
-  button,
-  .button {
-    display: inline-flex;
-    text-align: center;
-    align-self: flex-start;
-    line-height: 1.1;
-    font-weight: 700;
-    background: var(--primary);
-    padding-block: var(--padding-xs);
-    padding-inline: var(--padding-sm);
-    border-radius: var(--radius-btn);
-    border: var(--border-sm);
-
-    &:is(:hover, :focus) {
-      transform: translateY(-4px) translateX(-2px);
-      box-shadow: 2px 5px 0 0 var(--neutral-900);
-    }
-
-    &:is(:active) {
-      transform: translateY(-2px) translateX(-1px);
-      box-shadow: 1px 3px 0 0 var(--neutral-900);
-    }
-
-    &.secondary {
-      background: var(--secondary);
-    }
-
-    &.outline {
-      background: inherit;
-    }
-
-    &.full {
-      display: block;
-      width: 100%;
-    }
-
-    &.has-icon {
-      display: flex;
-      align-items: center;
-
-      [data-icon] {
-        font-size: 2ch;
-        fill: currentColor;
-        margin-right: 0.25em;
-      }
-    }
-  }
-</style>
+<button class:list={[className]} type={type} data-size={size}>
+  {iconName && <Icon class="icon" name={iconName} />}
+  <span>
+    <slot />
+  </span>
+</button>

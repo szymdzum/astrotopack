@@ -1,34 +1,28 @@
 ---
+import Link from './Link.astro';
+
+interface Props {
+  menu: NavItem[];
+}
+
+interface NavItem {
+  url: string;
+  text: string;
+}
+
 const { menu } = Astro.props;
 ---
 
 <nav role="navigation" aria-label="main navigation">
   <ul>
     {
-      menu.map(({ link, text }) => (
+      menu.map(({ url, text }) => (
         <li>
-          <a href={link}>{text}</a>
+          <Link className="nav-link" url={url}>
+            {text}
+          </Link>
         </li>
       ))
     }
   </ul>
 </nav>
-
-<style lang="scss">
-  nav {
-    li {
-      display: inline-block;
-    }
-
-    a {
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: var(--padding-sm);
-
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-</style>
