@@ -1,5 +1,5 @@
 ---
 name: 'contact'
-title: 'Zgłębiaj tajemnice świata przepisów'
-subtitle: 'Zapraszam do zgłębiania tajemnic świata przepisów, w którym dbałość o zgodność i bezpieczeństwo są kluczowe.'
+title: 'Zadbam o środowisko i spokój Twojej firmy.'
+subtitle: 'Skontaktuj się, aby dowiedzieć się, jak mogę pomóc Ci w spełnianiu wymogów środowiskowych w Twojej firmie.'
 ---

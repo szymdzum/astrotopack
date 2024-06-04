@@ -1,9 +1,9 @@
 ---
 name: 'intro'
-title: 'Czy w swojej firmie sprzedajesz produkty w opakowaniach? '
+title: 'Sprzedajesz produkty w opakowaniach?'
 paragraphs:
-  - 'Wysyłasz je do klienta w kartonowym pudełku lub foliowym opakowaniu np. ubrania, książki, kalendarze?'
-  - 'A może części Twoich produktów zapakowana jest w szklany słoik: kosmetyki, suplementy diety lub produkty do kąpieli?'
-  - 'Jeśli na którekolwiek z powyższych pytań odpowiedziałaś/łeś twierdząco, tzn., że jesteś wprowadzającym produkty w opakowaniach na rynek i masz z tego tytułu obowiązki sprawozdawcze. Podlegasz również opłatom produktowym lub musisz osiągać poziomy recyklingu i odzysku dla wprowadzonych rodzajów opakowań.'
-  - 'Jeśli pierwszy raz o tym słyszysz, napisz do mnie. Pomogę Ci zweryfikować zakres Twoich obowiązków i zaproponuję najlepsze rozwiązanie do ich realizacji. '
+  - 'Wysyłasz je do klienta w w kartonowych lub foliowych opakowaniach np. ubrania, książki, kalendarze?'
+  - 'Może pakujesz je w szklane słoiki, takie jak kosmetyki, suplementy diety czy produkty do kąpieli?'
+  - 'Jeśli tak, masz obowiązki sprawozdawcze dotyczące wprowadzania produktów w opakowaniach na rynek, opłat produktowych oraz poziomów recyklingu i odzysku dla tych opakowań.'
+  - 'Nie wiesz, co dalej? Pozwól mi pomóc.'
 ---

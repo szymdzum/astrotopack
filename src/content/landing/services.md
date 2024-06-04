@@ -1,7 +1,7 @@
 ---
 name: 'services'
 title: 'W czym mogę Ci pomóc?'
-subtitle: 'Wskażę i zweryfikuję działalność Twojej firmy pod kątem zgodności z przepisami ochrony środowiska'
+subtitle: 'Wskażę i zweryfikuję zgodność działalności Twojej firmy z przepisami ochrony środowiska.'
 services:
   - name: 'Obowiązki prawne'
     description: 'Zidentyfikuję wszelkie wymogi dotyczące opakowań, sprzętu elektronicznego, baterii i akumulatorów, które dotyczą Twojej firmy.'

@@ -1,5 +1,4 @@
 ---
-import Section from '@layouts/Section.astro';
 import Link from '@components/Link.astro';
 
 import { getEntry } from 'astro:content';
@@ -7,13 +6,13 @@ const content = await getEntry('landing', 'hero');
 const { name, title, subtitle } = content.data;
 ---
 
-<Section name={name}>
+<section id={name} class="center section">
   <div class="header stack">
     <h1>{title}</h1>
     <p>{subtitle}</p>
     <div class="buttons">
-      <Link url="#services" className="button">Usługi</Link>
       <Link url="#contact" className="button outline">Kontakt</Link>
+      <Link url="#services" className="button">Usługi</Link>
     </div>
   </div>
-</Section>
+</section>

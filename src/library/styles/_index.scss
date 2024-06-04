@@ -6,15 +6,16 @@
 @import './_font';
 @import './_navbar';
 @import './_button';
+@import './_speech-bubble';
 
 :root {
   --font-color: var(--neutral-900);
 
-  --background: var(--brute-bg);
-  --bg-accent: var(--brute-bg-accent);
-  --bg-highlight: var(--brute-bg-highlight);
+  --background: var(--neutral-100);
+  --bg-accent: var(--toned-bg-accent);
+  --bg-highlight: var(--toned-bg-highlight);
 
-  --primary: var(--brute-primary);
+  --primary: var(--toned-primary);
   --secondary: var(--brute-secondary);
   --tertiary: var(--brute-tertiary);
 
@@ -25,7 +26,7 @@
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
-  --radius-btn: 10em;
+  --radius-btn: 5px;
 
   --max-section-width: 80ch;
 }
@@ -37,25 +38,21 @@ body {
   background: var(--background);
 
   header,
+  #hero {}
+
   #hero {
-    background: var(--toned-secondary);
-    text-align: left;
+    height: 40vh;
+    text-align: center;
   }
 
-  #intro {
-    background: var(--neutral-100);
-  }
+  #intro {}
 
-  #features {
-    border-top: var(--border-sm);
-    border-bottom: var(--border-sm);
-    background: var(--brute-secondary);
-  }
+  #photo {}
+
+  #features {}
 
   #about {
     background: var(--bg-accent);
-    border-top: var(--border-sm);
-    border-bottom: var(--border-sm);
   }
 
   #contact .section {
@@ -75,6 +72,10 @@ body {
   padding: var(--padding-lg) var(--padding-md);
   max-width: var(--max-section-width);
 
+  .header {
+    text-align: center;
+  }
+
   @include breakpoint(medium) {
     #features .header {
       text-align: center;
@@ -89,6 +90,7 @@ body {
 }
 
 // Not the best place for this, but it's a small project
+// its a button wrapper
 .buttons {
   display: flex;
   flex-wrap: wrap;

@@ -11,10 +11,25 @@ const [p1, p2, p3, p4] = paragraphs;
   <div class="header stack">
     <h1>{title}</h1>
   </div>
-  <div class="content stack-sm">
-    <p>{p1}</p>
-    <p>{p2}</p>
-    <p>{p3}</p>
-    <p>{p4}</p>
+  <div class="content">
+    <div class="speech-bubble">
+      <p>{p1}</p>
+    </div>
+    <div class="speech-bubble speech-bubble-right">
+      <p>{p2}</p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="emphasis">
+      <p>{p3}</p>
+      <br />
+      <p>{p4}</p>
+    </div>
   </div>
 </Section>
+<style lang="scss">
+  .emphasis {
+    font-size: 1.2em;
+    background: var(--neutral-400);
+    padding: 1rem;
+  }
+</style>
