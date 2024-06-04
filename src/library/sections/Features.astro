@@ -4,19 +4,19 @@ import Feature from '@components/Feature.astro';
 
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'features');
-const { name, title, subtitle } = content.data;
+const { name, subtitle } = content.data;
 
 const features = [
   {
-    title: 'Opakowań',
+    title: 'Opakowaniach',
     imgSrc: '/box.png',
   },
   {
-    title: 'Elektroniki',
+    title: 'Elektronice',
     imgSrc: '/battery.png',
   },
   {
-    title: 'Innych',
+    title: 'Chemii',
     imgSrc: '/barrel.png',
   },
 ];
@@ -24,8 +24,10 @@ const features = [
 
 <Section name={name}>
   <div class="header stack">
-    <h2>{title}</h2>
-    <p>{subtitle}</p>
+    <div>
+      Napisz do mnie – pomogę Ci zweryfikować Twoje obowiązki i zaproponuję najlepsze rozwiązania.
+    </div>
+    <h2>{subtitle}</h2>
   </div>
   <div class="content">
     {features.map((feature) => <Feature {...feature} />)}

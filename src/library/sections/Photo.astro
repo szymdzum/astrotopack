@@ -1,0 +1,79 @@
+---
+import Section from '@layouts/Section.astro';
+---
+
+<Section name="photo">
+  <div class="header stack">
+    <h1>Cześć! Jestem Zuza Zalewska.</h1>
+  </div>
+  <div class="container">
+    <div class="text-content">
+      <div class="quote-icon">“</div>
+      <div class="quote">
+        Przez lata pracy nad różnorodnymi projektami zdobyłam nie tylko wiedzę, ale i praktyczne
+        doświadczenie w zakresie przepisów ochrony środowiska.
+      </div>
+    </div>
+    <div class="image-wrapper">
+      <img src="/zu_photo_web.jpg" alt="Profile Picture" />
+    </div>
+  </div>
+</Section>
+<style lang="scss">
+  $primary-color: #e01b24;
+  $background-color: #e0e0e0;
+  $text-color: #000;
+  $quote-color: #e01b24;
+
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(180deg, #fafafa, #fafafa);
+    background-repeat: no-repeat;
+    background-size: 66.666% calc(100% - 2.9375rem);
+  }
+
+  .image-wrapper {
+    position: relative;
+    margin-right: 20px;
+
+    img {
+      border-radius: 5px;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &::after {
+      background-color: #ec1940;
+      border-radius: 5px;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 14px;
+      position: absolute;
+      top: 14px;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+
+  .text-content {
+    max-width: 450px;
+    color: $text-color;
+
+    .quote-icon {
+      color: $quote-color;
+      font-size: 50px;
+    }
+
+    .quote {
+      font-size: 1.2em;
+      line-height: 1.5;
+      margin: 10px 0;
+    }
+  }
+</style>
