@@ -15,7 +15,7 @@
   --bg-accent: var(--toned-bg-accent);
   --bg-highlight: var(--toned-bg-highlight);
 
-  --primary: var(--toned-primary);
+  --primary: #9194E2;
   --secondary: var(--brute-secondary);
   --tertiary: var(--brute-tertiary);
 
@@ -37,19 +37,19 @@ body {
   color: var(--font-color);
   background: var(--background);
 
-  header,
-  #hero {}
-
-  #hero {
-    height: 40vh;
-    text-align: center;
+  header {
+    display: none;
   }
 
-  #intro {}
+  @include breakpoint(medium) {
+    header {
+      display: block;
+    }
+  }
 
-  #photo {}
-
-  #features {}
+  #intro {
+    background: #FDF3EE;
+  }
 
   #about {
     background: var(--bg-accent);
@@ -62,7 +62,7 @@ body {
   footer {
     background: var(--dotted-pattern);
     background-size: 2em 2em;
-    height: 25vh;
+    height: 5vh;
   }
 }
 
@@ -72,12 +72,8 @@ body {
   padding: var(--padding-lg) var(--padding-md);
   max-width: var(--max-section-width);
 
-  .header {
-    text-align: center;
-  }
-
   @include breakpoint(medium) {
-    #features .header {
+    .header {
       text-align: center;
     }
   }
@@ -87,6 +83,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 // Not the best place for this, but it's a small project

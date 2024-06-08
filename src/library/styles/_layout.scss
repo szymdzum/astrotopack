@@ -43,12 +43,18 @@ $breakpoints: (
   }
 }
 
+[class^='stack'],
+[class^='stack-sm']>* {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .stack {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  >*+* {
+  &>*+* {
     margin-block-start: var(--margin-sm
     );
 }

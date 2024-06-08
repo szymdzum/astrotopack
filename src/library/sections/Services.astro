@@ -1,6 +1,7 @@
 ---
 import Section from '@layouts/Section.astro';
 import Card from '@components/Card.astro';
+import Features from '@sections/Features.astro';
 
 import { getEntry } from 'astro:content';
 const servicesContent = await getEntry('landing', 'services');
@@ -8,13 +9,14 @@ const { name, title, subtitle, services } = await servicesContent.data;
 ---
 
 <Section name={name}>
+  <Features />
   <div class="header stack">
     <h2>{title}</h2>
     <p>{subtitle}</p>
   </div>
 
   <div class="content">
-    {services.map((service) => <Card {...service} />)}
+    {services.map((service: any) => <Card {...service} />)}
   </div>
 </Section>
 

@@ -1,79 +1,93 @@
 ---
 import Section from '@layouts/Section.astro';
+import Link from '@components/Link.astro';
 ---
 
 <Section name="photo">
-  <div class="header stack">
-    <h1>Cześć! Jestem Zuza Zalewska.</h1>
+  <div class="header stack-sm">
+    <h1>Jestem Zuza Zalewska</h1>
+    <p>Twój doradca środowiskowy</p>
   </div>
-  <div class="container">
+  <div class="container stack">
     <div class="text-content">
-      <div class="quote-icon">“</div>
-      <div class="quote">
+      <p>
         Przez lata pracy nad różnorodnymi projektami zdobyłam nie tylko wiedzę, ale i praktyczne
         doświadczenie w zakresie przepisów ochrony środowiska.
-      </div>
+      </p>
+
+      <p>Pomagam firmom spełniać wymogi prawne wynikające z ustaw środowiskowych.</p>
     </div>
     <div class="image-wrapper">
       <img src="/zu_photo_web.jpg" alt="Profile Picture" />
     </div>
   </div>
+
+  <div class="buttons stack-sm">
+    <p class="text-center">
+      Napisz do mnie – pomogę Ci zweryfikować Twoje obowiązki i zaproponuję najlepsze rozwiązania.
+    </p>
+    <Link url="#contact" className="button outline">Kontakt</Link>
+    <Link url="#services" className="button">Usługi</Link>
+  </div>
 </Section>
+
 <style lang="scss">
+  @import '@styles/_layout.scss';
+
   $primary-color: #e01b24;
   $background-color: #e0e0e0;
-  $text-color: #000;
-  $quote-color: #e01b24;
 
   .container {
     display: flex;
-    align-items: center;
-    padding: 20px;
-    background-image: linear-gradient(180deg, #fafafa, #fafafa);
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: var(--margin-md);
+    border-radius: var(--radius-md);
     background-repeat: no-repeat;
+    background-image: linear-gradient(180deg, var(--neutral-200), var(--neutral-300));
     background-size: 66.666% calc(100% - 2.9375rem);
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+  }
+
+  // Maybe time for contaianer query?
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: var(--padding-sm);
+    border-radius: var(--radius-md);
+
+    @include breakpoint(medium) {
+      max-width: 45%;
+    }
   }
 
   .image-wrapper {
     position: relative;
-    margin-right: 20px;
 
     img {
-      border-radius: 5px;
       height: 100%;
       object-fit: cover;
       position: relative;
       width: 100%;
       z-index: 1;
+      border-radius: var(--radius-md);
     }
 
     &::after {
-      background-color: #ec1940;
-      border-radius: 5px;
+      background-color: #97adf6;
       content: '';
       display: block;
-      height: 100%;
-      left: 14px;
       position: absolute;
-      top: 14px;
+      height: 100%;
       width: 100%;
+      left: 1rem;
+      top: 1rem;
       z-index: 0;
-    }
-  }
-
-  .text-content {
-    max-width: 450px;
-    color: $text-color;
-
-    .quote-icon {
-      color: $quote-color;
-      font-size: 50px;
-    }
-
-    .quote {
-      font-size: 1.2em;
-      line-height: 1.5;
-      margin: 10px 0;
+      border-radius: var(--radius-md);
     }
   }
 </style>

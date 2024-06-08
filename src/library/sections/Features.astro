@@ -1,10 +1,9 @@
 ---
-import Section from '@layouts/Section.astro';
 import Feature from '@components/Feature.astro';
 
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'features');
-const { name, subtitle } = content.data;
+const { subtitle } = content.data;
 
 const features = [
   {
@@ -16,29 +15,27 @@ const features = [
     imgSrc: '/battery.png',
   },
   {
-    title: 'Chemii',
+    title: 'Olejach i Oponach',
     imgSrc: '/barrel.png',
   },
 ];
 ---
 
-<Section name={name}>
-  <div class="header stack">
-    <div>
-      Napisz do mnie – pomogę Ci zweryfikować Twoje obowiązki i zaproponuję najlepsze rozwiązania.
-    </div>
+<section class="stack-lg">
+  <div class="header">
     <h2>{subtitle}</h2>
   </div>
   <div class="content">
     {features.map((feature) => <Feature {...feature} />)}
   </div>
-</Section>
-
+</section>
 <style lang="scss">
   .content {
+    width: 90%;
+    margin-inline: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-sm);
+
     --multiplier: calc(40rem - 100%);
   }
 </style>
