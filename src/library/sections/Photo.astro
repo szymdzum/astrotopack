@@ -5,11 +5,12 @@ import Link from '@components/Link.astro';
 
 <Section name="photo">
   <div class="header stack-sm">
-    <h1>Jestem Zuza Zalewska</h1>
+    <h1>Cześć! Jestem Zuza Zalewska</h1>
     <p>Twój doradca środowiskowy</p>
   </div>
   <div class="container stack">
     <div class="text-content">
+      Nie jesteś pewien, co zrobić dalej? Chętnie pomogę!
       <p>
         Przez lata pracy nad różnorodnymi projektami zdobyłam nie tylko wiedzę, ale i praktyczne
         doświadczenie w zakresie przepisów ochrony środowiska.
@@ -44,8 +45,8 @@ import Link from '@components/Link.astro';
     margin-bottom: var(--margin-md);
     border-radius: var(--radius-md);
     background-repeat: no-repeat;
-    background-image: linear-gradient(180deg, var(--neutral-200), var(--neutral-300));
-    background-size: 66.666% calc(100% - 2.9375rem);
+    background-image: linear-gradient(180deg, #ffdfc8, #ffdfc8);
+    background-size: 66.666% 100%;
 
     @include breakpoint(medium) {
       flex-direction: row;
@@ -78,7 +79,7 @@ import Link from '@components/Link.astro';
     }
 
     &::after {
-      background-color: #97adf6;
+      background-color: #e8e8e4;
       content: '';
       display: block;
       position: absolute;

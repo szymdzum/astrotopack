@@ -20,15 +20,39 @@ const [p1, p2, p3, p4] = paragraphs;
     </div>
     <div class="clearfix"></div>
     <div class="emphasis">
-      <p>{p3}</p>
+      <p>
+        {p3}
+        {p4}
+      </p>
     </div>
     <br />
-    <p>{p4}</p>
+    <div class="speech-bubble speech-bubble-success">
+      <p>Nie jesteś pewien, co zrobić dalej? Chętnie pomogę!</p>
+    </div>
   </div>
+  <style lang="scss">
+    .content {
+      padding-top: var(--padding-md);
+    }
+    .emphasis {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background: #ffadad;
+      padding: 1rem;
+      font-weight: 800;
+      width: fit-content;
+      margin-inline: auto;
+      border-radius: var(--radius-md);
+    }
+
+    .explanation {
+      margin-top: 1rem;
+      background: #caffbf;
+      padding: 1rem;
+      font-weight: 800;
+      width: fit-content;
+      margin-inline: auto;
+      border-radius: var(--radius-md);
+    }
+  </style>
 </Section>
-<style lang="scss">
-  .emphasis {
-    background: #ecd4d1;
-    padding: 1rem;
-  }
-</style>

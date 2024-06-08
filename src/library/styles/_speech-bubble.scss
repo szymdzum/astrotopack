@@ -1,14 +1,15 @@
 :root {
-  --speech-bubble-background: #DEF1EE;
+  --speech-bubble-background: #E8E8E4;
   --speech-bubble-arrow-size: 1rem;
+  --success-color: #E8E8E4;
 }
 
 .speech-bubble {
   position: relative;
   background: var(--speech-bubble-background);
-  border-radius: 0.25rem;
+  border-radius: var(--radius-md);
   padding: 1rem 1.5rem;
-  width: 75%;
+  width: 70%;
   margin-bottom: 2rem;
 
   &::before {
@@ -27,6 +28,17 @@
     &::before {
       left: auto;
       right: calc(-1 * var(--speech-bubble-arrow-size));
+    }
+  }
+
+  &-success {
+    float: right;
+    background: var(--success-color);
+
+    &::before {
+      left: auto;
+      right: calc(-1 * var(--speech-bubble-arrow-size));
+      border-color: transparent transparent var(--success-color) transparent;
     }
   }
 }
