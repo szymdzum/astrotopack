@@ -9,17 +9,17 @@
 @import './_speech-bubble';
 
 :root {
-  --font-color: var(--neutral-900);
+  --text: #050315;
+  --background: #FAF7FO;
+  --primary: #FEC5BB;
+  --secondary: #E5ECE4;
+  --accent: #C6D8BD;
 
-  --background: var(--neutral-100);
-  --bg-accent: var(--toned-bg-accent);
+  --bg-accent: #E8E8E4;
   --bg-highlight: var(--toned-bg-highlight);
 
-  --primary: #9194E2;
-  --secondary: var(--brute-secondary);
-  --tertiary: var(--brute-tertiary);
 
-  --border-sm: 0.35vmin solid var(--neutral-900);
+  --border-sm: 2px solid var(--neutral-900);
   --border-md: 0.4vmin solid var(--neutral-900);
   --border-lg: 0.5vmin solid var(--neutral-900);
   --box-shadow: 0.4rem 0.4rem var(--neutral-900);
@@ -34,7 +34,7 @@
 body {
   height: 100%;
   overflow: visible;
-  color: var(--font-color);
+  color: var(--text);
   background: var(--background);
 
   header {
@@ -47,12 +47,12 @@ body {
     }
   }
 
-  #intro {
-    background: #FDF3EE;
+  #photo .section {
+    padding-top: 0;
   }
 
   #about {
-    background: var(--bg-accent);
+    background: #E8E8E4
   }
 
   #contact .section {

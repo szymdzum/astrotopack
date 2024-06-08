@@ -7,7 +7,7 @@
     font-weight: 700;
     text-transform: uppercase;
     background: var(--primary);
-    color: var(--neutral-100);
+    color: var(--neutral-900);
     font-size: 18px;
     padding: 0.75em 2em;
     border-radius: 5px;
@@ -24,7 +24,8 @@
     }
 
     &.secondary {
-      color: hsl(0, 0%, 0%)
+      border: 2px solid #E8E8E4;
+      background: #E8E8E4;
     }
 
     &.outline {
@@ -45,7 +46,7 @@
 
     &.email {
       border: 0;
-      background: hsl(227, 98%, 68%);
+      background: #FEC5BB;
     }
 
     &.has-icon {
