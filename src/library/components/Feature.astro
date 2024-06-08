@@ -8,18 +8,20 @@ const { imgSrc, title, text } = Astro.props;
   <h3>{title}</h3>
   <p>{text}</p>
 </div>
-
 <style type="scss">
+  @import '@styles/_layout.scss';
+
   .feature {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-items: center;
-    text-align: center;
-    min-width: 30%;
+    flex-direction: column;
+    min-width: 31%;
     max-width: 100%;
     flex-basis: calc(var(--multiplier) * 999);
     background: var(--background);
-    padding: var(--padding-sm);
+    gap: var(--gap-sm);
+
+    @include breakpoint(medium) {
+    }
   }
 </style>

@@ -1,5 +1,5 @@
 ---
 name: 'features'
 title: 'Cześć! Jestem Zuza Zalewska.'
-subtitle: 'Skupiam się na:'
+subtitle: 'Specjalizuje się w'
 ---

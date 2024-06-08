@@ -8,7 +8,7 @@ const [p1, p2, p3, p4] = paragraphs;
 ---
 
 <Section name={name}>
-  <div class="header stack">
+  <div class="header">
     <h1>{title}</h1>
   </div>
   <div class="content">
@@ -21,14 +21,14 @@ const [p1, p2, p3, p4] = paragraphs;
     <div class="clearfix"></div>
     <div class="emphasis">
       <p>{p3}</p>
-      <br />
-      <p>{p4}</p>
     </div>
+    <br />
+    <p>{p4}</p>
   </div>
 </Section>
 <style lang="scss">
   .emphasis {
-    background: hsl(224, 19%, 85%);
+    background: #ecd4d1;
     padding: 1rem;
   }
 </style>

@@ -1,16 +1,15 @@
 :root {
-  --speech-bubble-background: rgb(226 232 240);
+  --speech-bubble-background: #DEF1EE;
   --speech-bubble-arrow-size: 1rem;
 }
 
 .speech-bubble {
   position: relative;
-  background: hsl(224, 19%, 85%);
+  background: var(--speech-bubble-background);
   border-radius: 0.25rem;
   padding: 1rem 1.5rem;
-  width: 65%;
+  width: 75%;
   margin-bottom: 2rem;
-
 
   &::before {
     content: '';
@@ -24,7 +23,6 @@
 
   &-right {
     float: right;
-    ;
 
     &::before {
       left: auto;

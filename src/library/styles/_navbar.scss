@@ -1,16 +1,16 @@
-  nav {
-    li {
-      display: inline-block;
-    }
+nav {
+  li {
+    display: inline-block;
+  }
 
-    .nav-link {
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: var(--padding-sm);
+  .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: var(--padding-sm);
 
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
+    &:focus,
+    &:hover {
+      text-decoration: underline;
     }
   }
+}
