@@ -45,8 +45,9 @@ import Link from '@components/Link.astro';
     margin-bottom: var(--margin-md);
     border-radius: var(--radius-md);
     background-repeat: no-repeat;
+    padding: var(--padding-sm);
     background-image: linear-gradient(180deg, #ffdfc8, #ffdfc8);
-    background-size: 66.666% 100%;
+    //  background-size: 66.666% 100%;
 
     @include breakpoint(medium) {
       flex-direction: row;
@@ -75,19 +76,6 @@ import Link from '@components/Link.astro';
       position: relative;
       width: 100%;
       z-index: 1;
-      border-radius: var(--radius-md);
-    }
-
-    &::after {
-      background-color: #e8e8e4;
-      content: '';
-      display: block;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      left: 1rem;
-      top: 1rem;
-      z-index: 0;
       border-radius: var(--radius-md);
     }
   }

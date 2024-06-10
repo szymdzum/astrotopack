@@ -19,7 +19,6 @@
     }
 
     &:is(:active) {
-      // transform to make it look like it's pressed
       transform: translateY(3px) translateX(2px);
     }
 
