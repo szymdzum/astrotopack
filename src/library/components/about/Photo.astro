@@ -1,7 +1,7 @@
 ---
 import Section from '@layouts/Section.astro';
-import Link from '@components/ui/Link.astro';
 import HeadingGroup from '@components/ui/HeadingGroup.astro';
+import Button from '@components/ui/Button.astro';
 
 const heading = 'Cześć! Jestem Zuza Zalewska';
 const subheading = 'Twój doradca środowiskowy';
@@ -27,8 +27,8 @@ const subheading = 'Twój doradca środowiskowy';
     <p class="text-center">
       Napisz do mnie – pomogę Ci zweryfikować Twoje obowiązki i zaproponuję najlepsze rozwiązania.
     </p>
-    <Link url="#contact" className="button outline">Kontakt</Link>
-    <Link url="#services" className="button">Usługi</Link>
+    <Button asLink url="#contact" className=" outline">Kontakt</Button>
+    <Button asLink url="#services">Usługi</Button>
   </div>
 
   <style lang="scss">

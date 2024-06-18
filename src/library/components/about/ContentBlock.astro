@@ -1,11 +1,12 @@
 ---
+import Button from '@components/ui/Button.astro';
 const { title, paragraph, linkUrl, linkText } = Astro.props;
 ---
 
 <div class="content-block stack">
   <h2>{title}</h2>
   <p>{paragraph}</p>
-  <a href={linkUrl} class="button outline">{linkText}</a>
+  <Button asLink url={linkUrl} className="outline">{linkText}</Button>
 </div>
 
 <style lang="scss">
