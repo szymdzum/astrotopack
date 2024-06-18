@@ -1,0 +1,19 @@
+---
+const { heading, subheading, as = 'h2' } = Astro.props;
+const HeadingTag = as;
+---
+
+<hgroup class="stack">
+  <HeadingTag>{heading}</HeadingTag>
+  <p>{subheading}</p>
+</hgroup>
+
+<style lang="scss">
+  hgroup {
+    text-align: center;
+
+    p {
+      font-size: calc(100% + 0.3vw);
+    }
+  }
+</style>

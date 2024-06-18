@@ -1,0 +1,17 @@
+---
+const { title, paragraph, linkUrl, linkText } = Astro.props;
+---
+
+<div class="content-block stack">
+  <h2>{title}</h2>
+  <p>{paragraph}</p>
+  <a href={linkUrl} class="button outline">{linkText}</a>
+</div>
+
+<style lang="scss">
+  .content-block {
+    padding: 1rem;
+    width: fit-content;
+    margin-inline: auto;
+  }
+</style>

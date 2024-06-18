@@ -1,5 +1,6 @@
 ---
 import Section from '@layouts/Section.astro';
+import HeadingGroup from '@components/ui/HeadingGroup.astro';
 import Link from '@components/ui/Link.astro';
 
 import { getEntry } from 'astro:content';
@@ -8,10 +9,7 @@ const { name, title, subtitle } = content.data;
 ---
 
 <Section name={name}>
-  <div class="header stack">
-    <h2>{title}</h2>
-    <p>{subtitle}</p>
-  </div>
+  <HeadingGroup heading={title} subheading={subtitle} />
 
   <div class="content">
     <div class="buttons">

@@ -1,13 +1,14 @@
 ---
 import Section from '@layouts/Section.astro';
 import Link from '@components/ui/Link.astro';
+import HeadingGroup from '@components/ui/HeadingGroup.astro';
+
+const heading = 'Cześć! Jestem Zuza Zalewska';
+const subheading = 'Twój doradca środowiskowy';
 ---
 
 <Section name="photo">
-  <div class="header stack-sm">
-    <h1>Cześć! Jestem Zuza Zalewska</h1>
-    <p>Twój doradca środowiskowy</p>
-  </div>
+  <HeadingGroup heading={heading} subheading={subheading} />
   <div class="container stack">
     <div class="text-content">
       <p>
@@ -29,53 +30,53 @@ import Link from '@components/ui/Link.astro';
     <Link url="#contact" className="button outline">Kontakt</Link>
     <Link url="#services" className="button">Usługi</Link>
   </div>
-</Section>
 
-<style lang="scss">
-  @import '@styles/_layout.scss';
+  <style lang="scss">
+    @import '@styles/_layout.scss';
 
-  $primary-color: #e01b24;
-  $background-color: #e0e0e0;
+    $primary-color: #e01b24;
+    $background-color: #e0e0e0;
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: var(--margin-md);
-    border-radius: var(--radius-md);
-    background-repeat: no-repeat;
-    padding: var(--padding-sm);
-    background-image: linear-gradient(180deg, #ffdfc8, #ffdfc8);
-    //  background-size: 66.666% 100%;
-
-    @include breakpoint(medium) {
-      flex-direction: row;
-    }
-  }
-
-  // Maybe time for contaianer query?
-  .text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: var(--padding-sm);
-    border-radius: var(--radius-md);
-
-    @include breakpoint(medium) {
-      max-width: 45%;
-    }
-  }
-
-  .image-wrapper {
-    position: relative;
-
-    img {
-      height: 100%;
-      object-fit: cover;
-      position: relative;
-      width: 100%;
-      z-index: 1;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: var(--margin-md);
       border-radius: var(--radius-md);
+      background-repeat: no-repeat;
+      padding: var(--padding-sm);
+      background-image: linear-gradient(180deg, #ffdfc8, #ffdfc8);
+      //  background-size: 66.666% 100%;
+
+      @include breakpoint(medium) {
+        flex-direction: row;
+      }
     }
-  }
-</style>
+
+    // Maybe time for contaianer query?
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: var(--padding-sm);
+      border-radius: var(--radius-md);
+
+      @include breakpoint(medium) {
+        max-width: 45%;
+      }
+    }
+
+    .image-wrapper {
+      position: relative;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        border-radius: var(--radius-md);
+      }
+    }
+  </style>
+</Section>

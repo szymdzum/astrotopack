@@ -1,34 +1,40 @@
 ---
-import Feature from '@components/services/Feature.astro';
-
+import HeadingGroup from '@components/ui/HeadingGroup.astro';
+import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'features');
-const { subtitle } = content.data;
+const { title } = content.data;
 
 const features = [
   {
-    title: 'Opakowaniach',
+    title: 'Opakowania',
     imgSrc: '/box.png',
   },
   {
-    title: 'Elektronice',
+    title: 'Elektronika',
     imgSrc: '/battery.png',
   },
   {
-    title: 'Olejach i Oponach',
+    title: 'Oleje i Opony',
     imgSrc: '/barrel.png',
   },
 ];
 ---
 
 <section class="stack-lg">
-  <div class="header">
-    <h2>{subtitle}</h2>
-  </div>
+  <HeadingGroup heading={title} />
   <div class="content">
-    {features.map((feature) => <Feature {...feature} />)}
+    {
+      features.map((feature) => (
+        <div class="feature stack-sm">
+          <Image src={feature.imgSrc} alt={feature.title} height="90" width="90" />
+          <h3>{feature.title}</h3>
+        </div>
+      ))
+    }
   </div>
 </section>
+
 <style lang="scss">
   .content {
     width: 90%;
@@ -36,7 +42,17 @@ const features = [
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-
     --multiplier: calc(40rem - 100%);
+
+    .feature {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      min-width: 31%;
+      max-width: 100%;
+      flex-basis: calc(var(--multiplier) * 999);
+      background: var(--background);
+      gap: var(--gap-xs);
+    }
   }
 </style>
