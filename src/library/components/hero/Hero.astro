@@ -1,5 +1,5 @@
 ---
-import Section from '@layouts/Section.astro';
+import Section from '../../layouts/Section.astro';
 
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'intro');
@@ -53,6 +53,55 @@ const [p1, p2, p3, p4] = paragraphs;
       width: fit-content;
       margin-inline: auto;
       border-radius: var(--radius-md);
+    }
+
+    :root {
+      --speech-bubble-background: #e8e8e4;
+      --speech-bubble-arrow-size: 1rem;
+      --success-color: #e8e8e4;
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: var(--speech-bubble-background);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      width: 70%;
+      margin-bottom: 2rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc(-1 * var(--speech-bubble-arrow-size));
+        border-width: var(--speech-bubble-arrow-size);
+        border-style: solid;
+        border-color: transparent transparent var(--speech-bubble-background) transparent;
+      }
+
+      &-right {
+        float: right;
+
+        &::before {
+          left: auto;
+          right: calc(-1 * var(--speech-bubble-arrow-size));
+        }
+      }
+
+      &-success {
+        float: right;
+        background: var(--success-color);
+
+        &::before {
+          left: auto;
+          right: calc(-1 * var(--speech-bubble-arrow-size));
+          border-color: transparent transparent var(--success-color) transparent;
+        }
+      }
+    }
+
+    .clearfix {
+      clear: both;
     }
   </style>
 </Section>

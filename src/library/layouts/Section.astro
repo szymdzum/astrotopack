@@ -7,3 +7,11 @@ const { name } = Astro.props;
     <slot />
   </div>
 </section>
+
+<style lang="scss">
+  .section {
+    margin-inline: auto;
+    padding: var(--padding-lg) var(--padding-md);
+    max-width: var(--max-section-width);
+  }
+</style>

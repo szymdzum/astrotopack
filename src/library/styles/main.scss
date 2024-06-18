@@ -4,11 +4,16 @@
 @import './_theme';
 @import './_layout';
 @import './_font';
-@import './_navbar';
 @import './_button';
-@import './_speech-bubble';
 
 :root {
+  /* Layout */
+
+  --small-screen: 24em;
+  --max-section-width: 80ch;
+
+
+  // Colors
   --text: #050315;
   --background: #FAF7FO;
   --primary: #FEC5BB;
@@ -18,7 +23,6 @@
   --bg-accent: #E8E8E4;
   --bg-highlight: var(--toned-bg-highlight);
 
-
   --border-sm: 2px solid var(--neutral-900);
   --border-md: 0.4vmin solid var(--neutral-900);
   --border-lg: 0.5vmin solid var(--neutral-900);
@@ -27,8 +31,6 @@
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-btn: 5px;
-
-  --max-section-width: 80ch;
 }
 
 body {
@@ -36,16 +38,6 @@ body {
   overflow: visible;
   color: var(--text);
   background: var(--background);
-
-  header {
-    display: none;
-  }
-
-  @include breakpoint(medium) {
-    header {
-      display: block;
-    }
-  }
 
   #photo .section {
     padding-top: 0;
@@ -59,25 +51,8 @@ body {
     padding-top: 0;
   }
 
-  footer {
-    background: var(--dotted-pattern);
-    background-size: 2em 2em;
-    height: 5vh;
-  }
 }
 
-.section {
-  margin-inline: auto;
-  container-type: inline-size;
-  padding: var(--padding-lg) var(--padding-md);
-  max-width: var(--max-section-width);
-
-  @include breakpoint(medium) {
-    .header {
-      text-align: center;
-    }
-  }
-}
 
 .center {
   display: flex;

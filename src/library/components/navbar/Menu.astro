@@ -1,0 +1,43 @@
+---
+interface Props {
+  menu: NavItem[];
+}
+
+interface NavItem {
+  url: string;
+  text: string;
+}
+
+const { menu } = Astro.props;
+---
+
+<ul class="menu" role="list">
+  {
+    menu.map(({ url, text }) => (
+      <li>
+        <a class="nav-link" href={url}>
+          {text}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  .menu {
+    li {
+      display: inline-block;
+    }
+
+    .nav-link {
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: var(--padding-xs);
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>
