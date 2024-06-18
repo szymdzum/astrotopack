@@ -1,5 +1,5 @@
 ---
-pageName: 'Put To Pack'
+brandName: 'Put To Pack'
 menu:
   - url: '#about'
     text: O Mnie

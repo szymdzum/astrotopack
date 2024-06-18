@@ -1,0 +1,30 @@
+<div class="split-screen">
+  <div class="split-half">
+    <slot name="left" />
+  </div>
+  <div class="split-half">
+    <slot name="right" />
+  </div>
+</div>
+<style is:global lang="scss">
+  .split-screen {
+    display: flex;
+
+    .split-half {
+      flex: 1;
+
+      img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        width: 90%;
+        border-radius: var(--radius-md);
+        border: var(--border-lg);
+        box-shadow: var(--box-shadow);
+      }
+    }
+
+    &:nth-child(2) {
+      flex-direction: row-reverse;
+    }
+  }
+</style>

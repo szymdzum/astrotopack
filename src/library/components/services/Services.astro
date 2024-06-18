@@ -1,0 +1,22 @@
+---
+import Section from '@layouts/Section.astro';
+import Card from '@components/services/Card.astro';
+import Features from '@components/services/Features.astro';
+import Grid from '@layouts/Grid.astro';
+
+import { getEntry } from 'astro:content';
+const content = await getEntry('landing', 'services');
+const { name, title, subtitle, services } = await content.data;
+---
+
+<Section name={name}>
+  <Features />
+  <div class="header stack">
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+  </div>
+
+  <Grid>
+    {services.map((service: any) => <Card {...service} />)}
+  </Grid>
+</Section>

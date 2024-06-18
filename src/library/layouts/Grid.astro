@@ -1,0 +1,11 @@
+<div class="grid">
+  <slot />
+</div>
+
+<style lang="scss">
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
+    gap: var(--gap-md);
+  }
+</style>

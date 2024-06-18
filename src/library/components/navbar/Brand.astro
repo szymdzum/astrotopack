@@ -1,16 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-const { imgSrc } = Astro.props;
+const { name, logoSrc } = Astro.props;
 ---
 
 <a href="/" class="logo" aria-label="Go to homepage">
-  <Image src={imgSrc} alt="Logo" width="65" height="75" />
-  <span><b>Put </b>to <b>Pack</b></span>
+  <Image src={logoSrc} alt="Logo" width="60" height="70" />
+  <span>{name}</span>
 </a>
 
 <style lang="scss">
-  @import '@styles/_layout.scss';
-
   .logo {
     display: flex;
     align-items: baseline;
@@ -22,21 +20,13 @@ const { imgSrc } = Astro.props;
 
     span {
       display: none;
-      font-size: 2rem;
-      font-weight: 500;
-
-      b {
-        font-weight: 900;
-      }
     }
 
-    @include breakpoint(medium) {
-      img {
-        margin-right: 0.5rem;
-      }
-
+    @container nav (inline-size >= 24em) {
       span {
         display: block;
+        font-size: 2rem;
+        font-weight: 700;
       }
     }
   }

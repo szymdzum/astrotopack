@@ -1,0 +1,62 @@
+---
+import Section from '@layouts/Section.astro';
+import Link from '@components/ui/Link.astro';
+import Split from '@layouts/Split.astro';
+
+import { getEntry } from 'astro:content';
+const content = await getEntry('landing', 'about');
+const { name, titles, paragraphs } = await content.data;
+const [title1, title2] = titles;
+const [p1, p2] = paragraphs;
+---
+
+<Section name={name}>
+  <Split>
+    <img slot="left" alt="Eco image" src="/about_img_1.png" />
+    <div slot="right" class="stack">
+      <h2>{title1}</h2>
+      <p>{p1}</p>
+      <Link className="button outline" url="#services">Czytaj dalej</Link>
+    </div>
+  </Split>
+
+  <Split>
+    <img slot="left" alt="Eco image" src="/about_img_2.png" />
+    <div slot="right" class="column stack">
+      <h2>{title2}</h2>
+      <p>{p2}</p>
+      <Link className="button outline" url="#contact">Skontaktuj się</Link>
+    </div>
+  </Split>
+</Section>
+
+<style lang="scss">
+  @import '@styles/_layout.scss';
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--gap-md);
+
+    .column {
+      flex: 1;
+    }
+
+    .swap {
+      order: -1;
+    }
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+
+      &:nth-child(2) {
+        margin-top: var(--margin-lg);
+      }
+
+      .swap {
+        order: 2;
+      }
+    }
+  }
+</style>

@@ -32,10 +32,4 @@ $colors: (
       --#{$color}-#{$shade}: #{$value};
     }
   }
-
-  --dotted-pattern: radial-gradient(circle, #000000 10%, transparent 11%),
-  radial-gradient(circle at bottom left, #000000 5%, transparent 6%),
-  radial-gradient(circle at bottom right, #000000 5%, transparent 6%),
-  radial-gradient(circle at top left, #000000 5%, transparent 6%),
-  radial-gradient(circle at top right, #000000 5%, transparent 6%);
 }

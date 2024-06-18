@@ -1,3 +1,16 @@
-<footer>
-  <div class="footer-content"></div>
-</footer>
+<footer></footer>
+<style lang="scss">
+  :root {
+    --dotted-pattern: radial-gradient(circle, #000000 10%, transparent 11%),
+      radial-gradient(circle at bottom left, #000000 5%, transparent 6%),
+      radial-gradient(circle at bottom right, #000000 5%, transparent 6%),
+      radial-gradient(circle at top left, #000000 5%, transparent 6%),
+      radial-gradient(circle at top right, #000000 5%, transparent 6%);
+  }
+
+  footer {
+    background: var(--dotted-pattern);
+    background-size: 2em 2em;
+    height: 5vh;
+  }
+</style>

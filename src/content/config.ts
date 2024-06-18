@@ -2,7 +2,7 @@ import { z, defineCollection } from 'astro:content';
 
 // Page Config
 const config = z.object({
-  pageName: z.string(),
+  brandName: z.string(),
   menu: z.array(
     z.object({
       name: z.string(),

@@ -1,28 +1,24 @@
 ---
 import SpeedInsights from '@vercel/speed-insights/astro';
 import '@fontsource/inter';
-import '@fontsource/poppins/600.css';
-import '@fontsource/poppins/400.css';
-import '@fontsource-variable/noto-serif';
 import '@fontsource-variable/rethink-sans';
-import '@fontsource-variable/dm-sans';
-import '@styles/_index.scss';
-import Header from '@sections/Header.astro';
+import '@styles/main.scss';
+import Navbar from '@components/navbar/Navbar.astro';
 import Footer from '@sections/Footer.astro';
 
-const PAGE_TITLE = 'Astrotopack';
+const PAGE_TITLE = 'Put To Pack';
 ---
 
 <!doctype html>
 <html lang="pl">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Astrotopack" />
+    <meta name="description" content={PAGE_TITLE} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{PAGE_TITLE}</title>
   </head>
   <body>
-    <Header />
+    <Navbar />
     <main>
       <slot />
     </main>
