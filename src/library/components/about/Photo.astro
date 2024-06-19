@@ -1,82 +1,44 @@
 ---
 import Section from '@layouts/Section.astro';
+import Stack from '@layouts/Stack.astro';
+import Split from '@layouts/Split.astro';
+import Group from '@layouts/Group.astro';
+import Center from '@layouts/Center.astro';
+
 import HeadingGroup from '@components/ui/HeadingGroup.astro';
+import Img from '@components/ui/Img.astro';
 import Button from '@components/ui/Button.astro';
+import Text from '@components/ui/Text.astro';
 
 const heading = 'Cześć! Jestem Zuza Zalewska';
 const subheading = 'Twój doradca środowiskowy';
+
+const aboutText_1 =
+  'Przez lata pracy nad różnorodnymi projektami zdobyłam nie tylko wiedzę, ale i praktyczne  doświadczenie w zakresie przepisów ochrony środowiska.';
+
+const aboutText_2 = 'Pomagam firmom spełniać wymogi prawne wynikające z ustaw środowiskowych.';
+
+const aboutText_3 =
+  'Napisz do mnie – pomogę Ci zweryfikować Twoje obowiązki i zaproponuję najlepsze rozwiązania.';
+
+const profilePicture = '/zu_photo_web.jpg';
 ---
 
 <Section name="photo">
   <HeadingGroup heading={heading} subheading={subheading} />
-  <div class="container stack">
-    <div class="text-content">
-      <p>
-        Przez lata pracy nad różnorodnymi projektami zdobyłam nie tylko wiedzę, ale i praktyczne
-        doświadczenie w zakresie przepisów ochrony środowiska.
-      </p>
+  <Split>
+    <Stack>
+      <Text>{aboutText_1}</Text>
+      <Text>{aboutText_2}</Text>
+    </Stack>
+    <Img src={profilePicture} alt="Profile Picture" />
+  </Split>
 
-      <p>Pomagam firmom spełniać wymogi prawne wynikające z ustaw środowiskowych.</p>
-    </div>
-    <div class="image-wrapper">
-      <img src="/zu_photo_web.jpg" alt="Profile Picture" />
-    </div>
-  </div>
-
-  <div class="buttons stack-sm">
-    <p class="text-center">
-      Napisz do mnie – pomogę Ci zweryfikować Twoje obowiązki i zaproponuję najlepsze rozwiązania.
-    </p>
-    <Button asLink url="#contact" className=" outline">Kontakt</Button>
-    <Button asLink url="#services">Usługi</Button>
-  </div>
-
-  <style lang="scss">
-    @import '@styles/_layout.scss';
-
-    $primary-color: #e01b24;
-    $background-color: #e0e0e0;
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-bottom: var(--margin-md);
-      border-radius: var(--radius-md);
-      background-repeat: no-repeat;
-      padding: var(--padding-sm);
-      background-image: linear-gradient(180deg, #ffdfc8, #ffdfc8);
-      //  background-size: 66.666% 100%;
-
-      @include breakpoint(medium) {
-        flex-direction: row;
-      }
-    }
-
-    // Maybe time for contaianer query?
-    .text-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      padding: var(--padding-sm);
-      border-radius: var(--radius-md);
-
-      @include breakpoint(medium) {
-        max-width: 45%;
-      }
-    }
-
-    .image-wrapper {
-      position: relative;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-        position: relative;
-        width: 100%;
-        z-index: 1;
-        border-radius: var(--radius-md);
-      }
-    }
-  </style>
+  <Text>{aboutText_3}</Text>
+  <Center>
+    <Group>
+      <Button asLink url="#contact" className="outline">Kontakt</Button>
+      <Button asLink url="#services">Usługi</Button>
+    </Group>
+  </Center>
 </Section>

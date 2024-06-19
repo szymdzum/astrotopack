@@ -1,16 +1,25 @@
 ---
+import Stack from '@layouts/Stack.astro';
 import Button from '@components/ui/Button.astro';
 const { title, paragraph, linkUrl, linkText } = Astro.props;
 ---
 
-<div class="content-block stack">
-  <h2>{title}</h2>
-  <p>{paragraph}</p>
-  <Button asLink url={linkUrl} className="outline">{linkText}</Button>
-</div>
+<section>
+  <Stack>
+    <h2>{title}</h2>
+    <p>{paragraph}</p>
+    <Button
+      asLink
+      url={linkUrl}
+      className="outline"
+    >
+      {linkText}
+    </Button>
+  </Stack>
+</section>
 
 <style lang="scss">
-  .content-block {
+  section {
     padding: 1rem;
     width: fit-content;
     margin-inline: auto;

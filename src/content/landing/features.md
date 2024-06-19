@@ -1,5 +1,5 @@
 ---
 name: 'features'
-title: 'Moje specializacje'
+title: 'Moje Specjalności'
 subtitle: ''
 ---

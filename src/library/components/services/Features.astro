@@ -21,13 +21,18 @@ const features = [
 ];
 ---
 
-<section class="stack-lg">
+<section>
   <HeadingGroup heading={title} />
   <div class="content">
     {
       features.map((feature) => (
-        <div class="feature stack-sm">
-          <Image src={feature.imgSrc} alt={feature.title} height="90" width="90" />
+        <div class="feature">
+          <Image
+            src={feature.imgSrc}
+            alt={feature.title}
+            height="90"
+            width="90"
+          />
           <h3>{feature.title}</h3>
         </div>
       ))
@@ -41,7 +46,8 @@ const features = [
     margin-inline: auto;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
     --multiplier: calc(40rem - 100%);
 
     .feature {

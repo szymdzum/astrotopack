@@ -7,6 +7,8 @@ export default {
   tabWidth: 2,
   trailingComma: "es5",
   useTabs: false,
+  proseWrap: "never",
+  singleAttributePerLine: true,
   plugins: ["prettier-plugin-astro"],
   overrides: [
     {

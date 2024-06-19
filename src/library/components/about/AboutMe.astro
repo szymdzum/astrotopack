@@ -1,6 +1,7 @@
 ---
 import Section from '@layouts/Section.astro';
 import Split from '@layouts/Split.astro';
+import Img from '@components/ui/Img.astro';
 import ContentBlock from './ContentBlock.astro';
 
 import { getEntry } from 'astro:content';
@@ -9,13 +10,18 @@ const content = await getEntry('landing', 'about');
 const { name, titles, paragraphs } = await content.data;
 const [title1, title2] = titles;
 const [text1, text2] = paragraphs;
+
+const AboutImage_1 = '/about_img_1.png';
+const AboutImage_2 = '/about_img_2.png';
 ---
 
 <Section name={name}>
   <Split>
-    <img slot="left" alt="Eco image" src="/about_img_1.png" />
+    <Img
+      src={AboutImage_1}
+      alt="Eco image"
+    />
     <ContentBlock
-      slot="right"
       title={title1}
       paragraph={text1}
       linkUrl="#services"
@@ -24,44 +30,15 @@ const [text1, text2] = paragraphs;
   </Split>
 
   <Split>
-    <img slot="left" alt="Eco image" src="/about_img_2.png" />
+    <Img
+      src={AboutImage_2}
+      alt="Eco image"
+    />
     <ContentBlock
-      slot="right"
       title={title2}
       paragraph={text2}
       linkUrl="#contact"
       linkText="Skontaktuj się"
     />
   </Split>
-
-  <style lang="scss">
-    @import '@styles/_layout.scss';
-
-    .flex {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      gap: var(--gap-md);
-
-      .column {
-        flex: 1;
-      }
-
-      .swap {
-        order: -1;
-      }
-
-      @include breakpoint(medium) {
-        flex-direction: row;
-
-        &:nth-child(2) {
-          margin-top: var(--margin-lg);
-        }
-
-        .swap {
-          order: 2;
-        }
-      }
-    }
-  </style>
 </Section>

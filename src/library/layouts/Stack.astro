@@ -1,0 +1,40 @@
+---
+const { size } = Astro.props;
+type Size = 'sm' | 'md' | 'lg';
+const sizeClasses: { sm: string; md: string; lg: string } = {
+  sm: 'spacing-sm',
+  md: 'spacing-md',
+  lg: 'spacing-lg',
+};
+
+const elem: Size = size ?? 'md';
+const spacingClass = sizeClasses[elem];
+---
+
+<div class={`stack ${spacingClass}`}>
+  <slot />
+</div>
+
+<style is:global lang="scss">
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    & > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .spacing-sm > * + * {
+    margin-top: var(--space-s);
+  }
+
+  .spacing-md > * + * {
+    margin-top: var(--space-m);
+  }
+
+  .spacing-lg > * + * {
+    margin-top: var(--space-l);
+  }
+</style>

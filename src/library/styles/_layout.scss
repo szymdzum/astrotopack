@@ -42,28 +42,3 @@ $breakpoints: (
     @error "Not a correct value, check _base-breakpoints for available values.";
   }
 }
-
-[class^='stack'],
-[class^='stack-sm']>* {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  &>*+* {
-    margin-block-start: var(--margin-sm
-    );
-}
-
-&-sm>*+* {
-  margin-block-start: var(--margin-xs);
-}
-
-&-lg>*+* {
-  margin-block-start: var(--margin-md);
-}
-}

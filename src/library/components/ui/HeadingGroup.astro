@@ -3,16 +3,19 @@ const { heading, subheading, as = 'h2' } = Astro.props;
 const HeadingTag = as;
 ---
 
-<hgroup class="stack">
+<hgroup>
   <HeadingTag>{heading}</HeadingTag>
   <p>{subheading}</p>
 </hgroup>
 
 <style lang="scss">
   hgroup {
+    max-width: 60ch;
     text-align: center;
+    margin-inline: auto;
 
     p {
+      margin-block: var(--space-s);
       font-size: calc(100% + 0.3vw);
     }
   }

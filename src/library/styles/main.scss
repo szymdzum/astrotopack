@@ -3,24 +3,53 @@
 @import './_reset';
 @import './_theme';
 @import './_layout';
-@import './_font';
 
 :root {
   /* Layout */
-
   --small-screen: 24em;
-  --max-section-width: 80ch;
+  --max-section-width: 90ch;
 
+  /* Typography */
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem);
+  line-height: 1.5;
+  $line-height-compact: 1.2;
 
-  // Colors
-  --text: #050315;
-  --background: #FAF7FO;
+  h1 {
+    font-size: clamp(1.728rem, 1.4799rem + 1.2407vi, 2.4414rem);
+  }
+
+  h2 {
+    font-weight: 700;
+    line-height: $line-height-compact;
+    font-size: clamp(1.44rem, 1.2615rem + 0.8924vi, 1.9531rem);
+  }
+
+  h3 {
+    font-weight: 700;
+    line-height: $line-height-compact;
+    font-size: clamp(1.2rem, 1.0739rem + 0.6304vi, 1.5625rem);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :where(header, h1, h2, h3, .button) {
+    font-family: 'Rethink Sans Variable', sans-serif;
+  }
+
+  /* Theme */
+  --text: hsl(247, 75%, 5%);
+  --background: hsl(200 12% 95%);
+
   --primary: #FEC5BB;
   --secondary: #E5ECE4;
   --accent: #C6D8BD;
 
-  --bg-accent: #E8E8E4;
-  --bg-highlight: var(--toned-bg-highlight);
+  --bg-secondary: hsl(60, 8%, 90%);
+
 
   --border-sm: 2px solid var(--neutral-900);
   --border-md: 0.4vmin solid var(--neutral-900);
@@ -30,6 +59,32 @@
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-btn: 5px;
+
+  /* Spacing */
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,2|4|6|8|10,s-l&g=s,l,xl,12 */
+
+  --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vi, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vi, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vi, 0.9375rem);
+  --space-s: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem);
+  --space-m: clamp(2rem, 1.8261rem + 0.8696vi, 2.5rem);
+  --space-l: clamp(4rem, 3.6522rem + 1.7391vi, 5rem);
+  --space-xl: clamp(6rem, 5.4783rem + 2.6087vi, 7.5rem);
+  --space-2xl: clamp(8rem, 7.3043rem + 3.4783vi, 10rem);
+  --space-3xl: clamp(10rem, 9.1304rem + 4.3478vi, 12.5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1196rem + 0.6522vi, 0.625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3478rem + 0.7609vi, 0.9375rem);
+  --space-xs-s: clamp(0.75rem, 0.5761rem + 0.8696vi, 1.25rem);
+  --space-s-m: clamp(1rem, 0.4783rem + 2.6087vi, 2.5rem);
+  --space-m-l: clamp(2rem, 0.9565rem + 5.2174vi, 5rem);
+  --space-l-xl: clamp(4rem, 2.7826rem + 6.087vi, 7.5rem);
+  --space-xl-2xl: clamp(6rem, 4.6087rem + 6.9565vi, 10rem);
+  --space-2xl-3xl: clamp(8rem, 6.4348rem + 7.8261vi, 12.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, -0.3913rem + 6.9565vi, 5rem);
 }
 
 body {
@@ -49,9 +104,7 @@ body {
   #contact .section {
     padding-top: 0;
   }
-
 }
-
 
 .center {
   display: flex;
@@ -61,13 +114,4 @@ body {
 
 .text-center {
   text-align: center;
-}
-
-// Not the best place for this, but it's a small project
-// its a button wrapper
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--gap-xs);
 }

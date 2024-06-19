@@ -1,17 +1,20 @@
 ---
+import Stack from '@layouts/Stack.astro';
 const { name } = Astro.props;
 ---
 
 <section id={name}>
-  <div class="section stack">
-    <slot />
+  <div class="container">
+    <Stack>
+      <slot />
+    </Stack>
   </div>
 </section>
 
 <style lang="scss">
-  .section {
+  .container {
     margin-inline: auto;
-    padding: var(--padding-lg) var(--padding-md);
+    padding: var(--space-m);
     max-width: var(--max-section-width);
   }
 </style>
