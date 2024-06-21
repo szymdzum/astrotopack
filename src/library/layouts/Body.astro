@@ -1,11 +1,9 @@
 ---
 import SpeedInsights from '@vercel/speed-insights/astro';
+import '@fontsource/francois-one';
 import '@fontsource/inter';
 import '@fontsource-variable/rethink-sans';
 import '@styles/main.scss';
-import Navbar from '@components/navbar/Navbar.astro';
-import Footer from '@components/footer/Footer.astro';
-
 const PAGE_TITLE = 'Put To Pack';
 ---
 
@@ -13,16 +11,18 @@ const PAGE_TITLE = 'Put To Pack';
 <html lang="pl">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content={PAGE_TITLE} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content={PAGE_TITLE}
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>{PAGE_TITLE}</title>
   </head>
   <body>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <slot />
     <SpeedInsights />
   </body>
 </html>

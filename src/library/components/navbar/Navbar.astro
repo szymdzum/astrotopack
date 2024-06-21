@@ -4,15 +4,20 @@ import Menu from './Menu.astro';
 import SocialLinks from './SocialLinks.astro';
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'config');
-
-import logoImg from '/src/assets/images/puttopack_logo.png';
+import logoImg from '/public/logo.png';
 const { brandName, menu } = content.data;
 const instaUrl = 'https://www.instagram.com/puttopack';
 ---
 
 <header>
-  <nav role="navigation" aria-label="main navigation">
-    <Brand name={brandName} logoSrc={logoImg} />
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <Brand
+      name={brandName}
+      src={logoImg}
+    />
     <Menu menu={menu} />
     <SocialLinks instaUrl={instaUrl} />
   </nav>
@@ -22,11 +27,10 @@ const instaUrl = 'https://www.instagram.com/puttopack';
   nav {
     container: nav / inline-size;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     margin-inline: auto;
-    align-items: baseline;
     justify-content: space-between;
+    padding: var(--space-s);
     max-width: var(--max-section-width);
-    padding: 0 var(--padding-md) var(--padding-sm) var(--padding-md);
   }
 </style>

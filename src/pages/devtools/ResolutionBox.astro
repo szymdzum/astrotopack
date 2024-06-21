@@ -1,0 +1,42 @@
+<style is:global>
+  #resolution-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+</style>
+<script is:inline>
+  function createResolutionBox() {
+    // Create the resolution box
+    const box = document.createElement('div');
+    box.id = 'resolution-box';
+    document.body.appendChild(box);
+
+    // Function to update the resolution in the box
+    function updateResolution() {
+      const widthPx = window.innerWidth;
+      const heightPx = window.innerHeight;
+      const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const widthRem = (widthPx / fontSize).toFixed(2);
+      const heightRem = (heightPx / fontSize).toFixed(2);
+      box.innerHTML = `px: ${widthPx}w x ${heightPx}h<br>rem: ${widthRem}w ${heightRem}h`;
+    }
+
+    // Initial update
+    updateResolution();
+
+    // Update the resolution on window resize
+    window.addEventListener('resize', updateResolution);
+  }
+
+  // Create the resolution box when the document is fully loaded
+  window.onload = createResolutionBox;
+</script>

@@ -1,0 +1,35 @@
+<section class="outliner">
+  <div class="outliner-container">
+    <slot />
+  </div>
+</section>
+<style>
+  .outliner {
+    border: 5px solid lightgray; /* Thick short-lined border with light gray */
+    border-style: dashed;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(211, 211, 211, 0.3),
+        rgba(211, 211, 211, 0.5) 1px,
+        transparent 1px,
+        transparent 1rem
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(211, 211, 211, 0.3),
+        rgba(211, 211, 211, 0.3) 1px,
+        transparent 1px,
+        transparent 1rem
+      );
+  }
+</style>
+<script>
+  // Select all div elements on the page
+  const divs = document.querySelectorAll('div');
+
+  // Apply a border to each div
+  divs.forEach((div) => {
+    div.style.border = '1px dashed rgba(125, 235, 122, 0.5)';
+    div.style.boxSizing = 'border-box';
+  });
+</script>

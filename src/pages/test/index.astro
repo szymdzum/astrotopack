@@ -1,0 +1,26 @@
+---
+import Body from '@layouts/Body.astro';
+import Section from '@layouts/Section.astro';
+import Center from '@layouts/Center.astro';
+import ResolutionBox from '../devtools/ResolutionBox.astro';
+import Outliner from '../devtools/Outliner.astro';
+
+import PuttopackLogo from '@components/navbar/PuttopackLogo.astro';
+---
+
+<Body>
+  <Outliner>
+    <Section name="test">
+      <Center> <PuttopackLogo /> </Center>
+    </Section>
+  </Outliner>
+  <ResolutionBox />
+</Body>
+
+<style lang="scss">
+  /* Helper classes for design */
+  * {
+    border: 1px dotted rgba(125, 235, 122, 0.302);
+    /* Outline to indicate element boundary */
+  }
+</style>

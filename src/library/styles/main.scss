@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 @import './_reset';
-@import './_theme';
 @import './_layout';
 
 :root {
@@ -84,6 +83,7 @@
   --space-2xl-3xl: clamp(8rem, 6.4348rem + 7.8261vi, 12.5rem);
 
   /* Custom pairs */
+  --space-xs-m: clamp(0.75rem, 0.1413rem + 3.0435vi, 2.5rem);
   --space-s-l: clamp(1rem, -0.3913rem + 6.9565vi, 5rem);
 }
 
