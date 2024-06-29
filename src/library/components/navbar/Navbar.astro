@@ -1,36 +1,17 @@
 ---
 import Brand from './Brand.astro';
 import Menu from './Menu.astro';
+import Header from './Header.astro';
 import SocialLinks from './SocialLinks.astro';
 import { getEntry } from 'astro:content';
 const content = await getEntry('landing', 'config');
-import logoImg from '/public/logo.png';
+
 const { brandName, menu } = content.data;
 const instaUrl = 'https://www.instagram.com/puttopack';
 ---
 
-<header>
-  <nav
-    role="navigation"
-    aria-label="main navigation"
-  >
-    <Brand
-      name={brandName}
-      src={logoImg}
-    />
-    <Menu menu={menu} />
-    <SocialLinks instaUrl={instaUrl} />
-  </nav>
-</header>
-
-<style lang="scss">
-  nav {
-    container: nav / inline-size;
-    display: flex;
-    align-items: center;
-    margin-inline: auto;
-    justify-content: space-between;
-    padding: var(--space-s);
-    max-width: var(--max-section-width);
-  }
-</style>
+<Header>
+  <Brand name={brandName} />
+  <Menu menu={menu} />
+  <SocialLinks instaUrl={instaUrl} />
+</Header>

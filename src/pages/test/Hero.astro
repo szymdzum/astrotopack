@@ -1,0 +1,56 @@
+---
+import Stack from '@layouts/Stack.astro';
+import Cta from './Cta.astro';
+---
+
+<div class="hero">
+  <div class="half-circle">
+    <div class="content">
+      <Stack size="sm">
+        <p>Zrównoważony Rozwój dla Biznesu</p>
+        <h1>Raportowanie ESG Kompleksowe Usługi Doradcze</h1>
+        <!-- <p>Wdrożenie CSRD i ESRS w Twojej Organizacji</p> -->
+      </Stack>
+      <Cta />
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .hero {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 60%;
+  }
+  .half-circle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 200%;
+    width: 110%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 0 0;
+    background-color: hsl(86, 81%, 79%);
+  }
+  .content {
+    position: relative;
+    margin-inline: auto;
+    text-wrap: balance;
+    text-align: center;
+    margin-top: var(--space-s-l);
+    padding: var(--space-l);
+    width: 70%;
+    z-index: 2;
+
+    h1 {
+      line-height: 1.1;
+      font-weight: 700;
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+</style>

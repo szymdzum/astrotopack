@@ -1,0 +1,20 @@
+<header>
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <slot />
+  </nav>
+</header>
+
+<style lang="scss">
+  nav {
+    container: nav / inline-size;
+    display: flex;
+    align-items: center;
+    margin-inline: auto;
+    justify-content: space-between;
+    padding: var(--space-s);
+    max-width: var(--max-section-width);
+  }
+</style>

@@ -1,26 +1,32 @@
 ---
 import Body from '@layouts/Body.astro';
-import Section from '@layouts/Section.astro';
-import Center from '@layouts/Center.astro';
-import ResolutionBox from '../devtools/ResolutionBox.astro';
-import Outliner from '../devtools/Outliner.astro';
+import Header from '@components/navbar/Header.astro';
 
-import PuttopackLogo from '@components/navbar/PuttopackLogo.astro';
+import ResolutionBox from '@devtools/ResolutionBox.astro';
+import Menu from '@components/navbar/Menu.astro';
+import ImageBackground from './ImageBackground.astro';
+import Hero from './Hero.astro';
+import PutToPackLogo from '@navbar/PutToPackLogo.astro';
+
+import { getEntry } from 'astro:content';
+const content = await getEntry('landing', 'config');
+
+const { menu } = content.data;
 ---
 
 <Body>
-  <Outliner>
-    <Section name="test">
-      <Center> <PuttopackLogo /> </Center>
-    </Section>
-  </Outliner>
+  <ImageBackground>
+    <Header>
+      <PutToPackLogo />
+      <Menu menu={menu} />
+    </Header>
+    <Hero />
+  </ImageBackground>
   <ResolutionBox />
 </Body>
 
 <style lang="scss">
-  /* Helper classes for design */
-  * {
-    border: 1px dotted rgba(125, 235, 122, 0.302);
-    /* Outline to indicate element boundary */
+  .outliner {
+    background: no-repeat center/100% url('/cloud.svg');
   }
 </style>
